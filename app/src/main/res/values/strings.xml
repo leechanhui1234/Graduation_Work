@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">graduation_work</string>
+    <string name="auto_login">Auto_Login</string>
+    <string name="prompt_ID">Auto_Login_ID</string>
+    <string name="prompt_PW">Auto_Login_PW</string>
+    <string name="prompt_Age">나이를 선택하세요</string>
 </resources>
