@@ -1,7 +1,6 @@
 package com.example.aop.part4.graduation_work
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,11 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Response
 import com.android.volley.toolbox.Volley
 import com.example.aop.part4.graduation_work.Request.RegisterRequest
-import com.example.aop.part4.graduation_work.databinding.ActivityMainBinding
 import com.example.aop.part4.graduation_work.databinding.NewAccountBinding
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.json.JSONObject
-import java.util.jar.Attributes
 
 class NewAccount : AppCompatActivity() {
 
@@ -34,7 +30,7 @@ class NewAccount : AppCompatActivity() {
             }
 
             Login.setOnClickListener {
-                var intent = Intent(applicationContext, MainActivity::class.java)
+                var intent = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }

@@ -6,28 +6,24 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.Response
 import com.android.volley.toolbox.Volley
 import com.example.aop.part4.graduation_work.Request.LoginRequest
-import com.example.aop.part4.graduation_work.Request.RegisterRequest
 import com.example.aop.part4.graduation_work.data.UserData
-import com.example.aop.part4.graduation_work.databinding.ActivityMainBinding
+import com.example.aop.part4.graduation_work.databinding.ActivityLoginBinding
 import org.json.JSONObject
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var sharePreferences: SharedPreferences
     private lateinit var editor : SharedPreferences.Editor
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         bindViews()
@@ -101,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
         val loginRequest =
             LoginRequest(userId, userPw, responseListener)
-        val queue = Volley.newRequestQueue(this@MainActivity)
+        val queue = Volley.newRequestQueue(this@LoginActivity)
         queue.add(loginRequest)
     }
 
