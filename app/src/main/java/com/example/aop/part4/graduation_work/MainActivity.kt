@@ -15,58 +15,59 @@ import com.android.volley.toolbox.Volley
 import com.example.aop.part4.graduation_work.Request.LoginRequest
 import com.example.aop.part4.graduation_work.Request.RegisterRequest
 import com.example.aop.part4.graduation_work.data.UserData
+import com.example.aop.part4.graduation_work.databinding.ActivityMainBinding
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var ID : EditText
-    private lateinit var PW : EditText
-    lateinit var Login : Button
-
-    lateinit var AutoLogin : CheckBox
     private lateinit var sharePreferences: SharedPreferences
     private lateinit var editor : SharedPreferences.Editor
 
-    lateinit var New_Account : Button
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        ID = findViewById(R.id.ID)
-        PW = findViewById(R.id.PW)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        Login = findViewById<Button>(R.id.Login)
-        Login.setOnClickListener {
-            if (AutoLogin.isChecked) {
-                editor.putBoolean(getString(R.string.auto_login), true)
-                editor.apply()
-                editor.putString(getString(R.string.prompt_ID), ID.text.toString())
-                editor.putString(getString(R.string.prompt_PW), PW.text.toString())
-                editor.commit()
-            }
-            else {
-                editor.putBoolean(getString(R.string.auto_login), false)
-                editor.putString(getString(R.string.prompt_ID), ID.text.toString())
-                editor.putString(getString(R.string.prompt_PW), PW.text.toString())
-                editor.commit()
-            }
-
-            val id = ID.text.toString()
-            val pw = PW.text.toString()
-            checkUser(id, pw)
-        }
-
-        New_Account = findViewById(R.id.NewAccount)
-        New_Account.setOnClickListener {
-            val intent = Intent(this, NewAccount::class.java)
-            startActivity(intent)
-        }
+        bindViews()
 
         sharePreferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this)
         editor = sharePreferences.edit()
 
         checkSharedPreference()
+    }
+
+    private fun bindViews() {
+        binding.Login.setOnClickListener {
+            if (binding.AutoLogin.isChecked) {
+                with(binding){
+                    editor.putBoolean(getString(R.string.auto_login), true)
+                    editor.apply()
+                    editor.putString(getString(R.string.prompt_ID), ID.text.toString())
+                    editor.putString(getString(R.string.prompt_PW), PW.text.toString())
+                    editor.commit()
+                }
+            }
+            else {
+                with(binding){
+                    editor.putBoolean(getString(R.string.auto_login), false)
+                    editor.putString(getString(R.string.prompt_ID), ID.text.toString())
+                    editor.putString(getString(R.string.prompt_PW), PW.text.toString())
+                    editor.commit()
+                }
+            }
+
+            val id = binding.ID.text.toString()
+            val pw = binding.PW.text.toString()
+            checkUser(id, pw)
+        }
+
+        binding.NewAccount.setOnClickListener {
+            val intent = Intent(this, NewAccount::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun checkUser(userId: String, userPw: String) {
@@ -82,12 +83,13 @@ class MainActivity : AppCompatActivity() {
                     val userAge = jsonObject.getInt("userAge")
                     val userValue = jsonObject.getString("userValue")
                     val data = UserData(userId, userPw, userEmail, userAge, userValue, userName)
+
                     //todo intent를 이용해 메인 화면으로 보내버리자
                     Toast.makeText(applicationContext, "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(applicationContext, "잘못된 아이디 or 패스워드 값입니다. 다시 로그인해주세요", Toast.LENGTH_SHORT).show()
-                    ID.setText("")
-                    PW.setText("")
+                    binding.ID.setText("")
+                    binding.PW.setText("")
                     return@Listener
                 }
             } catch(e: Exception){
@@ -105,9 +107,10 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("StringFormatInvalid")
     private fun checkSharedPreference() {
-        AutoLogin = findViewById(R.id.AutoLogin)
-        AutoLogin.isChecked = sharePreferences.getBoolean(getString(R.string.auto_login), false)
-        ID.setText(sharePreferences.getString(getString(R.string.prompt_ID), ""))
-        PW.setText(sharePreferences.getString(getString(R.string.prompt_PW), ""))
+        with(binding){
+            AutoLogin.isChecked = sharePreferences.getBoolean(getString(R.string.auto_login), false)
+            ID.setText(sharePreferences.getString(getString(R.string.prompt_ID), ""))
+            PW.setText(sharePreferences.getString(getString(R.string.prompt_PW), ""))
+        }
     }
 }
