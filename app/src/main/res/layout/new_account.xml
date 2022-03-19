@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#FAFAFA">
 
         <EditText
             android:id="@+id/Name"
@@ -76,7 +77,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="여자" />
-
         </RadioGroup>
 
         <Spinner
@@ -113,16 +113,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
-                android:text="가입하기" />
+                android:text="가입하기"
+                android:textColor="@color/black"
+                android:backgroundTint="#6490ED" />
 
             <Button
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="로그인하기" />
-
+                android:text="로그인하기"
+                android:textColor="@color/black"
+                android:backgroundTint="#6490ED" />
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
