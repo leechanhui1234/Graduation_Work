@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Graduation_work"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".LoginActivity"
+            android:name=".CesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewAccount" />
-        <activity android:name=".CesActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".Ces1Activity" />
     </application>
 
 </manifest>

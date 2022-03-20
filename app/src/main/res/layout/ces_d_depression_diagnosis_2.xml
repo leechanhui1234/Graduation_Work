@@ -4,18 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TableLayout
-        android:layout_margin="10dp"
+        android:background="#FAFAFA"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="*"
+        android:layout_margin="10dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
+        android:layout_marginEnd="20dp"
+        android:padding="10dp"
+        android:stretchColumns="*">
 
-        <TableRow>
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -28,72 +30,74 @@
                 android:layout_height="wrap_content"
                 android:layout_span="4">
 
-                <TableRow android:layout_width="198dp">
+                <TableRow
+                    android:layout_marginBottom="10dp">
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="1dp"
                         android:text="극히드물다" />
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
 
                         android:text="가끔" />
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
                         android:text="자주" />
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
                         android:text="거의 대부분" />
                 </TableRow>
 
-                <TableRow>
+                <TableRow
+                    android:layout_marginBottom="10dp">
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
-                        android:text="1일 이하" />
+                        android:text="(1일 이하)" />
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
-                        android:text="1일~2일" />
+                        android:text="(1일~2일)" />
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
-                        android:text="3~4일" />
+                        android:text="(3~4일)" />
 
                     <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
-                        android:text="5~7일" />
+                        android:text="(5~7일)" />
                 </TableRow>
 
             </TableLayout>
 
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
-
-                android:layout_width="165dp"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layoutmargin="12dp"
                 android:text="15 큰 불만 없이 생활했다." />
 
             <RadioGroup
@@ -127,14 +131,16 @@
             </RadioGroup>
 
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:text="16 사람들이 나에게 차갑게 대하는 것 같았다." />
+                android:text="16 사람들이 나에게 차갑게 대하는 것 같았다."
+                android:textAlignment="center" />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -167,7 +173,9 @@
             </RadioGroup>
 
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="6dp"
@@ -206,13 +214,14 @@
             </RadioGroup>
 
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_wedth="match_parent"
                 android:text="18 마음이 슬펐다." />
 
             <RadioGroup
@@ -246,14 +255,16 @@
             </RadioGroup>
 
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:text="19 사람들이 나를 싫어하는 것 같았다." />
+                android:text="19 사람들이 나를 싫어하는 것 같았다."
+                android:textAlignment="center" />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -286,14 +297,16 @@
             </RadioGroup>
 
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:text="20 도무지 뭘 해 나갈 엄두가 나지 않았다." />
+                android:text="20 도무지 뭘 해 나갈 엄두가 나지 않았다."
+                android:textAlignment="center" />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -328,14 +341,20 @@
         </TableRow>
 
         <Button
+            android:textColor="@color/white"
+            android:backgroundTint="#6490ED"
+            android:layout_marginBottom="10dp"
             android:layout_height="wrap_content"
-            android:text="진단 나가기"
-            />
+            android:text="진단 나가기" />
+
         <Button
+            android:textColor="@color/white"
+            android:backgroundTint="#6490ED"
+            android:layout_marginBottom="10dp"
             android:id="@+id/end_of_diagnosis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="다음문항"/>
+            android:text="다음문항" />
 
 
     </TableLayout>
