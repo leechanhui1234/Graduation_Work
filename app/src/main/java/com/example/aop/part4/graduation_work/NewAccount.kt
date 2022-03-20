@@ -14,7 +14,7 @@ import org.json.JSONObject
 
 class NewAccount : AppCompatActivity() {
 
-    private lateinit var binding: NewAccountBinding
+    private lateinit var binding : NewAccountBinding
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class NewAccount : AppCompatActivity() {
 
         linkAdapter()
 
-        with(binding){
+        with(binding) {
             Save.setOnClickListener {
                 checkInvalidate()
             }
@@ -49,7 +49,7 @@ class NewAccount : AppCompatActivity() {
         var regex1 = Regex("""[A-Z]""") //비밀번호 대문자
         var regex2 = Regex("""[~|!|@|#|$|%|^|&|*|(|)|_|+|/|.|`|<|>|?]""") //비밀번호 특수문자
 
-        with(binding){
+        with(binding) {
             if (Name == null) { //이름 공백 확인
                 Toast.makeText(applicationContext, "이름을 입력하세요.", Toast.LENGTH_SHORT).show()
             }
@@ -75,7 +75,7 @@ class NewAccount : AppCompatActivity() {
                 var name = Name.text.toString()
                 var id = ID.text.toString()
                 var pw = PW.text.toString()
-                var sex = when(SexGroup.checkedRadioButtonId){
+                var sex = when(SexGroup.checkedRadioButtonId) {
                     R.id.Male -> "남성"
                     else -> "여성"
                 }
@@ -90,19 +90,19 @@ class NewAccount : AppCompatActivity() {
         }
     }
 
-    private fun InputDatabase(userId: String, userPw: String, userName: String, userValue: String, userAge: Int, userEmail: String) {
+    private fun InputDatabase (userId: String, userPw: String, userName: String, userValue: String, userAge: Int, userEmail: String) {
         val responseListener = Response.Listener<String> { response ->
             try {
                 val jsonObject = JSONObject(response)
                 val success = jsonObject.getBoolean("success")
-                if(success){
+                if(success) {
                     Toast.makeText(applicationContext, "회원 등록에 성공하셨습니다. 로그인하기 버튼을 클릭해주세요", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(applicationContext, "중복된 아이디입니다. 아이디를 다시 입력해주세요", Toast.LENGTH_SHORT).show()
                     binding.ID.setText("")
                     return@Listener
                 }
-            } catch(e: Exception){
+            } catch(e: Exception) {
                 e.printStackTrace()
                 Log.d("NewAccount", e.message.toString())
                 Toast.makeText(this, "예상치 못한 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()

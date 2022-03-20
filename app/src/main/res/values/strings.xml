@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">graduation_work</string>
+    <string name="app_name">헬디(HealDe)</string>
     <string name="auto_login">Auto_Login</string>
     <string name="prompt_ID">Auto_Login_ID</string>
     <string name="prompt_PW">Auto_Login_PW</string>

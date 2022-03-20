@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             else {
-                with(binding){
+                with(binding) {
                     editor.putBoolean(getString(R.string.auto_login), false)
                     editor.putString(getString(R.string.prompt_ID), ID.text.toString())
                     editor.putString(getString(R.string.prompt_PW), PW.text.toString())
@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val jsonObject = JSONObject(response)
                 val success = jsonObject.getBoolean("success")
-                if(success){
+                if (success) {
                     val userId = jsonObject.getString("userId")
                     val userPw = jsonObject.getString("userPw")
                     val userName = jsonObject.getString("userName")
@@ -83,12 +83,12 @@ class LoginActivity : AppCompatActivity() {
                     //todo intent를 이용해 메인 화면으로 보내버리자
                     Toast.makeText(applicationContext, "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(applicationContext, "잘못된 아이디 or 패스워드 값입니다. 다시 로그인해주세요", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "잘못된 아이디/패스워드 값입니다. 다시 로그인해주세요", Toast.LENGTH_SHORT).show()
                     binding.ID.setText("")
                     binding.PW.setText("")
                     return@Listener
                 }
-            } catch(e: Exception){
+            } catch (e: Exception){
                 e.printStackTrace()
                 Log.d("MainActivity", e.message.toString())
                 Toast.makeText(this, "예상치 못한 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
@@ -103,7 +103,7 @@ class LoginActivity : AppCompatActivity() {
 
     @SuppressLint("StringFormatInvalid")
     private fun checkSharedPreference() {
-        with(binding){
+        with(binding) {
             AutoLogin.isChecked = sharePreferences.getBoolean(getString(R.string.auto_login), false)
             ID.setText(sharePreferences.getString(getString(R.string.prompt_ID), ""))
             PW.setText(sharePreferences.getString(getString(R.string.prompt_PW), ""))

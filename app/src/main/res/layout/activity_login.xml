@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#FAFAFA">
 
         <EditText
             android:id="@+id/ID"
@@ -46,8 +47,9 @@
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="로그인" />
-
+                android:text="로그인"
+                android:textColor="@color/black"
+                android:backgroundTint="#6490ED"/>
         </LinearLayout>
 
         <LinearLayout
@@ -62,8 +64,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:text="회원가입" />
-
+                android:text="회원가입"
+                android:textColor="@color/black"
+                android:backgroundTint="#6490ED" />
         </LinearLayout>
     </LinearLayout>
 
