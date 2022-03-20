@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TableLayout
+
+        android:stretchColumns="*"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+
+        <TableRow>
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="문항" />
+            <TableLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_span="4">
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_wedth="wrap_content"
+                        android:text="극히드물다" />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_wedth="wrap_content"
+
+                        android:text="가끔" />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_wedth="wrap_content"
+                        android:text="자주" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_wedth="wrap_content"
+                        android:text="거의 대부분" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_wedth="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="1일 이하"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_wedth="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="1일~2일"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_wedth="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="3~4일"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_wedth="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="5~7일"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="01 평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/score1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/score2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/score3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/score4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="02 먹고 싶지 않았다. 식욕이 없었다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="03 어느 누가 도와주더라도 나의 울적한 기분을 떨쳐버릴 수 없을 것 같았다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="04 무슨 일을 하든 정신을 집중하기가 힘들었다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="05 비교적 잘 지냈다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="06 상당히 우울했다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="07 모든 일들이 힘들게 느껴졌다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="08 앞일이 암담하게 느껴졌다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="09 지금까지의 내 인생은 실패작이라는 생각이 들었다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="10 적어도 보통 사람들 만큼의 능력은 있었다고 생각한다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="11 잠을 설쳤다 (잠을 잘 이루지 못 했다)." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="12 두려움을 느꼈다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="13 평소에 비해 말수가 적었다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="14 세상에 홀로 있는 듯한 외로움을 느꼈다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="15 큰 불만 없이 생활했다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="16 사람들이 나에게 차갑게 대하는 것 같았다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="17 갑자기 울음이 나왔다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="18 마음이 슬펐다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="19 사람들이 나를 싫어하는 것 같았다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_wedth="match_parent"
+                android:text="20 도무지 뭘 해 나갈 엄두가 나지 않았다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
