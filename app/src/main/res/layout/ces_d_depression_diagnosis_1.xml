@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <TableLayout
-
-        android:stretchColumns="*"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:stretchColumns="*"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_margin="10dp"
+
         >
 
+
         <TableRow>
+
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="문항" />
-            <TableLayout
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="문항" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_span="4">
-                <TableRow>
+
+                <TableRow android:layout_width="198dp">
 
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_wedth="wrap_content"
+                        android:layout_margin="1dp"
                         android:text="극히드물다" />
+
+
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_wedth="wrap_content"
 
                         android:text="가끔" />
+
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -52,87 +59,47 @@
                         android:layout_wedth="wrap_content"
                         android:text="거의 대부분" />
                 </TableRow>
+
                 <TableRow>
+
                     <TextView
                         android:layout_height="wrap_content"
-                        android:layout_wedth="wrap_content"
                         android:layout_gravity="center"
-                        android:text="(1일 이하)"
-                        />
+                        android:layout_wedth="wrap_content"
+                        android:text="1일 이하" />
+
                     <TextView
                         android:layout_height="wrap_content"
-                        android:layout_wedth="wrap_content"
                         android:layout_gravity="center"
-                        android:text="(1일~2일)"
-                        />
+                        android:layout_wedth="wrap_content"
+                        android:text="1일~2일" />
+
                     <TextView
                         android:layout_height="wrap_content"
-                        android:layout_wedth="wrap_content"
                         android:layout_gravity="center"
-                        android:text="(3~4일)"
-                        />
+                        android:layout_wedth="wrap_content"
+                        android:text="3~4일" />
+
                     <TextView
                         android:layout_height="wrap_content"
-                        android:layout_wedth="wrap_content"
                         android:layout_gravity="center"
-                        android:text="(5~7일)"
-                        />
+                        android:layout_wedth="wrap_content"
+                        android:text="5~7일" />
                 </TableRow>
 
             </TableLayout>
 
         </TableRow>
-
-        <TableRow
-            android:layout_gravity="center">
-
-            <TextView
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="01 평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다." />
-
-            <RadioGroup
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/score1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:id="@+id/score2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:id="@+id/score3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:id="@+id/score4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </RadioGroup>
-
-
-        </TableRow>
         <TableRow>
 
             <TextView
-                android:layout_width="6dp"
+
+                android:layout_width="165dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="02 먹고 싶지 않았다. 식욕이 없었다." />
+                android:layoutmargin="12dp"
+                android:text="08 앞일이 암담하게 느껴졌다." />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -172,10 +139,9 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="03 어느 누가 도와주더라도 나의 울적한 기분을 떨쳐버릴 수 없을 것 같았다." />
+                android:text="09 지금까지의 내 인생은 실패작이라는 생각이 들었다." />
 
             <RadioGroup
-
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -213,7 +179,48 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="04 무슨 일을 하든 정신을 집중하기가 힘들었다." />
+                android:text="10 적어도 보통 사람들 만큼의 능력은 있었다고 생각한다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity=""
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="11 잠을 설쳤다 (잠을 잘 이루지 못 했다)." />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -252,46 +259,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="05 비교적 잘 지냈다." />
-
-            <RadioGroup
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <RadioButton
-
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <RadioButton
-
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <RadioButton
-
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </RadioGroup>
-
-        </TableRow>
-        <TableRow>
-
-            <TextView
-                android:layout_width="6dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="06 상당히 우울했다." />
+                android:text="12 두려움을 느꼈다." />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -331,7 +299,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="07 모든 일들이 힘들게 느껴졌다." />
+                android:text="13 평소에 비해 말수가 적었다." />
 
             <RadioGroup
                 android:layout_width="240dp"
@@ -364,17 +332,58 @@
             </RadioGroup>
 
         </TableRow>
-<Button
-    android:layout_height="wrap_content"
-    android:text="진단 나가기"
-    />
-<Button
-    android:id="@+id/to_diagnosis_1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="다음문항"/>
+        <TableRow>
+
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="14 세상에 홀로 있는 듯한 외로움을 느꼈다." />
+
+            <RadioGroup
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </TableRow>
+
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="진단 나가기"
+            />
+        <Button
+            android:id="@+id/to_diagnosis_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음문항"/>
 
 
     </TableLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

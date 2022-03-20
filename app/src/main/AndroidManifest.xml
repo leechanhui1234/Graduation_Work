@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewAccount" />
+        <activity android:name=".CesActivity"/>
     </application>
 
 </manifest>
