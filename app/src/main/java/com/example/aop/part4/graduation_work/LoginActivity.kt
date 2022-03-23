@@ -57,6 +57,11 @@ class LoginActivity : AppCompatActivity() {
             val id = binding.ID.text.toString()
             val pw = binding.PW.text.toString()
             checkUser(id, pw)
+
+            /*val intent = Intent(this, MainPage::class.java)
+            //사용자 이름을 넣어서 같이 전송할 것!
+            //intent.putExtra("Name", UserData(userName))
+            startActivity(intent)*/
         }
 
         binding.NewAccount.setOnClickListener {
@@ -80,8 +85,12 @@ class LoginActivity : AppCompatActivity() {
                     val userValue = jsonObject.getString("userValue")
                     val data = UserData(userId, userPw, userEmail, userAge, userValue, userName)
 
-                    //todo intent를 이용해 메인 화면으로 보내버리자
                     Toast.makeText(applicationContext, "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this@LoginActivity, MainPage::class.java)
+                    intent.putExtra("User", data)
+                    startActivity(intent)
+
                 } else {
                     Toast.makeText(applicationContext, "잘못된 아이디/패스워드 값입니다. 다시 로그인해주세요", Toast.LENGTH_SHORT).show()
                     binding.ID.setText("")

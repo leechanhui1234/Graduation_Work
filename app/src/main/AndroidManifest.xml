@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.aop.part4.graduation_work">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,8 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewAccount" />
-        <activity android:name=".CesActivity"/>
-        <activity android:name=".Ces1Activity" />
+        <activity android:name=".MainPage" />
+        <activity android:name=".DepressiveCheck"/>
+        <activity android:name=".Diary" />
     </application>
 
 </manifest>

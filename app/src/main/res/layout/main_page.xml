@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/logo"
+                android:clickable="true"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/Logout"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="#6490ED"
+                android:gravity="right|center_vertical"
+                android:text="로그아웃"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/depressiveCheck"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:clickable="true"
+                    android:background="@drawable/logo"
+                    android:contentDescription="@string/app_name"/>
+
+                <ImageButton
+                    android:id="@+id/health"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/logo"
+                    android:contentDescription="@string/app_name"/>
+
+                <ImageButton
+                    android:id="@+id/hospital"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:clickable="true"
+                    android:background="@drawable/logo"
+                    android:contentDescription="@string/app_name"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="35dp"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/board"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:clickable="true"
+                    android:background="@drawable/logo"
+                    android:contentDescription="@string/app_name"/>
+
+                <ImageButton
+                    android:id="@+id/diary"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/logo"
+                    android:contentDescription="@string/app_name"/>
+
+                <ImageButton
+                    android:id="@+id/other"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:clickable="true"
+                    android:background="@drawable/logo"
+                    android:contentDescription="@string/app_name"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Banner1"
+                android:layout_width="350dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:text="배너 1"
+                android:textColor="@color/white"
+                android:backgroundTint="#6490ED"/>
+
+            <Button
+                android:id="@+id/Banner2"
+                android:layout_width="350dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:text="배너 2"
+                android:textColor="@color/white"
+                android:backgroundTint="#6490ED"/>
+
+            <Button
+                android:id="@+id/Banner3"
+                android:layout_width="350dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="배너 3"
+                android:textColor="@color/white"
+                android:backgroundTint="#6490ED"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
