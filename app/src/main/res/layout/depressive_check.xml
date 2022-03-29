@@ -20,7 +20,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="8"
                     android:gravity="center"
                     android:text="문항"/>
                 <TextView
@@ -48,7 +47,6 @@
                     android:gravity="center"
                     android:text="거의 대부분\n(5~7일)"/>
             </TableRow>
-
 
         </TableLayout>
 

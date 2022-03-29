@@ -18,6 +18,8 @@ class Diary: AppCompatActivity() {
         binding = DiaryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
     }
 
     override fun onBackPressed() {

@@ -33,6 +33,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
+                android:textSize="20dp"
                 android:text=""/>
 
             <Button
@@ -60,28 +61,34 @@
                 <ImageButton
                     android:id="@+id/depressiveCheck"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="100dp"
                     android:layout_marginRight="30dp"
                     android:clickable="true"
-                    android:background="@drawable/logo"
+                    android:src="@drawable/center"
+                    android:scaleType="centerCrop"
+                    android:background="@color/none"
                     android:contentDescription="@string/app_name"/>
 
                 <ImageButton
                     android:id="@+id/health"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:clickable="true"
-                    android:background="@drawable/logo"
+                    android:src="@drawable/exercise"
+                    android:scaleType="centerCrop"
+                    android:background="@color/none"
                     android:contentDescription="@string/app_name"/>
 
                 <ImageButton
                     android:id="@+id/hospital"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="100dp"
                     android:layout_marginLeft="30dp"
                     android:clickable="true"
-                    android:background="@drawable/logo"
+                    android:src="@drawable/hospital"
+                    android:scaleType="centerCrop"
+                    android:background="@color/none"
                     android:contentDescription="@string/app_name"/>
             </TableRow>
 
@@ -94,28 +101,34 @@
                 <ImageButton
                     android:id="@+id/board"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="100dp"
                     android:layout_marginRight="30dp"
                     android:clickable="true"
-                    android:background="@drawable/logo"
+                    android:src="@drawable/chat"
+                    android:scaleType="centerCrop"
+                    android:background="@color/none"
                     android:contentDescription="@string/app_name"/>
 
                 <ImageButton
                     android:id="@+id/diary"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:clickable="true"
-                    android:background="@drawable/logo"
+                    android:src="@drawable/diary"
+                    android:scaleType="centerCrop"
+                    android:background="@color/none"
                     android:contentDescription="@string/app_name"/>
 
                 <ImageButton
                     android:id="@+id/other"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="100dp"
                     android:layout_marginLeft="30dp"
                     android:clickable="true"
-                    android:background="@drawable/logo"
+                    android:src="@drawable/more"
+                    android:scaleType="centerCrop"
+                    android:background="@color/none"
                     android:contentDescription="@string/app_name"/>
             </TableRow>
 

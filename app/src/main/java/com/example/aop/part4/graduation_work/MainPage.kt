@@ -21,6 +21,7 @@ class MainPage : AppCompatActivity() {
         binding = MainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         with(binding) {
             logo.setOnClickListener {
                 var builder = AlertDialog.Builder(this@MainPage)
