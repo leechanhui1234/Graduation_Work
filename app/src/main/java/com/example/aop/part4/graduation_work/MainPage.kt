@@ -1,6 +1,7 @@
 package com.example.aop.part4.graduation_work
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import com.example.aop.part4.graduation_work.databinding.MainPageBinding
 import com.example.aop.part4.graduation_work.databinding.NewAccountBinding
 import android.content.Intent
 import android.widget.Toast
+import androidx.core.content.edit
 import androidx.core.view.KeyEventDispatcher
 import com.example.aop.part4.graduation_work.data.UserData
 
@@ -20,6 +22,8 @@ class MainPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = MainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
 
 
         with(binding) {
@@ -36,7 +40,16 @@ class MainPage : AppCompatActivity() {
                     .create().show()
             }
 
-            var name = intent.getParcelableExtra<UserData>("User")?.userName.toString()
+            var name = intent.getParcelableExtra<UserData>("User")?.userName
+
+            if(name.isNullOrEmpty()){
+                name = sharedPreferences.getString("name", "") ?: ""
+            } else {
+                sharedPreferences.edit {
+                    this.putString("name", name)
+                    commit()
+                }
+            }
             Name.text = "$name" + "님, 반갑습니다."
 
             Logout.setOnClickListener {
