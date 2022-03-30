@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="일기장"/>
+
+        <TextView
+            android:id="@+id/Day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="30dp"
+            android:text=""/>
+
+        <!-- 일기 작성 -->
+        <EditText
+            android:id="@+id/dairyText"
+            android:layout_width="350dp"
+            android:layout_height="400dp"
+            android:background="#EDEDED"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="자신의 현재 심정을 짧게 적어보세요"/>
+
+        <Button
+            android:id="@+id/dairySave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:text="저장하기"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

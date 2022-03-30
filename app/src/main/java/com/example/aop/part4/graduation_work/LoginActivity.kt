@@ -57,11 +57,6 @@ class LoginActivity : AppCompatActivity() {
             val id = binding.ID.text.toString()
             val pw = binding.PW.text.toString()
             checkUser(id, pw)
-
-            /*val intent = Intent(this, MainPage::class.java)
-            //사용자 이름을 넣어서 같이 전송할 것!
-            //intent.putExtra("Name", UserData(userName))
-            startActivity(intent)*/
         }
 
         binding.NewAccount.setOnClickListener {
@@ -86,7 +81,8 @@ class LoginActivity : AppCompatActivity() {
                     val data = UserData(userId, userPw, userEmail, userAge, userValue, userName)
 
                     Toast.makeText(applicationContext, "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT).show()
-
+                    
+                    //메인 페이지로 화면 전환
                     val intent = Intent(this@LoginActivity, MainPage::class.java)
                     intent.putExtra("User", data)
                     startActivity(intent)

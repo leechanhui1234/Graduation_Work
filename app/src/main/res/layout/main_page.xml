@@ -121,7 +121,7 @@
                     android:contentDescription="@string/app_name"/>
 
                 <ImageButton
-                    android:id="@+id/other"
+                    android:id="@+id/more"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="30dp"

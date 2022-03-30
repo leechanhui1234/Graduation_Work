@@ -24,6 +24,7 @@
         <activity android:name=".NewAccount" />
         <activity android:name=".MainPage" />
         <activity android:name=".DepressiveCheck"/>
+        <activity android:name=".Dialist" />
         <activity android:name=".Diary" />
     </application>
 

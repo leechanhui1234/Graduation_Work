@@ -25,7 +25,6 @@ class MainPage : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
 
-
         with(binding) {
             logo.setOnClickListener {
                 var builder = AlertDialog.Builder(this@MainPage)
@@ -85,13 +84,34 @@ class MainPage : AppCompatActivity() {
             }
             
             diary.setOnClickListener {
-                val intent = Intent(this@MainPage, Diary::class.java)
+                val intent = Intent(this@MainPage, Dialist::class.java)
                 startActivity(intent)
                 finish()
             }
 
-            other.setOnClickListener {
+            more.setOnClickListener {
+                //val intent = Intent(this@MainPage, More::class.java)
+                //startActivity(intent)
+                //finish()
+            }
+
+            Banner1.setOnClickListener {
+                //
                 //val intent = Intent(this@MainPage, Other::class.java)
+                //startActivity(intent)
+                //finish()
+            }
+
+            Banner2.setOnClickListener {
+                //개인정보
+                //val intent = Intent(this@MainPage, PersonalInfo::class.java)
+                //startActivity(intent)
+                //finish()
+            }
+
+            Banner3.setOnClickListener {
+                //문의하기
+                //val intent = Intent(this@MainPage, DeveloperInfo::class.java)
                 //startActivity(intent)
                 //finish()
             }
