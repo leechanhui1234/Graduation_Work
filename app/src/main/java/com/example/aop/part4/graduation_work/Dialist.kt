@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import com.example.aop.part4.graduation_work.databinding.DialistBinding
 
-class Dailist : AppCompatActivity() {
+class Dialist : AppCompatActivity() {
 
     private lateinit var binding : DialistBinding
 
@@ -18,7 +18,7 @@ class Dailist : AppCompatActivity() {
 
         with(binding) {
             NeWrite.setOnClickListener {
-                val intent = Intent(this@Dailist, Diary::class.java)
+                val intent = Intent(this@Dialist, Diary::class.java)
                 startActivity(intent)
                 finish()
             }
