@@ -4,14 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Button
-import android.widget.Toast
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.aop.part4.graduation_work.Board.adapter.ChatAdapter
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
 import com.example.aop.part4.graduation_work.Board.model.ChatModel

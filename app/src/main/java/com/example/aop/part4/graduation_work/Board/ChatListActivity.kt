@@ -5,17 +5,10 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.edit
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.aop.part4.graduation_work.Board.adapter.ChatListAdapter
 import com.example.aop.part4.graduation_work.Board.model.ChatAdapterListModel
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel

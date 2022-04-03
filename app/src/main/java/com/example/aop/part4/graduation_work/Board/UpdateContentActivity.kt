@@ -2,9 +2,6 @@ package com.example.aop.part4.graduation_work.Board
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
 import com.example.aop.part4.graduation_work.databinding.ActivityUpdateBinding

@@ -2,9 +2,6 @@ package com.example.aop.part4.graduation_work.Board
 
 import android.os.Build
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
