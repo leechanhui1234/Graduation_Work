@@ -17,11 +17,27 @@ class Dialist : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
+
+            Delete.setOnClickListener {
+                //삭제
+            }
+
             NeWrite.setOnClickListener {
+                //글쓰기
                 val intent = Intent(this@Dialist, Diary::class.java)
                 startActivity(intent)
                 finish()
             }
+
+            reWrite.setOnClickListener {
+                //수정하기
+            }
         }
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainPage::class.java)
+        startActivity(intent)
+        finish()
     }
 }

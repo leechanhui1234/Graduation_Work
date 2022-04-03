@@ -6,12 +6,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aop.part4.graduation_work.databinding.MainPageBinding
-import com.example.aop.part4.graduation_work.databinding.NewAccountBinding
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.content.edit
-import androidx.core.view.KeyEventDispatcher
 import com.example.aop.part4.graduation_work.data.UserData
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class MainPage : AppCompatActivity() {
 
@@ -26,6 +26,7 @@ class MainPage : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
 
         with(binding) {
+
             logo.setOnClickListener {
                 var builder = AlertDialog.Builder(this@MainPage)
                 builder.setTitle("개발자 정보")
@@ -69,6 +70,7 @@ class MainPage : AppCompatActivity() {
                 //val intent = Intent(this@MainPage,Health::class.java)
                 //startActivity(intent)
                 //finish()
+
             }
             
             hospital.setOnClickListener {
