@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/drawable/drawable_rect.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/drawable/ic_baseline_reorder_24.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/drawable/ic_baseline_west_24.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_chat_adapter.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_chat_list.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_chat_list_adapter.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_update.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_write.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/menu/chat_list_menu.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work6/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work6/app/src/main/res/layout/new_account.xml" value="0.1" />

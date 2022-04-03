@@ -26,6 +26,12 @@
         <activity android:name=".DepressiveCheck"/>
         <activity android:name=".Dialist" />
         <activity android:name=".Diary" />
+        <activity android:name=".Board.ChatActivity" />
+        <activity android:name=".Board.WriteActivity"/>
+        <activity android:name=".Board.ChatListActivity"
+            android:parentActivityName=".Board.ChatActivity"/>
+        <activity android:name=".Board.UpdateContentActivity"
+            android:parentActivityName=".Board.ChatActivity"/>
     </application>
 
 </manifest>
