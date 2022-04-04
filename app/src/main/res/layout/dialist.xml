@@ -1,72 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="일기장" />
+            android:text="일기장"
+            android:textSize="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ItemList"
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/dialist_list" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#6490ED"
+                android:gravity="center"
+                android:text="삭제"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/NeWrite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#6490ED"
+                android:gravity="center"
+                android:text="글쓰기"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/reWrite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#6490ED"
+                android:gravity="center"
+                android:text="수정하기"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/Delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="15dp"
-            android:gravity="center"
-            android:text="삭제"
-            android:textColor="@color/white"
-            android:backgroundTint="#6490ED"/>
-
-        <Button
-            android:id="@+id/NeWrite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:gravity="center"
-            android:text="글쓰기"
-            android:textColor="@color/white"
-            android:backgroundTint="#6490ED"/>
-
-        <Button
-            android:id="@+id/reWrite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="15dp"
-            android:gravity="center"
-            android:text="수정하기"
-            android:textColor="@color/white"
-            android:backgroundTint="#6490ED"/>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
