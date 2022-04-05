@@ -4,18 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
-import com.example.aop.part4.graduation_work.databinding.ActivityUpdateBinding
+import com.example.aop.part4.graduation_work.databinding.ChatUpdateBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class UpdateContentActivity : AppCompatActivity(){
-    private lateinit var binding: ActivityUpdateBinding
+    private lateinit var binding: ChatUpdateBinding
 
     private val database = Firebase.database.reference.child("board")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityUpdateBinding.inflate(layoutInflater)
+        binding = ChatUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val model = intent.getParcelableExtra<ChatKeyModel>("model")

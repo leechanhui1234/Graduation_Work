@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
-import com.example.aop.part4.graduation_work.databinding.ActivityChatAdapterBinding
+import com.example.aop.part4.graduation_work.databinding.ChatAdapterBinding
 
 class ChatAdapter(private val onItemClicked: (ChatKeyModel) -> Unit): ListAdapter<ChatKeyModel, ChatAdapter.ModelItemViewHolder> (
     diffUtil
 ){
-    inner class ModelItemViewHolder(private val binding: ActivityChatAdapterBinding): RecyclerView.ViewHolder(binding.root){
+    inner class ModelItemViewHolder(private val binding: ChatAdapterBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(model: ChatKeyModel, position: Int){
             binding.title.text = model.title
             binding.content.text = model.content
@@ -24,7 +24,7 @@ class ChatAdapter(private val onItemClicked: (ChatKeyModel) -> Unit): ListAdapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelItemViewHolder {
-        return ModelItemViewHolder(ActivityChatAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ModelItemViewHolder(ChatAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ModelItemViewHolder, position: Int) {

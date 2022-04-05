@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aop.part4.graduation_work.Board.model.ChatModel
-import com.example.aop.part4.graduation_work.databinding.ActivityWriteBinding
+import com.example.aop.part4.graduation_work.databinding.ChatWriteBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDate
@@ -14,14 +14,14 @@ import java.time.format.DateTimeFormatter
 
 class WriteActivity: AppCompatActivity() {
 
-    private lateinit var binding: ActivityWriteBinding
+    private lateinit var binding: ChatWriteBinding
 
     private val database = Firebase.database.reference.child("board")
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityWriteBinding.inflate(layoutInflater)
+        binding = ChatWriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var name = intent.getStringExtra("name")

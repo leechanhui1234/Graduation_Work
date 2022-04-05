@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aop.part4.graduation_work.Board.adapter.ChatAdapter
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
 import com.example.aop.part4.graduation_work.Board.model.ChatModel
-import com.example.aop.part4.graduation_work.databinding.ActivityChatBinding
+import com.example.aop.part4.graduation_work.databinding.ChatBinding
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -20,13 +20,13 @@ class ChatActivity : AppCompatActivity() {
 
     private val list = mutableListOf<ChatKeyModel>()
 
-    private lateinit var binding: ActivityChatBinding
+    private lateinit var binding: ChatBinding
     private val database = Firebase.database.reference.child("board")
     private lateinit var adapter: ChatAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityChatBinding.inflate(layoutInflater)
+        binding = ChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var name = intent.getStringExtra("name")

@@ -14,7 +14,7 @@ import com.example.aop.part4.graduation_work.Board.model.ChatAdapterListModel
 import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
 import com.example.aop.part4.graduation_work.Board.model.ChatListModel
 import com.example.aop.part4.graduation_work.R
-import com.example.aop.part4.graduation_work.databinding.ActivityChatListBinding
+import com.example.aop.part4.graduation_work.databinding.ChatListBinding
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -24,7 +24,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class ChatListActivity: AppCompatActivity() {
-    private lateinit var binding: ActivityChatListBinding
+    private lateinit var binding: ChatListBinding
 
     private val database = Firebase.database.reference.child("board")
     private val chatdatabase = Firebase.database.reference.child("chat")
@@ -36,7 +36,7 @@ class ChatListActivity: AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityChatListBinding.inflate(layoutInflater)
+        binding = ChatListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         model = intent.getParcelableExtra<ChatKeyModel>("model")!!
