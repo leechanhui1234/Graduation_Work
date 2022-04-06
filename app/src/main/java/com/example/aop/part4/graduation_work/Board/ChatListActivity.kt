@@ -5,9 +5,12 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.edit
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aop.part4.graduation_work.Board.adapter.ChatListAdapter
 import com.example.aop.part4.graduation_work.Board.model.ChatAdapterListModel
@@ -39,7 +42,18 @@ class ChatListActivity: AppCompatActivity() {
         binding = ChatListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+
         model = intent.getParcelableExtra<ChatKeyModel>("model")!!
+        var userId = intent.getStringExtra("id")!!
+
+        var id = model.userId
+
+        if(id.equals(userId)){
+            binding.menuclick.visibility = View.VISIBLE
+        } else {
+            binding.menuclick.visibility = View.GONE
+        }
 
         adapter = ChatListAdapter(onItemClicked = {
             chatdatabase.child(model!!.key).child(it.key).removeValue()
@@ -91,9 +105,8 @@ class ChatListActivity: AppCompatActivity() {
                         update()
                         return@setNavigationItemSelectedListener false
                     }
-                    else -> {
-                        return@setNavigationItemSelectedListener true
-                    }
+
+                    else -> return@setNavigationItemSelectedListener true
                 }
             }
         }

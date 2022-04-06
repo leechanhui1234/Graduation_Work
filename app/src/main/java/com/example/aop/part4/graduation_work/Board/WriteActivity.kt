@@ -24,13 +24,13 @@ class WriteActivity: AppCompatActivity() {
         binding = ChatWriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var name = intent.getStringExtra("name")
+        var id = intent.getStringExtra("id")
 
-        bindViews(name!!)
+        bindViews(id!!)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun bindViews(name: String) {
+    private fun bindViews(id: String) {
         with(binding){
             backbtn.setOnClickListener {
                 finish()
@@ -43,7 +43,9 @@ class WriteActivity: AppCompatActivity() {
                     val now = LocalDate.now()
                     var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
-                    val model = ChatModel(name, str1, str2, Strnow.toString())
+                    Toast.makeText(this@WriteActivity, id, Toast.LENGTH_SHORT).show()
+
+                    val model = ChatModel(id, str1, str2, Strnow.toString())
 
                     database.push().setValue(model)
 

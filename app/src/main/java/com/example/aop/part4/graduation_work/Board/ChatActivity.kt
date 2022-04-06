@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aop.part4.graduation_work.Board.adapter.ChatAdapter
@@ -23,6 +24,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var binding: ChatBinding
     private val database = Firebase.database.reference.child("board")
     private lateinit var adapter: ChatAdapter
+    private var id: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +32,25 @@ class ChatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var name = intent.getStringExtra("name")
+        id = intent.getStringExtra("id")
 
         val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
+        var sharedPreferences2 = getSharedPreferences("id", Context.MODE_PRIVATE)
 
         if(name.isNullOrEmpty()){
             name = sharedPreferences.getString("name", "") ?: ""
         } else {
             sharedPreferences.edit {
                 this.putString("name", name)
+                commit()
+            }
+        }
+
+        if(id.isNullOrEmpty()){
+            id = sharedPreferences2.getString("id", "") ?: ""
+        } else {
+            sharedPreferences2.edit {
+                this.putString("id", id)
                 commit()
             }
         }
@@ -99,6 +112,9 @@ class ChatActivity : AppCompatActivity() {
 
         adapter.submitList(list)
         adapter.notifyDataSetChanged()
+
+        binding.progress.visibility = View.GONE
+        binding.progresstext.visibility = View.GONE
     }
 
     private fun updateChild(data: ChatKeyModel){
@@ -128,7 +144,7 @@ class ChatActivity : AppCompatActivity() {
 
             writebtn.setOnClickListener {
                 val intent = Intent(this@ChatActivity, WriteActivity::class.java)
-                intent.putExtra("name", name)
+                intent.putExtra("id", id)
                 startActivity(intent)
             }
 
@@ -142,6 +158,7 @@ class ChatActivity : AppCompatActivity() {
         adapter = ChatAdapter(onItemClicked = { model ->
             val intent = Intent(this@ChatActivity, ChatListActivity::class.java)
             intent.putExtra("model", model)
+            intent.putExtra("id", id)
             startActivity(intent)
         })
     }

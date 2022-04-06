@@ -25,6 +25,7 @@ class MainPage : AppCompatActivity() {
         setContentView(binding.root)
 
         val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
+        val sharedPreferences2 = getSharedPreferences("id", Context.MODE_PRIVATE)
 
         with(binding) {
 
@@ -42,12 +43,22 @@ class MainPage : AppCompatActivity() {
             }
 
             var name = intent.getParcelableExtra<UserData>("User")?.userName
+            var id = intent.getParcelableExtra<UserData>("User")?.userId
 
             if(name.isNullOrEmpty()){
                 name = sharedPreferences.getString("name", "") ?: ""
             } else {
                 sharedPreferences.edit {
                     this.putString("name", name)
+                    commit()
+                }
+            }
+
+            if(id.isNullOrEmpty()){
+                id = sharedPreferences2.getString("id", "") ?: ""
+            } else{
+                sharedPreferences2.edit {
+                    this.putString("id", id)
                     commit()
                 }
             }
@@ -83,6 +94,7 @@ class MainPage : AppCompatActivity() {
             board.setOnClickListener {
                 val intent = Intent(this@MainPage, ChatActivity::class.java)
                 intent.putExtra("name", name)
+                intent.putExtra("id", id)
                 startActivity(intent)
             }
             
