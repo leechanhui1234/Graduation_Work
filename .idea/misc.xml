@@ -18,14 +18,7 @@
         <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_update.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_write.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/menu/chat_list_menu.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/activity_login.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/activity_update.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/activity_write.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/chat.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/chat_adapter.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/chat_list.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/main_page.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work6/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work6/app/src/main/res/layout/new_account.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/graduation_work/app/src/main/res/layout/activity_main.xml" value="0.16458333333333333" />
@@ -34,6 +27,9 @@
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis.xml" value="0.1" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis_1.xml" value="0.1" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis_2.xml" value="0.17451874366767983" />
+        <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/chat.xml" value="0.359375" />
+        <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/chat_list.xml" value="0.359375" />
+        <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/chat_list_adapter.xml" value="0.359375" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/dailist.xml" value="0.359375" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/dairy.xml" value="0.17451874366767983" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/day_diary.xml" value="0.17451874366767983" />
