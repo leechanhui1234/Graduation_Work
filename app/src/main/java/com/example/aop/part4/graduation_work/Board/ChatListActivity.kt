@@ -8,6 +8,7 @@ import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.edit
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -56,7 +57,13 @@ class ChatListActivity: AppCompatActivity() {
         }
 
         adapter = ChatListAdapter(onItemClicked = {
-            chatdatabase.child(model!!.key).child(it.key).removeValue()
+            AlertDialog.Builder(this@ChatListActivity)
+                .setMessage("삭제하시겠습니까?")
+                .setPositiveButton("확인"){dialog, which ->
+                    chatdatabase.child(model!!.key).child(it.key).removeValue()
+                }.setNegativeButton("취소"){dialog, which ->
+                }
+                .show()
         })
 
         controlSharedPreferences()
@@ -97,7 +104,15 @@ class ChatListActivity: AppCompatActivity() {
             navigation.setNavigationItemSelectedListener{
                 when(it.itemId){
                     R.id.delete -> {
-                        delete()
+                        val dialog = AlertDialog.Builder(this@ChatListActivity)
+                            .setTitle("알람")
+                            .setMessage("해당 게시글을 삭제하시겠습니까?")
+                            .setPositiveButton("확인"){ dialog, which ->
+                                delete()
+                            }.setNegativeButton("취소"){ dialog, which ->
+
+                            }
+                            .show()
                         return@setNavigationItemSelectedListener false
                     }
 
