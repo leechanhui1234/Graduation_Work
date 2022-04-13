@@ -12,10 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aop.part4.graduation_work.data.UserDialist
 import com.example.aop.part4.graduation_work.databinding.DialistBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class Dialist : AppCompatActivity() {
 
     private lateinit var binding : DialistBinding
+    private val diarydatabase = Firebase.database.reference.child("diary")
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -77,13 +77,18 @@ class ChatListActivity: AppCompatActivity() {
 
             sendbtn.setOnClickListener {
                 var text = message.text.toString()
-                val now = LocalDate.now()
-                var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-                var userId = model?.userId
-                val chatList = ChatListModel(userId!!, text, Strnow)
-                chatdatabase.child(model!!.key).push().setValue(chatList)
+                if (text.isEmpty()) {
+                    Toast.makeText(applicationContext, "공백은 입력할 수 없습니다.", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    val now = LocalDate.now()
+                    var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                    var userId = model?.userId
+                    val chatList = ChatListModel(userId!!, text, Strnow)
+                    chatdatabase.child(model!!.key).push().setValue(chatList)
 
-                message.setText("")
+                    message.setText("")
+                }
             }
 
             backbtn.setOnClickListener {
