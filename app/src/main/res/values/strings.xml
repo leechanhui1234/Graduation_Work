@@ -4,4 +4,5 @@
     <string name="prompt_ID">Auto_Login_ID</string>
     <string name="prompt_PW">Auto_Login_PW</string>
     <string name="prompt_Age">나이를 선택하세요</string>
+    <string name="backbtn">뒤로 가기</string>
 </resources>

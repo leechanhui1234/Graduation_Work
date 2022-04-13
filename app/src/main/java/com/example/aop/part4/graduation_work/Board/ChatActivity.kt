@@ -113,8 +113,8 @@ class ChatActivity : AppCompatActivity() {
         adapter.submitList(list)
         adapter.notifyDataSetChanged()
 
-        binding.progress.visibility = View.GONE
-        binding.progresstext.visibility = View.GONE
+//        binding.progress.visibility = View.GONE
+//        binding.progresstext.visibility = View.GONE
     }
 
     private fun updateChild(data: ChatKeyModel){

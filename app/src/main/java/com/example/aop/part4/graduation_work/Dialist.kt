@@ -26,6 +26,12 @@ class Dialist : AppCompatActivity() {
 
         with(binding) {
 
+            backbtn.setOnClickListener {
+                val intent1 = Intent(this@Dialist, MainPage::class.java)
+                startActivity(intent1)
+                finish()
+            }
+
             Delete.setOnClickListener {
                 //삭제
             }
