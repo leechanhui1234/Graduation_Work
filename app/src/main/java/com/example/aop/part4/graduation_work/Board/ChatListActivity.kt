@@ -57,13 +57,17 @@ class ChatListActivity: AppCompatActivity() {
         }
 
         adapter = ChatListAdapter(onItemClicked = {
-            AlertDialog.Builder(this@ChatListActivity)
-                .setMessage("삭제하시겠습니까?")
-                .setPositiveButton("확인"){dialog, which ->
-                    chatdatabase.child(model!!.key).child(it.key).removeValue()
-                }.setNegativeButton("취소"){dialog, which ->
-                }
-                .show()
+            if(userId.equals(it.userId)){
+                AlertDialog.Builder(this@ChatListActivity)
+                    .setMessage("삭제하시겠습니까?")
+                    .setPositiveButton("확인"){dialog, which ->
+                        chatdatabase.child(model!!.key).child(it.key).removeValue()
+                    }.setNegativeButton("취소"){dialog, which ->
+                    }
+                    .show()
+            } else {
+                Toast.makeText(this@ChatListActivity, "자신의 댓글만 삭제 가능합니다.", Toast.LENGTH_SHORT).show()
+            }
         })
 
         controlSharedPreferences()

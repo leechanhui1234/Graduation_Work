@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aop.part4.graduation_work.Board.adapter.ChatAdapter
@@ -58,7 +59,7 @@ class ChatActivity : AppCompatActivity() {
         list.clear()
 
         initAdapter()
-        bindViews(name)
+        bindViews(id!!)
         controlDatabase()
     }
 
@@ -137,7 +138,7 @@ class ChatActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
     }
 
-    private fun bindViews(name: String) {
+    private fun bindViews(id: String) {
         with(binding){
             chatlist.adapter = adapter
             chatlist.layoutManager = LinearLayoutManager(this@ChatActivity)
