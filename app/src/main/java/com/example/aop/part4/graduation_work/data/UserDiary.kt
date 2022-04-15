@@ -5,6 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class UserDiary (
-    val Diary : String,
-    val Day : String
+    val diary : String = "",
+    val day : String = ""
 ) : Parcelable

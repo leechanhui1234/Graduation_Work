@@ -63,7 +63,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun controlDatabase() {
-        database?.addChildEventListener(object: ChildEventListener{
+        database.addChildEventListener(object: ChildEventListener{
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val chatItem = snapshot.getValue(ChatModel::class.java)
 

@@ -85,7 +85,7 @@ class ChatListActivity: AppCompatActivity() {
             sendbtn.setOnClickListener {
                 var text = message.text.toString()
                 if (text.isEmpty()) {
-                    Toast.makeText(applicationContext, "공백은 입력할 수 없습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "내용을 입력하세요", Toast.LENGTH_SHORT).show()
                 }
                 else {
                     val now = LocalDate.now()

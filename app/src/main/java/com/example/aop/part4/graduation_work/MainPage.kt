@@ -100,6 +100,7 @@ class MainPage : AppCompatActivity() {
             
             diary.setOnClickListener {
                 val intent = Intent(this@MainPage, Dialist::class.java)
+                intent.putExtra("id", id)
                 startActivity(intent)
                 finish()
             }

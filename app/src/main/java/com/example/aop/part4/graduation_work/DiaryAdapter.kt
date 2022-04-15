@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aop.part4.graduation_work.data.UserDialist
+import com.example.aop.part4.graduation_work.data.UserDiary
 
-class DiaryAdapter(private val items: ArrayList<UserDialist>, private val onClick: (UserDialist) -> Unit) : RecyclerView.Adapter<DiaryAdapter.ViewHolder>() {
+class DiaryAdapter(private val items: MutableList<UserDialist>, private val onClick: (UserDialist) -> Unit) : RecyclerView.Adapter<DiaryAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = items.size
 
@@ -21,7 +22,6 @@ class DiaryAdapter(private val items: ArrayList<UserDialist>, private val onClic
 
         holder.apply {
             bind(listner, item)
-            itemView.tag = item
         }
     }
 
@@ -35,8 +35,8 @@ class DiaryAdapter(private val items: ArrayList<UserDialist>, private val onClic
         fun bind(listner: View.OnClickListener, item:UserDialist) {
             var content = view.findViewById<TextView>(R.id.content)
             var time = view.findViewById<TextView>(R.id.time)
-            content.text = item.Diary
-            time.text = item.Day
+            content.text = item.diary
+            time.text = item.day
 
             view.setOnClickListener(listner)
         }
