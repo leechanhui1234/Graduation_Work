@@ -40,12 +40,13 @@ class ChatListActivity: AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ChatListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
-        model = intent.getParcelableExtra<ChatKeyModel>("model")!!
+        model = intent.getParcelableExtra("model")!!
         var userId = intent.getStringExtra("id")!!
 
         var id = model.userId
@@ -62,7 +63,7 @@ class ChatListActivity: AppCompatActivity() {
                     .setMessage("삭제하시겠습니까?")
                     .setPositiveButton("확인"){dialog, which ->
                         chatdatabase.child(model!!.key).child(it.key).removeValue()
-                    }.setNegativeButton("취소"){dialog, which ->
+                    }.setNegativeButton("취소") {dialog, which ->
                     }
                     .show()
             } else {
@@ -111,7 +112,7 @@ class ChatListActivity: AppCompatActivity() {
             }
 
             navigation.setNavigationItemSelectedListener{
-                when(it.itemId){
+                when(it.itemId) {
                     R.id.delete -> {
                         val dialog = AlertDialog.Builder(this@ChatListActivity)
                             .setTitle("알람")

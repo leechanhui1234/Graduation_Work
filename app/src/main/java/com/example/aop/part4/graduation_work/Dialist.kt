@@ -64,7 +64,6 @@ class Dialist : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-
         }
 
         binding.ItemList.addOnScrollListener(object  : RecyclerView.OnScrollListener() {
@@ -84,11 +83,12 @@ class Dialist : AppCompatActivity() {
 
     private fun controlDatabase(id : String) {
         diarydatabase?.child(id).addChildEventListener(object:ChildEventListener{
+            //DB 가져오기
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val getItem = snapshot.getValue(UserDiary::class.java)
                 val getKey = snapshot.key
 
-                val data = UserDialist(getKey!!, getItem!!.diary, getItem!!.day)
+                val data = UserDialist(getKey!!, getItem!!.title, getItem!!.diary, getItem!!.day)
 
                 list.add(data)
                 var adapter = DiaryAdapter(list) { data -> adapterOnClick(data) }
@@ -96,15 +96,16 @@ class Dialist : AppCompatActivity() {
                 binding.ItemList.addItemDecoration(DistanceItemDecorator(10))
             }
 
+            //수정
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
                 val updateItem = snapshot.getValue(UserDiary::class.java)
                 val getKey = snapshot.key
 
-                val data = UserDialist(getKey!!, updateItem!!.diary, updateItem!!.day)
+                val data = UserDialist(getKey!!, updateItem!!.title, updateItem!!.diary, updateItem!!.day)
 
-                for (i in 0..list.size - 1) {
+                for (i in 0 until list.size) {
                     if (list[i].key == data!!.key) {
-                        list.set(i, data)
+                        list[i] = data
                     }
                 }
                 var adapter = DiaryAdapter(list) { data -> adapterOnClick(data) }
@@ -112,11 +113,12 @@ class Dialist : AppCompatActivity() {
                 binding.ItemList.addItemDecoration(DistanceItemDecorator(10))
             }
 
+            //삭제
             override fun onChildRemoved(snapshot: DataSnapshot) {
                 val removeItem = snapshot.getValue(UserDiary::class.java)
                 val getKey = snapshot.key
 
-                val data = UserDialist(getKey!!, removeItem!!.diary, removeItem!!.day)
+                val data = UserDialist(getKey!!, removeItem!!.title, removeItem!!.diary, removeItem.day)
 
                 list.remove(data)
                 var adapter = DiaryAdapter(list) { data -> adapterOnClick(data) }
@@ -138,8 +140,7 @@ class Dialist : AppCompatActivity() {
         //일기 보여줄 kt, xml 제작
         //해당 화면에서 삭제 및 수정 구현
         //타이틀 넣기
-        //
-        val intent = Intent(this@Dialist, Diary::class.java)
+        val intent = Intent(this@Dialist, DiaryShow::class.java)
         intent.putExtra("data", data)
         startActivity(intent)
         finish()

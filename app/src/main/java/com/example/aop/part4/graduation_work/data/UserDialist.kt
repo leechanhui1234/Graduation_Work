@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class UserDialist (
     val key : String = "",
+    val title : String = "",
     val diary : String = "",
     val day : String = ""
 ) : Parcelable

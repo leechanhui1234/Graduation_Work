@@ -34,7 +34,7 @@ class Diary: AppCompatActivity() {
             val intent1 = Intent(this@Diary, Dialist::class.java)
             diarySave.setOnClickListener {
                 var id = intent.getStringExtra("id")
-                database.child(id!!).push().setValue(UserDiary(diaryText.text.toString(), Day.text.toString()))
+                database.child(id!!).push().setValue(UserDiary(diaryTitle.text.toString(), diaryText.text.toString(), Day.text.toString()))
                 Toast.makeText(applicationContext, "저장 되었습니다.", Toast.LENGTH_SHORT).show()
                 //저장 후 리스트로 돌아가기
                 startActivity(intent1)

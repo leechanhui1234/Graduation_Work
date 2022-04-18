@@ -25,6 +25,18 @@
         app:tint="@color/white" />
 
     <TextView
+        android:id="@+id/maintitle"
+        android:text="수정"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/backbtn"
+        app:layout_constraintEnd_toStartOf="@id/backbtn"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/backbtn"
@@ -38,18 +50,6 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/maintitle"
-        android:text="수정"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toEndOf="@id/backbtn"
-        app:layout_constraintEnd_toStartOf="@id/backbtn"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"/>
 
     <ImageButton
         android:id="@+id/completebtn"

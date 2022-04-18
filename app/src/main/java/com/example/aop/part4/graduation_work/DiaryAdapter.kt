@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aop.part4.graduation_work.data.UserDialist
-import com.example.aop.part4.graduation_work.data.UserDiary
 
 class DiaryAdapter(private val items: MutableList<UserDialist>, private val onClick: (UserDialist) -> Unit) : RecyclerView.Adapter<DiaryAdapter.ViewHolder>() {
 
@@ -33,9 +32,9 @@ class DiaryAdapter(private val items: MutableList<UserDialist>, private val onCl
     class ViewHolder(v : View) : RecyclerView.ViewHolder(v) {
         private var view : View = v
         fun bind(listner: View.OnClickListener, item:UserDialist) {
-            var content = view.findViewById<TextView>(R.id.content)
+            var title = view.findViewById<TextView>(R.id.title)
             var time = view.findViewById<TextView>(R.id.time)
-            content.text = item.diary
+            title.text = item.title
             time.text = item.day
 
             view.setOnClickListener(listner)

@@ -41,6 +41,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/completebtn"
+        android:text="완료"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_baseline_check_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
     <!-- 오늘 날짜 출력 -->
     <TextView
         android:id="@+id/Day"
@@ -63,7 +74,6 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:background="#EDEDED"
-        android:hint="제목"
         android:maxLength="50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,21 +86,9 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:background="#EDEDED"
-        android:hint="자신의 현재 심정을 500자로 적어보세요"
         android:maxLength="500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diaryTitle" />
-
-    <Button
-        android:id="@+id/diarySave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="right"
-        android:text="저장하기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/diaryText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
