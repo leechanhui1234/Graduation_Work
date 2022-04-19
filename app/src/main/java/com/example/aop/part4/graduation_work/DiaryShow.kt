@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.aop.part4.graduation_work.data.UserDialist
-import com.example.aop.part4.graduation_work.data.UserDiary
 import com.example.aop.part4.graduation_work.databinding.DiaryShowBinding
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -23,6 +22,8 @@ import com.google.firebase.ktx.Firebase
 class DiaryShow : AppCompatActivity() {
 
     private val diarydatabase = Firebase.database.reference.child("diary")
+
+    private val list = mutableListOf<UserDialist>()
 
     private lateinit var binding : DiaryShowBinding
     private lateinit var data : UserDialist
@@ -115,22 +116,31 @@ class DiaryShow : AppCompatActivity() {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
             }
 
-            //수정
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
             }
 
-            //삭제
             override fun onChildRemoved(snapshot: DataSnapshot) {
+                val diaryItem = snapshot.getValue(UserDialist::class.java)
+
+                diaryItem ?: return
+
+                removeChild(snapshot, diaryItem)
             }
 
             override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-                TODO("Not yet implemented")
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
+    }
+
+    private fun removeChild(snapshot : DataSnapshot, diaryItem : UserDialist) {
+        val data = snapshot.key?.let { key ->
+            UserDialist(key, diaryItem.title, diaryItem.diary, diaryItem.day)
+        }
+
+        list.remove(data)
     }
 
 }

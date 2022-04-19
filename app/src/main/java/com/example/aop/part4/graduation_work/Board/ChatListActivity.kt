@@ -120,7 +120,6 @@ class ChatListActivity: AppCompatActivity() {
                             .setPositiveButton("확인"){ dialog, which ->
                                 delete()
                             }.setNegativeButton("취소"){ dialog, which ->
-
                             }
                             .show()
                         return@setNavigationItemSelectedListener false
