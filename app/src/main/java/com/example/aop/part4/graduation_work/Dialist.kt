@@ -27,6 +27,8 @@ class Dialist : AppCompatActivity() {
 
     private val list = mutableListOf<UserDialist>()
 
+    private var id: String? = null
+
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +44,7 @@ class Dialist : AppCompatActivity() {
             }
 
             //메인페이지에서 id 받아오기
-            var id = intent.getStringExtra("id")
+            id = intent.getStringExtra("id")
             val sharedPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
             if(id.isNullOrEmpty()){
                 id = sharedPreferences.getString("id", "") ?: ""
@@ -135,12 +137,10 @@ class Dialist : AppCompatActivity() {
 
     private fun adapterOnClick(data : UserDialist) {
         //일기 클릭 -> 일기 보여주기
-        var id = intent.getStringExtra("id")
         val intent = Intent(this@Dialist, DiaryShow::class.java)
         intent.putExtra("data", data)
         intent.putExtra("id", id)
         startActivity(intent)
-        finish()
     }
 
     class DistanceItemDecorator(private val value: Int): RecyclerView.ItemDecoration() {

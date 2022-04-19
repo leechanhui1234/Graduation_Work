@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
@@ -27,6 +28,7 @@ class DiaryShow : AppCompatActivity() {
 
     private lateinit var binding : DiaryShowBinding
     private lateinit var data : UserDialist
+    private var id: String? = null
 
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ResourceType")
@@ -40,7 +42,7 @@ class DiaryShow : AppCompatActivity() {
 
         with(binding) {
 
-            var id = intent.getStringExtra("id")
+            id = intent.getStringExtra("id")!!
             val sharedPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
             if(id.isNullOrEmpty()){
                 id = sharedPreferences.getString("id", "") ?: ""
@@ -93,7 +95,8 @@ class DiaryShow : AppCompatActivity() {
     }
 
     private fun delete() {
-        diarydatabase.child(data.key).removeValue()
+        Toast.makeText(this@DiaryShow, "${data.key}",Toast.LENGTH_SHORT).show()
+        diarydatabase.child(id!!).child(data.key).removeValue()
         val intent_d = Intent(this@DiaryShow, Dialist::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
