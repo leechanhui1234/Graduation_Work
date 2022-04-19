@@ -2,21 +2,23 @@ package com.example.aop.part4.graduation_work
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.provider.SyncStateContract.Helpers.update
 import android.view.Gravity
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.aop.part4.graduation_work.data.UserDialist
-import com.example.aop.part4.graduation_work.databinding.DialistBinding
+import com.example.aop.part4.graduation_work.data.UserDiary
 import com.example.aop.part4.graduation_work.databinding.DiaryShowBinding
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import java.nio.file.Files.delete
 
 class DiaryShow : AppCompatActivity() {
 
@@ -36,6 +38,19 @@ class DiaryShow : AppCompatActivity() {
         binding.drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
         with(binding) {
+
+            var id = intent.getStringExtra("id")
+            val sharedPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
+            if(id.isNullOrEmpty()){
+                id = sharedPreferences.getString("id", "") ?: ""
+            } else{
+                sharedPreferences.edit {
+                    this.putString("id", id)
+                    commit()
+                }
+            }
+            controlDatabase(id!!)
+
             backbtn.setOnClickListener {
                 val intent1 = Intent(this@DiaryShow, Dialist::class.java)
                 startActivity(intent1)
@@ -77,19 +92,45 @@ class DiaryShow : AppCompatActivity() {
     }
 
     private fun delete() {
-        diarydatabase.child(data!!.key).removeValue()
+        diarydatabase.child(data.key).removeValue()
         val intent_d = Intent(this@DiaryShow, Dialist::class.java)
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent_d)
         finish()
     }
 
     private fun update() {
+        var id = intent.getStringExtra("id")
         val intent_u = Intent(this@DiaryShow, DiaryUpdate::class.java)
         intent_u.putExtra("data", data)
+        intent_u.putExtra("id", id)
         startActivity(intent_u)
+    }
+
+    private fun controlDatabase(id : String) {
+        diarydatabase?.child(id).addChildEventListener(object: ChildEventListener {
+            //DB 가져오기
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            //수정
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            //삭제
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
 }

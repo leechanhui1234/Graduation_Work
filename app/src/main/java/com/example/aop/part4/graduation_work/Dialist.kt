@@ -8,7 +8,6 @@ import android.content.Intent
 import android.graphics.Rect
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +18,6 @@ import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 class Dialist : AppCompatActivity() {
@@ -37,7 +35,6 @@ class Dialist : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-
             backbtn.setOnClickListener {
                 val intent1 = Intent(this@Dialist, MainPage::class.java)
                 startActivity(intent1)
@@ -137,11 +134,11 @@ class Dialist : AppCompatActivity() {
     }
 
     private fun adapterOnClick(data : UserDialist) {
-        //일기 보여줄 kt, xml 제작
-        //해당 화면에서 삭제 및 수정 구현
-        //타이틀 넣기
+        //일기 클릭 -> 일기 보여주기
+        var id = intent.getStringExtra("id")
         val intent = Intent(this@Dialist, DiaryShow::class.java)
         intent.putExtra("data", data)
+        intent.putExtra("id", id)
         startActivity(intent)
         finish()
     }

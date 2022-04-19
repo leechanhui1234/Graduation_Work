@@ -75,6 +75,7 @@
         android:layout_gravity="center"
         android:background="#EDEDED"
         android:maxLength="50"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Day" />
@@ -87,6 +88,7 @@
         android:layout_gravity="center"
         android:background="#EDEDED"
         android:maxLength="500"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diaryTitle" />
