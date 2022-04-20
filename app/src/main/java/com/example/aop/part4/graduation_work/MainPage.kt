@@ -9,6 +9,8 @@ import com.example.aop.part4.graduation_work.databinding.MainPageBinding
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.content.edit
+import com.example.aop.part4.graduation_work.Board.ChatActivity
+import com.example.aop.part4.graduation_work.Diary_.Dialist
 import com.example.aop.part4.graduation_work.data.UserData
 
 class MainPage : AppCompatActivity() {

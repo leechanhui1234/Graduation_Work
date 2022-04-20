@@ -1,10 +1,11 @@
-package com.example.aop.part4.graduation_work
+package com.example.aop.part4.graduation_work.Diary_
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aop.part4.graduation_work.R
 import com.example.aop.part4.graduation_work.data.UserDialist
 
 class DiaryAdapter(private val items: MutableList<UserDialist>, private val onClick: (UserDialist) -> Unit) : RecyclerView.Adapter<DiaryAdapter.ViewHolder>() {

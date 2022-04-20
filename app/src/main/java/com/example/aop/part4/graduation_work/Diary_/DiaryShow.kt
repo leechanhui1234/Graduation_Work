@@ -1,4 +1,4 @@
-package com.example.aop.part4.graduation_work
+package com.example.aop.part4.graduation_work.Diary_
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -12,7 +12,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.aop.part4.graduation_work.Dialist
+import com.example.aop.part4.graduation_work.R
 import com.example.aop.part4.graduation_work.data.UserDialist
 import com.example.aop.part4.graduation_work.databinding.DiaryShowBinding
 import com.google.firebase.database.ChildEventListener

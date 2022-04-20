@@ -24,10 +24,10 @@
         <activity android:name=".NewAccount" />
         <activity android:name=".MainPage" />
         <activity android:name=".DepressiveCheck"/>
-        <activity android:name=".Dialist" />
-        <activity android:name=".Diary" />
-        <activity android:name=".DiaryShow" />
-        <activity android:name=".DiaryUpdate" />
+        <activity android:name=".Diary_.Dialist" />
+        <activity android:name=".Diary_.Diary" />
+        <activity android:name=".Diary_.DiaryShow" />
+        <activity android:name=".Diary_.DiaryUpdate" />
         <activity android:name=".Board.ChatActivity" />
         <activity android:name=".Board.WriteActivity"/>
         <activity android:name=".Board.ChatListActivity"

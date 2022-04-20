@@ -1,4 +1,4 @@
-package com.example.aop.part4.graduation_work
+package com.example.aop.part4.graduation_work.Diary_
 
 import android.annotation.SuppressLint
 import android.content.Intent
