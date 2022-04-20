@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
-import android.widget.Toast
 import com.example.aop.part4.graduation_work.data.UserDialist
-import com.example.aop.part4.graduation_work.databinding.DiaryShowBinding
 import com.example.aop.part4.graduation_work.databinding.DiaryUpdateBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
