@@ -1,56 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
+    <View
+        android:id="@+id/View"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_west_24"
+        android:background="@android:color/transparent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/maintitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/backbtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/backbtn"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="우울증 검사"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/ScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="680dp"
 
-        <TableLayout
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="50dp"
+
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-                <!-- 속성 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="문항"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="극히 드물다\n(1일이하)" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="가끔\n(1~2일)" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="자주\n(3~4일)"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="거의 대부분\n(5~7일)"/>
-            </TableRow>
+            <ImageButton
+                android:id="@+id/cesCheck"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="0dp"
+                android:background="@color/none"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/center" />
+            <TextView
 
-        </TableLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:text="성인 우울증검사(CES-D)"
+                android:textSize="20dp"/>
 
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/depCheck"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="30dp"
+                android:background="@color/none"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/center" />
 
-    </ScrollView>
+            <ImageButton
+
+                android:id="@+id/oldCheck"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="80dp"
+                android:background="@color/none"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/center" />
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="35dp"
+        android:text="우울증 자가진단"
+        android:textSize="20dp"/>
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_gravity="center"
+        android:layout_marginLeft="70dp"
+        android:text="노인 우울 척도"
+    android:textSize="20dp"/>
+
+</LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
