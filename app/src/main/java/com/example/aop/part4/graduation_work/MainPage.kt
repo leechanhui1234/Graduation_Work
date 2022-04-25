@@ -25,6 +25,8 @@ class MainPage : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
         val sharedPreferences2 = getSharedPreferences("id", Context.MODE_PRIVATE)
+        val sharedPreferences3 = getSharedPreferences("age", Context.MODE_PRIVATE)
+        val sharedPreferences4 = getSharedPreferences("value", Context.MODE_PRIVATE)
 
         with(binding) {
 
@@ -43,6 +45,8 @@ class MainPage : AppCompatActivity() {
 
             var name = intent.getParcelableExtra<UserData>("User")?.userName
             var id = intent.getParcelableExtra<UserData>("User")?.userId
+            var value = intent.getParcelableExtra<UserData>("User")?.userValue
+            var age = intent.getParcelableExtra<UserData>("User")?.userAge ?: 0
 
             if(name.isNullOrEmpty()) {
                 name = sharedPreferences.getString("name", "") ?: ""
@@ -58,6 +62,24 @@ class MainPage : AppCompatActivity() {
             } else{
                 sharedPreferences2.edit {
                     this.putString("id", id)
+                    commit()
+                }
+            }
+
+            if(age == 0){
+                age = sharedPreferences3.getInt("age", 0) ?: 0
+            } else{
+                sharedPreferences3.edit {
+                    this.putInt("age", age)
+                    commit()
+                }
+            }
+
+            if(value.isNullOrEmpty()){
+                value = sharedPreferences4.getString("value", "") ?: ""
+            } else{
+                sharedPreferences4.edit {
+                    this.putString("value", value)
                     commit()
                 }
             }
@@ -90,6 +112,8 @@ class MainPage : AppCompatActivity() {
                 * }
                 * */
                 var intent = Intent(this@MainPage, HealthCheck::class.java)
+                intent.putExtra("age", age)
+                intent.putExtra("value", value)
                 startActivity(intent)
             }
             

@@ -4,6 +4,13 @@
     package="com.example.aop.part4.graduation_work">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -24,6 +31,7 @@
         <activity android:name=".NewAccount" />
         <activity android:name=".MainPage" />
         <activity android:name=".DepressiveCheck"/>
+        <activity android:name=".DepressionResult"/>
         <activity android:name=".Health"/>
         <activity android:name=".HealthCheck"
             tools:ignore="MissingClass" />

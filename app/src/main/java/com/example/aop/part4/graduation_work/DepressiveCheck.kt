@@ -268,15 +268,15 @@ class DepressiveCheck : AppCompatActivity(){
 
                 }
                 if(Q20.checkedRadioButtonId==-1) {
-                    Allcheck=false              }
-                else
+                    Allcheck=false
+                } else
                     Allcheck=true
 
 
 
                 if (Allcheck == false){///////////체크 되지 않은 항목 확인
                     Toast.makeText(applicationContext,"체크되지 않은 항목이 있습니다.",Toast.LENGTH_SHORT).show()
-value=0
+                    value=0
                 }
 
 
