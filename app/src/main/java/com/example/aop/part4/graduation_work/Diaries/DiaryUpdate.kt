@@ -35,9 +35,23 @@ class DiaryUpdate : AppCompatActivity() {
                 finish()
             }
 
+            //저장 버튼
             completebtn.setOnClickListener {
                 val data = UserDialist(list!!.key, diaryTitle.text.toString(), diaryText.text.toString(), list!!.day)
-                hashmap.put("${list!!.key}", data)
+                hashmap["${list!!.key}"] = data
+                diarydatabase.child(id!!).updateChildren(hashmap as Map<String, Any>)
+                val intent = Intent(this@DiaryUpdate, Dialist::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
+            }
+
+            //저장 버튼
+            diarySave.setOnClickListener {
+                val data = UserDialist(list!!.key, diaryTitle.text.toString(), diaryText.text.toString(), list!!.day)
+                hashmap["${list!!.key}"] = data
                 diarydatabase.child(id!!).updateChildren(hashmap as Map<String, Any>)
                 val intent = Intent(this@DiaryUpdate, Dialist::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK

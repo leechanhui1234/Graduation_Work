@@ -44,7 +44,7 @@ class MainPage : AppCompatActivity() {
             var name = intent.getParcelableExtra<UserData>("User")?.userName
             var id = intent.getParcelableExtra<UserData>("User")?.userId
 
-            if(name.isNullOrEmpty()){
+            if(name.isNullOrEmpty()) {
                 name = sharedPreferences.getString("name", "") ?: ""
             } else {
                 sharedPreferences.edit {
@@ -63,33 +63,44 @@ class MainPage : AppCompatActivity() {
             }
             Name.text = "$name" + "님, 반갑습니다."
 
+            //로그아웃
             Logout.setOnClickListener {
-                //로그아웃 기능 구현할 것.
                 Toast.makeText(applicationContext, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@MainPage, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
 
+            //우울증 항목 조사
             depressiveCheck.setOnClickListener {
                 val intent = Intent(this@MainPage, DepressiveCheck::class.java)
                 startActivity(intent)
                 finish()
             }
             
+            //운동 
             health.setOnClickListener {
-                //val intent = Intent(this@MainPage,Health::class.java)
-                //startActivity(intent)
-                //finish()
-
+                //사용자 항목에 따라 다른 곳으로 intent
+                /*
+                * if (health == 1) {
+                *   //사용자 항목을 완료했다면 -> health 메인 페이지로
+                *   var intent = Intent(this@MainPage, Health::class.java)
+                * } else {
+                *   //처음 들어간다면 -> health 사용자 체크 페이지로
+                * }
+                * */
+                var intent = Intent(this@MainPage, HealthCheck::class.java)
+                startActivity(intent)
             }
             
+            //병원 찾기
             hospital.setOnClickListener {
-                //val intent = Intent(this@MainPage,Hospital::class.java)
+                //val intent = Intent(this@MainPage, Hospital::class.java)
                 //startActivity(intent)
                 //finish()
             }
             
+            //게시판
             board.setOnClickListener {
                 val intent = Intent(this@MainPage, ChatActivity::class.java)
                 intent.putExtra("name", name)
@@ -97,6 +108,7 @@ class MainPage : AppCompatActivity() {
                 startActivity(intent)
             }
             
+            //일기장
             diary.setOnClickListener {
                 val intent = Intent(this@MainPage, Dialist::class.java)
                 intent.putExtra("id", id)
@@ -104,12 +116,14 @@ class MainPage : AppCompatActivity() {
                 finish()
             }
 
+            //기타 항목
             more.setOnClickListener {
                 //val intent = Intent(this@MainPage, More::class.java)
                 //startActivity(intent)
                 //finish()
             }
 
+            //베너 1
             Banner1.setOnClickListener {
                 //
                 //val intent = Intent(this@MainPage, Other::class.java)
@@ -117,6 +131,7 @@ class MainPage : AppCompatActivity() {
                 //finish()
             }
 
+            //베너2
             Banner2.setOnClickListener {
                 //개인정보
                 //val intent = Intent(this@MainPage, PersonalInfo::class.java)
@@ -124,6 +139,7 @@ class MainPage : AppCompatActivity() {
                 //finish()
             }
 
+            //베너3
             Banner3.setOnClickListener {
                 //문의하기
                 //val intent = Intent(this@MainPage, DeveloperInfo::class.java)

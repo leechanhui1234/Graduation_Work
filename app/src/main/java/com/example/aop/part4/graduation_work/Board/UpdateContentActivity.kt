@@ -22,7 +22,7 @@ class UpdateContentActivity : AppCompatActivity(){
 
         val hashmap = HashMap<String, ChatKeyModel>()
 
-        with(binding){
+        with(binding) {
             backbtn.setOnClickListener {
                 finish()
             }
@@ -32,9 +32,9 @@ class UpdateContentActivity : AppCompatActivity(){
                 hashmap.put("${model!!.key}", data)
                 database.updateChildren(hashmap as Map<String, Any>)
                 val intent = Intent(this@UpdateContentActivity, ChatActivity::class.java)
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)
                 finish()
             }
