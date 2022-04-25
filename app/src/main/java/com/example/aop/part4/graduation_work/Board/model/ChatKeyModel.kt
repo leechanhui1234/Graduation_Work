@@ -1,7 +1,7 @@
 package com.example.aop.part4.graduation_work.Board.model
 
 import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ChatKeyModel(

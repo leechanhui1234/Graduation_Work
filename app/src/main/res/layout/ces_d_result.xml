@@ -57,7 +57,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="40dp"
+            android:textSize="80dp"
+            android:text="13"/>
+            <TextView
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="230dp"
+                android:textSize="30dp"
+                android:text="/60 점 입니다"/>
 
 
 

@@ -26,12 +26,7 @@
         <activity android:name=".DepressiveCheck"/>
         <activity android:name=".Dialist" />
         <activity android:name=".Diary" />
-        <activity android:name=".Ces"/>
-        <activity android:name=".CesResult"/>
-        <activity android:name=".Depression"/>
         <activity android:name=".DepressionResult"/>
-        <activity android:name=".Old"/>
-        <activity android:name=".OldResult"/>
         <activity android:name=".DiaryShow" />
         <activity android:name=".DiaryUpdate" />
         <activity android:name=".Board.ChatActivity" />
