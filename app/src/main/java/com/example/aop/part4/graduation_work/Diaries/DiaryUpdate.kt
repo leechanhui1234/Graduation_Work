@@ -1,12 +1,10 @@
-package com.example.aop.part4.graduation_work
+package com.example.aop.part4.graduation_work.Diaries
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
-import android.widget.Toast
 import com.example.aop.part4.graduation_work.data.UserDialist
-import com.example.aop.part4.graduation_work.databinding.DiaryShowBinding
 import com.example.aop.part4.graduation_work.databinding.DiaryUpdateBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -37,9 +35,23 @@ class DiaryUpdate : AppCompatActivity() {
                 finish()
             }
 
+            //저장 버튼
             completebtn.setOnClickListener {
                 val data = UserDialist(list!!.key, diaryTitle.text.toString(), diaryText.text.toString(), list!!.day)
-                hashmap.put("${list!!.key}", data)
+                hashmap["${list!!.key}"] = data
+                diarydatabase.child(id!!).updateChildren(hashmap as Map<String, Any>)
+                val intent = Intent(this@DiaryUpdate, Dialist::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
+            }
+
+            //저장 버튼
+            diarySave.setOnClickListener {
+                val data = UserDialist(list!!.key, diaryTitle.text.toString(), diaryText.text.toString(), list!!.day)
+                hashmap["${list!!.key}"] = data
                 diarydatabase.child(id!!).updateChildren(hashmap as Map<String, Any>)
                 val intent = Intent(this@DiaryUpdate, Dialist::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_west_24"
+        android:background="@android:color/transparent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="개인 운동 성향 조사"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/backbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="키 : "
+            android:layout_marginRight="5dp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/user_height"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="몸무게 : "
+            android:layout_marginRight="5dp"/>
+
+        <EditText
+            android:id="@+id/user_weight"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/view3"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="선호하는 도구 선택"
+            android:gravity="center"/>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/thing1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="줄넘기"/>
+
+            <CheckBox
+                android:id="@+id/thing2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="덤벨"/>
+
+            <CheckBox
+                android:id="@+id/thing3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="바벨"/>
+
+            <CheckBox
+                android:id="@+id/thing4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="폼롤러"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/thing5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="철봉"/>
+
+            <CheckBox
+                android:id="@+id/thing6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="짐볼"/>
+
+            <CheckBox
+                android:id="@+id/thing7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="트레드밀"/>
+
+            <CheckBox
+                android:id="@+id/thing8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="자전거"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/thing9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="사다리"/>
+
+            <CheckBox
+                android:id="@+id/thing10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="의자"/>
+
+            <CheckBox
+                android:id="@+id/thing11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="헬스기구"/>
+
+            <CheckBox
+                android:id="@+id/thing12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="테이블"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/thing13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="밴드"/>
+
+            <CheckBox
+                android:id="@+id/thing14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="막대"/>
+
+            <CheckBox
+                android:id="@+id/thing15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="계단"/>
+
+            <CheckBox
+                android:id="@+id/thing16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="원판"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/view4"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view3"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="운동 부위 선택 (3개 이상)"
+            android:gravity="center"/>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/part1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전신"/>
+
+            <CheckBox
+                android:id="@+id/part2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="상체"/>
+
+            <CheckBox
+                android:id="@+id/part3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="목"/>
+
+            <CheckBox
+                android:id="@+id/part4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="가슴"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/part5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="어깨"/>
+
+            <CheckBox
+                android:id="@+id/part6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="팔"/>
+
+            <CheckBox
+                android:id="@+id/part7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="손목"/>
+
+            <CheckBox
+                android:id="@+id/part8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="등"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/part9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="척추"/>
+
+            <CheckBox
+                android:id="@+id/part10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="허리"/>
+
+            <CheckBox
+                android:id="@+id/part11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="옆구리"/>
+
+            <CheckBox
+                android:id="@+id/part12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="복부"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/part13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="하체"/>
+
+            <CheckBox
+                android:id="@+id/part14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="엉덩이"/>
+
+            <CheckBox
+                android:id="@+id/part15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="다리"/>
+
+            <CheckBox
+                android:id="@+id/part16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="허벅지"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/part17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="무릎"/>
+
+            <CheckBox
+                android:id="@+id/part18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="발목"/>
+
+            <CheckBox
+                android:id="@+id/part19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="발"/>
+            <!-- 고관절 -> 관절, 복근 -> 복부 통합 -->
+            <CheckBox
+                android:id="@+id/part20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="관절"/>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/view5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view4"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="리 셋"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/white"
+            android:backgroundTint="#6490ED"/>
+
+        <Button
+            android:id="@+id/health_save"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="저 장"
+            android:textColor="@color/white"
+            android:backgroundTint="#6490ED"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

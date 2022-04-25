@@ -38,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
         var sharedPreferences2 = getSharedPreferences("id", Context.MODE_PRIVATE)
 
-        if(name.isNullOrEmpty()){
+        if (name.isNullOrEmpty()){
             name = sharedPreferences.getString("name", "") ?: ""
         } else {
             sharedPreferences.edit {
@@ -47,7 +47,7 @@ class ChatActivity : AppCompatActivity() {
             }
         }
 
-        if(id.isNullOrEmpty()){
+        if (id.isNullOrEmpty()){
             id = sharedPreferences2.getString("id", "") ?: ""
         } else {
             sharedPreferences2.edit {
@@ -113,14 +113,11 @@ class ChatActivity : AppCompatActivity() {
 
         adapter.submitList(list)
         adapter.notifyDataSetChanged()
-
-//        binding.progress.visibility = View.GONE
-//        binding.progresstext.visibility = View.GONE
     }
 
-    private fun updateChild(data: ChatKeyModel){
-        for(i in 0..list.size - 1){
-            if(list[i].key == data!!.key){
+    private fun updateChild(data: ChatKeyModel) {
+        for (i in 0..list.size - 1) {
+            if(list[i].key == data!!.key) {
                 list.set(i, data)
             }
         }
@@ -139,7 +136,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun bindViews(id: String) {
-        with(binding){
+        with(binding) {
             chatlist.adapter = adapter
             chatlist.layoutManager = LinearLayoutManager(this@ChatActivity)
 

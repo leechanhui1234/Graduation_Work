@@ -58,7 +58,7 @@ class ChatListActivity: AppCompatActivity() {
         }
 
         adapter = ChatListAdapter(onItemClicked = {
-            if(userId.equals(it.userId)){
+            if(userId == it.userId){
                 AlertDialog.Builder(this@ChatListActivity)
                     .setMessage("삭제하시겠습니까?")
                     .setPositiveButton("확인"){dialog, which ->
@@ -140,9 +140,9 @@ class ChatListActivity: AppCompatActivity() {
         chatdatabase.child(model!!.key).removeValue()
         database.child(model!!.key).removeValue()
         val intent = Intent(this@ChatListActivity, ChatActivity::class.java)
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)
         finish()
     }

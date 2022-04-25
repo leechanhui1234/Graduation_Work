@@ -1,4 +1,4 @@
-package com.example.aop.part4.graduation_work
+package com.example.aop.part4.graduation_work.Diaries
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,6 +11,7 @@ import android.view.View
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aop.part4.graduation_work.MainPage
 import com.example.aop.part4.graduation_work.data.UserDialist
 import com.example.aop.part4.graduation_work.data.UserDiary
 import com.example.aop.part4.graduation_work.databinding.DialistBinding
@@ -126,11 +127,9 @@ class Dialist : AppCompatActivity() {
             }
 
             override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-                TODO("Not yet implemented")
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
     }

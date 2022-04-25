@@ -37,7 +37,7 @@ class WriteActivity: AppCompatActivity() {
             }
 
             completebtn.setOnClickListener {
-                if(title.text.isNotEmpty() && content.text.isNotEmpty()){
+                if (title.text.isNotEmpty() && content.text.isNotEmpty()){
                     val str1 = title.text.toString()
                     val str2 = content.text.toString()
                     val now = LocalDate.now()
@@ -50,7 +50,7 @@ class WriteActivity: AppCompatActivity() {
                     database.push().setValue(model)
 
                     finish()
-                }else{
+                } else {
                     Toast.makeText(this@WriteActivity, "내용을 입력해주세요", Toast.LENGTH_SHORT).show()
                 }
             }
