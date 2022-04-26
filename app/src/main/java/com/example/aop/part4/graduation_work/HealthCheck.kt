@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -107,6 +108,13 @@ class HealthCheck : AppCompatActivity() {
             }
 
             healthSave.setOnClickListener {
+                progress.visibility = View.VISIBLE
+                loading.visibility = View.VISIBLE
+                reset.visibility = View.GONE
+                healthSave.visibility = View.GONE
+                view2.visibility = View.GONE
+                view3.visibility = View.GONE
+                view4.visibility = View.GONE
                 list1.clear()
                 if(thing1.isChecked) list1.add(thing1.text.toString())
                 if(thing2.isChecked) list1.add(thing2.text.toString())
@@ -217,6 +225,13 @@ class HealthCheck : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body!!.string()
                 runOnUiThread {
+                    binding.progress.visibility = View.GONE
+                    binding.loading.visibility = View.GONE
+                    binding.reset.visibility = View.VISIBLE
+                    binding.healthSave.visibility = View.VISIBLE
+                    binding.view2.visibility = View.VISIBLE
+                    binding.view3.visibility = View.VISIBLE
+                    binding.view4.visibility = View.VISIBLE
                     val d = data.split("|")
                     val pre_data = d[0].split(",")
                     val in_data = d[1].split(",")
@@ -237,6 +252,7 @@ class HealthCheck : AppCompatActivity() {
                     customView.findViewById<TextView>(R.id.post_item1).setText(post_data[0])
                     customView.findViewById<TextView>(R.id.post_item2).setText(post_data[1])
                     customView.findViewById<TextView>(R.id.post_item3).setText(post_data[2])
+
                     dialog.setView(customView)
                         .setTitle("추천 목록")
 
