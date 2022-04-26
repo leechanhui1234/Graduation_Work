@@ -28,59 +28,56 @@
         android:id="@+id/maintitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/backbtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/backbtn"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="80dp"
         android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:text="성인 우울증 검사 결과"
+        android:text="우울증 검사 결과"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="bold"/>
-
-
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
-        android:id="@+id/ScrollView"
+        android:id="@+id/View2"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="680dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backbtn">
 
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="50dp"
-
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_marginTop="60dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
         <TextView
             android:id="@+id/result"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="40dp"
             android:textSize="80dp"
-            android:text="13"/>
-            <TextView
+            android:text=""/>
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="230dp"
-                android:textSize="30dp"
-                android:text="/60 점 입니다"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:textSize="30dp"
+            android:text="/60 점 입니다"/>
 
+    </LinearLayout>
 
+    <!-- 여기에 해당 점수가 얼마나 심각한지 표라던가 추가 정보를 입력. -->
 
-
-
-            </LinearLayout>
-        </LinearLayout>
-
-
-
-
+    <Button
+        android:id="@+id/resultcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:text="확 인"
+        android:backgroundTint="#6490ED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/View2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

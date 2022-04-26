@@ -24,9 +24,14 @@
         <activity android:name=".NewAccount" />
         <activity android:name=".MainPage" />
         <activity android:name=".DepressiveCheck"/>
+        <activity android:name=".Ces"/>
+        <activity android:name=".CesResult"/>
+        <activity android:name=".Depression"/>
+        <activity android:name=".DepressionResult"/>
+        <activity android:name=".Old"/>
+        <activity android:name=".OldResult"/>
         <activity android:name=".Health"/>
-        <activity android:name=".HealthCheck"
-            tools:ignore="MissingClass" />
+        <activity android:name=".HealthCheck"/>
         <activity android:name=".Diaries.Dialist" />
         <activity android:name=".Diaries.Diary" />
         <activity android:name=".Diaries.DiaryShow" />

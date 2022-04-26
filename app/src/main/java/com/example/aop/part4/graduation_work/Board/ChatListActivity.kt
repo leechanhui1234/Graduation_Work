@@ -51,7 +51,7 @@ class ChatListActivity: AppCompatActivity() {
 
         var id = model.userId
 
-        if(id.equals(userId)){
+        if(id == userId){
             binding.menuclick.visibility = View.VISIBLE
         } else {
             binding.menuclick.visibility = View.GONE

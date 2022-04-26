@@ -52,58 +52,46 @@
         app:tint="@color/white" />
 
     <ScrollView
-
         android:id="@+id/ScrollView"
         android:layout_width="match_parent"
-        android:layout_height="680dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="50dp"
-        app:layout_constraintTop_toBottomOf="@id/View"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/backbtn">
+
         <TableLayout
+            android:id="@+id/table1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp">
 
-            <TableRow
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지난 일주일 간 느꼈던 감정을 체크해주세요!"
-                    android:textSize="33dp"
-                    android:gravity="center"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:text="지난 일주일간 느꼈던 감정을 체크해주세요!"
+                android:textSize="33dp" />
 
-                    />
-            </TableRow>
-            <!--문항시작-->
-            <TableRow
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1. 평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="1. 평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q1"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -111,58 +99,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q1A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q1A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q1A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2. 먹고 싶지 않고, 식욕이 없었다."
-                    android:textSize="25sp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_bottom"
+                android:gravity="left"
+                android:text="2. 먹고 싶지 않고, 식욕이 없었다."
+                android:textSize="25sp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q2"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -170,57 +150,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q2A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q2A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q2A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3. 어느 누가 도와준다 하더라도, 나의 울적한 기분을 떨쳐버릴수 없을 것 같았다."
-                    android:textSize="25sp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="3. 어느 누가 도와준다 하더라도, 나의 울적한 기분을 떨쳐버릴수 없을 것 같았다."
+                android:textSize="25sp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border_bottom">
 
                 <RadioGroup
                     android:id="@+id/Q3"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -228,57 +201,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q3A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q3A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q3A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4. 무슨 일을 하든 정신을 집중하기가 힘들었다."
-                    android:textSize="25sp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="4. 무슨 일을 하든 정신을 집중하기가 힘들었다."
+                android:textSize="25sp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q4"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -286,57 +252,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q4A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q4A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q4A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5. 비교적 잘 지냈다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="5. 비교적 잘 지냈다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q5"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -344,57 +303,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q5A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q5A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q5A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6. 상당히 우울했다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="6. 상당히 우울했다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q6"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -402,57 +354,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q6A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q6A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q6A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7. 모든 일들이 힘들게 느껴졌다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="7. 모든 일들이 힘들게 느껴졌다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q7"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -460,57 +405,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q7A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q7A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q7A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8. 앞일이 암담하게 느껴졌다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="8. 앞일이 암담하게 느껴졌다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q8"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -518,57 +456,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q8A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q8A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q8A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9. 지금까지의 내 인생은 실패작이라는 생각이 들었다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="9. 지금까지의 내 인생은 실패작이라는 생각이 들었다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q9"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -576,56 +507,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q9A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q9A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q9A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝--><!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10. 적더도 보통사람들만큼의 능력은 있었다고 생각한다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="10. 적더도 보통사람들만큼의 능력은 있었다고 생각한다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q10"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -633,56 +558,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q10A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q10A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q10A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝--><!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11. 잠을 설쳤다(잠을 잘 이루지 못했다)."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="11. 잠을 설쳤다(잠을 잘 이루지 못했다)."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q11"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -690,56 +609,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q11A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q11A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q11A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝--><!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12. 두려움을 느꼈다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="12. 두려움을 느꼈다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q12"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -747,56 +660,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q12A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q12A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q12A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝--><!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="13. 평소에 비해 말수가 적었다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="13. 평소에 비해 말수가 적었다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q13"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -804,56 +711,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q13A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q13A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q13A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝--><!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14. 세상에 홀로 있는 듯한 외로움을 느꼈다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="14. 세상에 홀로 있는 듯한 외로움을 느꼈다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q14"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -861,56 +762,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q14A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q14A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q14A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝--><!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15. 큰 불만없이 생활했다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="15. 큰 불만없이 생활했다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q15"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -918,57 +813,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q15A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q15A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q15A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="16. 사람들이 나에게 차갑게 대하는 것 같았다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="16. 사람들이 나에게 차갑게 대하는 것 같았다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q16"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -976,57 +864,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q16A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q16A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q16A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="17. 갑자기 울음이 나왔다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="17. 갑자기 울음이 나왔다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q17"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -1034,57 +915,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q17A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q17A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q17A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="18. 마음이 슬펐다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="18. 마음이 슬펐다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q18"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -1092,57 +966,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q18A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q18A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q18A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19. 사람들이 나를 싫어하는 것 같았다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="19. 사람들이 나를 싫어하는 것 같았다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q19"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -1150,58 +1017,51 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q19A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q19A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q19A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
-            <!--문항시작-->
-            <TableRow
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20. 도무지 뭘 해 나갈 엄두가 나지 않았다."
-                    android:textSize="25dp"
-                    android:gravity="left"
-                    />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="left"
+                android:text="20. 도무지 뭘 해 나갈 엄두가 나지 않았다."
+                android:textSize="25dp" />
 
-
-            </TableRow>                                 <!--문항 끝-->
-
-            <!-- 라디오버튼 시작-->
             <TableRow
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginBottom="100dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+                android:background="@drawable/border">
 
                 <RadioGroup
                     android:id="@+id/Q20"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -1209,35 +1069,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 이하"/>
+                        android:text="1일 이하" />
 
                     <RadioButton
                         android:id="@+id/Q20A2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1일 ~ 2일"/>
+                        android:text="1일 ~ 2일" />
 
                     <RadioButton
                         android:id="@+id/Q20A3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3 ~ 4일"/>
+                        android:text="3 ~ 4일" />
 
                     <RadioButton
                         android:id="@+id/Q20A4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5일 이상"/>
+                        android:text="5일 이상" />
 
                 </RadioGroup>
             </TableRow>
-            <!-- 라디오버튼 끝-->
+
+            <Button
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#6490ED"
+                android:text="저장하기"
+                android:textColor="@color/white" />
         </TableLayout>
-
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

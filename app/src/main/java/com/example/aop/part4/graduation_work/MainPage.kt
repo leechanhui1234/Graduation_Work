@@ -80,15 +80,6 @@ class MainPage : AppCompatActivity() {
             
             //운동 
             health.setOnClickListener {
-                //사용자 항목에 따라 다른 곳으로 intent
-                /*
-                * if (health == 1) {
-                *   //사용자 항목을 완료했다면 -> health 메인 페이지로
-                *   var intent = Intent(this@MainPage, Health::class.java)
-                * } else {
-                *   //처음 들어간다면 -> health 사용자 체크 페이지로
-                * }
-                * */
                 var intent = Intent(this@MainPage, HealthCheck::class.java)
                 startActivity(intent)
             }

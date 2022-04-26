@@ -29,21 +29,21 @@ class HealthCheck : AppCompatActivity() {
                 if (isChecked) {
                     when(button.id) {
                         R.id.thing1 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing2 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing3 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing4 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing5 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing6 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing7 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing8 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing9 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing10 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing11 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing12 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing13 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing14 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing15 -> {thing_list += thing1.text.toString() + ","}
-                        R.id.thing16 -> {thing_list += thing1.text.toString() + ","}
+                        R.id.thing2 -> {thing_list += thing2.text.toString() + ","}
+                        R.id.thing3 -> {thing_list += thing3.text.toString() + ","}
+                        R.id.thing4 -> {thing_list += thing4.text.toString() + ","}
+                        R.id.thing5 -> {thing_list += thing5.text.toString() + ","}
+                        R.id.thing6 -> {thing_list += thing6.text.toString() + ","}
+                        R.id.thing7 -> {thing_list += thing7.text.toString() + ","}
+                        R.id.thing8 -> {thing_list += thing8.text.toString() + ","}
+                        R.id.thing9 -> {thing_list += thing9.text.toString() + ","}
+                        R.id.thing10 -> {thing_list += thing10.text.toString() + ","}
+                        R.id.thing11 -> {thing_list += thing11.text.toString() + ","}
+                        R.id.thing12 -> {thing_list += thing12.text.toString() + ","}
+                        R.id.thing13 -> {thing_list += thing13.text.toString() + ","}
+                        R.id.thing14 -> {thing_list += thing14.text.toString() + ","}
+                        R.id.thing15 -> {thing_list += thing15.text.toString() + ","}
+                        R.id.thing16 -> {thing_list += thing16.text.toString() + ","}
                     }
                 }
                 else {
@@ -159,7 +159,6 @@ class HealthCheck : AppCompatActivity() {
             part19.setOnCheckedChangeListener(part_listener)
             part20.setOnCheckedChangeListener(part_listener)
 
-
             reset.setOnClickListener {
                 thing1.isChecked = false
                 thing2.isChecked = false
@@ -210,9 +209,9 @@ class HealthCheck : AppCompatActivity() {
                     intent.putExtra("things", thing_list)
                     intent.putExtra("parts", part_list)
                     startActivity(intent)
+                    finish()
                 }
             }
-
         }
     }
 }
