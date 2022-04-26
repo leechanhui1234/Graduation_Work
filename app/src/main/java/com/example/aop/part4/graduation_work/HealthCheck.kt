@@ -12,6 +12,8 @@ import androidx.core.content.edit
 import com.example.aop.part4.graduation_work.Board.ChatActivity
 import com.example.aop.part4.graduation_work.Url.Url
 import com.example.aop.part4.graduation_work.databinding.HealthCheckBinding
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import java.io.IOException
 
 class HealthCheck : AppCompatActivity() {
