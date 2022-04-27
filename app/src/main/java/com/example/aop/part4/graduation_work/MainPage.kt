@@ -97,7 +97,6 @@ class MainPage : AppCompatActivity() {
             depressiveCheck.setOnClickListener {
                 val intent = Intent(this@MainPage, DepressiveCheck::class.java)
                 startActivity(intent)
-                finish()
             }
             
             //운동 
@@ -129,7 +128,6 @@ class MainPage : AppCompatActivity() {
                 val intent = Intent(this@MainPage, Dialist::class.java)
                 intent.putExtra("id", id)
                 startActivity(intent)
-                finish()
             }
 
             //기타 항목

@@ -138,13 +138,6 @@ class HealthCheck : AppCompatActivity() {
             }
 
             healthSave.setOnClickListener {
-                progress.visibility = View.VISIBLE
-                loading.visibility = View.VISIBLE
-                reset.visibility = View.GONE
-                healthSave.visibility = View.GONE
-                view2.visibility = View.GONE
-                view3.visibility = View.GONE
-                view4.visibility = View.GONE
 
                 list1.clear()
 
@@ -228,6 +221,13 @@ class HealthCheck : AppCompatActivity() {
                 }
 
                 else {
+                    progress.visibility = View.VISIBLE
+                    loading.visibility = View.VISIBLE
+                    reset.visibility = View.GONE
+                    healthSave.visibility = View.GONE
+                    view2.visibility = View.GONE
+                    view3.visibility = View.GONE
+                    view4.visibility = View.GONE
                     val text = "$value|$ageValue|$part_list|$thing_list|$height|$weight"
                     database.child(id!!).push().setValue(UserHealth(id, Date.toString(), height, weight, thing_list, part_list))
                     connectServer(text)
@@ -271,9 +271,17 @@ class HealthCheck : AppCompatActivity() {
                     binding.view4.visibility = View.VISIBLE
 
                     val d = data.split("|")
-                    val pre_data = d[0].split(",")
-                    val in_data = d[1].split(",")
-                    val post_data = d[2].split(",")
+                    var pre_data: List<String>
+                    var in_data: List<String>
+                    var post_data: List<String>
+                    try{
+                        pre_data = d[0].split(",")
+                        in_data = d[1].split(",")
+                        post_data = d[2].split(",")
+                    }catch(e: Exception){
+                        Toast.makeText(this@HealthCheck, "추천 데이터가 없습니다.", Toast.LENGTH_SHORT).show()
+                        return@runOnUiThread
+                    }
 
                     val dialog = AlertDialog.Builder(this@HealthCheck)
                     val inflater = layoutInflater

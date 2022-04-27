@@ -37,13 +37,14 @@ class DepressionResult : AppCompatActivity(){
                 depressionText3.visibility = android.view.View.VISIBLE
             }
             backbtn.setOnClickListener {
-                val intent1 = Intent(this@DepressionResult, MainPage::class.java)
-                startActivity(intent1)
                 finish()
             }
 
             resultcheck.setOnClickListener {
                 val intent1 = Intent(this@DepressionResult, MainPage::class.java)
+                intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent1)
                 finish()
             }

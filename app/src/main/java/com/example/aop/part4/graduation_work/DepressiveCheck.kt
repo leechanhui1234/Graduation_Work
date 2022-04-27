@@ -209,12 +209,9 @@ class DepressiveCheck : AppCompatActivity() {
                     val intent = Intent(this@DepressiveCheck, DepressionResult::class.java)
                     intent.putExtra("score", value)
                     startActivity(intent)
-                    finish()
                 }
             }
             backbtn.setOnClickListener {
-                val intent1 = Intent(this@DepressiveCheck, MainPage::class.java)
-                startActivity(intent1)
                 finish()
             }
 

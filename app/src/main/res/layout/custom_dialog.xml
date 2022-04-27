@@ -108,9 +108,9 @@
     </RadioGroup>
 
     <LinearLayout
-        android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end"
         android:orientation="horizontal">
 
         <Button
@@ -118,12 +118,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:backgroundTint="#6490ED"
             android:text="확인" />
 
         <Button
             android:id="@+id/no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#6490ED"
             android:text="취소" />
     </LinearLayout>
 

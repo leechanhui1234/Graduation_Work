@@ -47,6 +47,11 @@ class ChatActivity : AppCompatActivity() {
             }
         }
 
+        binding.progress.visibility = View.VISIBLE
+        binding.loading.visibility = View.VISIBLE
+        binding.chatlist.visibility = View.GONE
+        binding.writebtn.visibility = View.GONE
+
         if (id.isNullOrEmpty()){
             id = sharedPreferences2.getString("id", "") ?: ""
         } else {
@@ -110,6 +115,11 @@ class ChatActivity : AppCompatActivity() {
         totallist.map{
             list.add(it!!)
         }
+
+        binding.progress.visibility = View.GONE
+        binding.loading.visibility = View.GONE
+        binding.chatlist.visibility = View.VISIBLE
+        binding.writebtn.visibility = View.VISIBLE
 
         adapter.submitList(list)
         adapter.notifyDataSetChanged()
