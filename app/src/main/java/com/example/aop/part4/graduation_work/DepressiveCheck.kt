@@ -20,21 +20,13 @@ class DepressiveCheck : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-
-            backbtn.setOnClickListener {
-                val intent1 = Intent(this@DepressiveCheck, MainPage::class.java)
-                startActivity(intent1)
-                finish()
-            }
-
-            completebtn.setOnClickListener {
-
-               when(Q1.checkedRadioButtonId) {
-                   Q1A1.id -> value += 0
-                   Q1A2.id -> value += 1
-                   Q1A3.id -> value += 2
-                   Q1A4.id -> value += 3
-               }
+            fun value(){
+                when(Q1.checkedRadioButtonId) {
+                    Q1A1.id -> value += 0
+                    Q1A2.id -> value += 1
+                    Q1A3.id -> value += 2
+                    Q1A4.id -> value += 3
+                }
                 allcheck = Q1.checkedRadioButtonId != -1
 
                 when(Q2.checkedRadioButtonId) {
@@ -219,8 +211,20 @@ class DepressiveCheck : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }
-
             }
+            backbtn.setOnClickListener {
+                val intent1 = Intent(this@DepressiveCheck, MainPage::class.java)
+                startActivity(intent1)
+                finish()
+            }
+
+            completebtn.setOnClickListener {
+                value()
+            }
+            check.setOnClickListener {
+                value()
+            }
+
         }
     }
 }

@@ -5,18 +5,14 @@ import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
-import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
-import com.example.aop.part4.graduation_work.Board.model.ChatModel
-import com.example.aop.part4.graduation_work.Diaries.Dialist
-import com.example.aop.part4.graduation_work.Diaries.DiaryAdapter
+import com.example.aop.part4.graduation_work.Board.ChatActivity
 import com.example.aop.part4.graduation_work.Url.Url
-import com.example.aop.part4.graduation_work.data.UserDialist
-import com.example.aop.part4.graduation_work.data.UserDiary
 import com.example.aop.part4.graduation_work.data.UserHealth
 import com.example.aop.part4.graduation_work.databinding.HealthCheckBinding
 import com.google.firebase.database.ChildEventListener
@@ -142,6 +138,13 @@ class HealthCheck : AppCompatActivity() {
             }
 
             healthSave.setOnClickListener {
+                progress.visibility = View.VISIBLE
+                loading.visibility = View.VISIBLE
+                reset.visibility = View.GONE
+                healthSave.visibility = View.GONE
+                view2.visibility = View.GONE
+                view3.visibility = View.GONE
+                view4.visibility = View.GONE
                 list1.clear()
                 if(thing1.isChecked) list1.add(thing1.text.toString())
                 if(thing2.isChecked) list1.add(thing2.text.toString())
@@ -256,6 +259,13 @@ class HealthCheck : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body!!.string()
                 runOnUiThread {
+                    binding.progress.visibility = View.GONE
+                    binding.loading.visibility = View.GONE
+                    binding.reset.visibility = View.VISIBLE
+                    binding.healthSave.visibility = View.VISIBLE
+                    binding.view2.visibility = View.VISIBLE
+                    binding.view3.visibility = View.VISIBLE
+                    binding.view4.visibility = View.VISIBLE
                     val d = data.split("|")
                     val pre_data = d[0].split(",")
                     val in_data = d[1].split(",")
@@ -326,6 +336,7 @@ class HealthCheck : AppCompatActivity() {
                     noButton.setOnClickListener {
                         Alertdialog.dismiss()
                     }
+
                 }
                 Log.d("RESPONSE", data)
             }

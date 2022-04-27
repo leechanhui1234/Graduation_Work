@@ -64,7 +64,68 @@
             android:layout_marginLeft="230dp"
             android:textSize="30dp"
             android:text="/60 점 입니다"/>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/depression_1"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/depression_1"/>
+
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/depression_2"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/depression_2"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/depression_3"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/depression_3"/>
+
+</FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/depression_text_1"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="건강한 상태입니다.\n 현재상태를 유지해주세요"/>
+    <TextView
+        android:id="@+id/depression_text_2"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="우울한 상태입니다.\n 기분전환 해보는건 어떨까요?"/>
+    <TextView
+        android:id="@+id/depression_text_3"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="매우 우울한 상태입니다.\n 전문의와 상담하세요."/>
+
+</FrameLayout>
     </LinearLayout>
 
     <!-- 여기에 해당 점수가 얼마나 심각한지 표라던가 추가 정보를 입력. -->
