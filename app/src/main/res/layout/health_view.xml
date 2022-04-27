@@ -39,52 +39,102 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/pre_health"
+    <LinearLayout
+        android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:layout_gravity="left"
-        android:text="준비운동"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/backbtn"
-        android:background="@drawable/border" />
-
-    <TextView
-        android:id="@+id/in_health"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
         android:gravity="left"
-        android:text="본운동"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pre_health"
-        android:background="@drawable/border" />
+        app:layout_constraintTop_toBottomOf="@id/view"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/post_health"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="준비 운동      "
+            android:textSize="18sp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/pre_health"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:background="@drawable/border"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view3"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
         android:gravity="left"
-        android:text="마무리 운동"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/in_health"
-        android:background="@drawable/border" />
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="본 운동          "
+            android:textSize="18sp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/in_health"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:background="@drawable/border"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view3"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="마무리 운동  "
+            android:textSize="18sp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/post_health"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:background="@drawable/border"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+    <!-- 타이머, 음악, 달력 등 운동에 필요한 기능들 구현 -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

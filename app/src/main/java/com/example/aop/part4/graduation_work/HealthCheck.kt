@@ -2,6 +2,7 @@ package com.example.aop.part4.graduation_work
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
-import com.example.aop.part4.graduation_work.Board.ChatActivity
 import com.example.aop.part4.graduation_work.Url.Url
 import com.example.aop.part4.graduation_work.data.UserHealth
 import com.example.aop.part4.graduation_work.databinding.HealthCheckBinding
@@ -145,7 +145,9 @@ class HealthCheck : AppCompatActivity() {
                 view2.visibility = View.GONE
                 view3.visibility = View.GONE
                 view4.visibility = View.GONE
+
                 list1.clear()
+
                 if(thing1.isChecked) list1.add(thing1.text.toString())
                 if(thing2.isChecked) list1.add(thing2.text.toString())
                 if(thing3.isChecked) list1.add(thing3.text.toString())
@@ -259,6 +261,7 @@ class HealthCheck : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body!!.string()
                 runOnUiThread {
+
                     binding.progress.visibility = View.GONE
                     binding.loading.visibility = View.GONE
                     binding.reset.visibility = View.VISIBLE
@@ -266,6 +269,7 @@ class HealthCheck : AppCompatActivity() {
                     binding.view2.visibility = View.VISIBLE
                     binding.view3.visibility = View.VISIBLE
                     binding.view4.visibility = View.VISIBLE
+
                     val d = data.split("|")
                     val pre_data = d[0].split(",")
                     val in_data = d[1].split(",")
@@ -295,6 +299,7 @@ class HealthCheck : AppCompatActivity() {
                     val noButton = customView.findViewById<Button>(R.id.no)
 
                     yesButton.setOnClickListener {
+
                         val group1 = customView.findViewById<RadioGroup>(R.id.precheck)
                         val group2 = customView.findViewById<RadioGroup>(R.id.incheck)
                         val group3 = customView.findViewById<RadioGroup>(R.id.postcheck)
@@ -302,6 +307,7 @@ class HealthCheck : AppCompatActivity() {
                         var predata: String? = null
                         var indata: String? = null
                         var postdata: String? = null
+
                         when(group1.checkedRadioButtonId) {
                             R.id.pre_item1 -> predata = customView.findViewById<TextView>(R.id.pre_item1).text.toString()
                             R.id.pre_item2 -> predata = customView.findViewById<TextView>(R.id.pre_item2).text.toString()
@@ -324,12 +330,12 @@ class HealthCheck : AppCompatActivity() {
                             Toast.makeText(this@HealthCheck, "데이터를 선택해주세요", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(this@HealthCheck, "${predata}|${indata}|${postdata}", Toast.LENGTH_SHORT).show()
-                            //val intent = Intent(this@HealthCheck, HealthView::class.java)
-                            //intent.putExtra("predata", thing_list)
-                            //intent.putExtra("indata", part_list)
-                            //intent.putExtra("postdata", part_list)
-                            //startActivity(intent)
-                            //finish()
+                            val intent = Intent(this@HealthCheck, HealthView::class.java)
+                            intent.putExtra("predata", predata)
+                            intent.putExtra("indata", indata)
+                            intent.putExtra("postdata", postdata)
+                            startActivity(intent)
+                            finish()
                         }
                     }
 
@@ -346,9 +352,10 @@ class HealthCheck : AppCompatActivity() {
     private fun controlData() {
         database.addChildEventListener(object: ChildEventListener{
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                val Item = snapshot.getValue(UserHealth::class.java)
+                val item = snapshot.getValue(UserHealth::class.java)
+                val key = snapshot.key
 
-                val list = UserHealth(id!!, Item!!.date, Item!!.height, Item!!.weight, Item!!.things, Item!!.part)
+                val list = UserHealth(id!!, item!!.date, item!!.height, item!!.weight, item!!.things, item!!.part)
 
                 binding.userHeight.setText(list.height)
                 binding.userWeight.setText(list.weight)

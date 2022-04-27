@@ -34,6 +34,7 @@
         <activity android:name=".DepressionResult"/>
         <activity android:name=".Health"/>
         <activity android:name=".HealthCheck"/>
+        <activity android:name=".HealthView"/>
         <activity android:name=".Diaries.Dialist" />
         <activity android:name=".Diaries.Diary" />
         <activity android:name=".Diaries.DiaryShow" />
