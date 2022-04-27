@@ -214,9 +214,9 @@ class DepressiveCheck : AppCompatActivity() {
                 }
 
                 else {
-                    val intent2 = Intent(this@DepressiveCheck, DepressionResult::class.java)
-                    intent2.putExtra("score", value)
-                    startActivity(intent2)
+                    val intent = Intent(this@DepressiveCheck, DepressionResult::class.java)
+                    intent.putExtra("score", value)
+                    startActivity(intent)
                     finish()
                 }
 

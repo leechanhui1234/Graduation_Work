@@ -2,32 +2,54 @@ package com.example.aop.part4.graduation_work
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
-import com.example.aop.part4.graduation_work.Board.ChatActivity
+import com.example.aop.part4.graduation_work.Board.model.ChatKeyModel
+import com.example.aop.part4.graduation_work.Board.model.ChatModel
+import com.example.aop.part4.graduation_work.Diaries.Dialist
+import com.example.aop.part4.graduation_work.Diaries.DiaryAdapter
 import com.example.aop.part4.graduation_work.Url.Url
+import com.example.aop.part4.graduation_work.data.UserDialist
+import com.example.aop.part4.graduation_work.data.UserDiary
+import com.example.aop.part4.graduation_work.data.UserHealth
 import com.example.aop.part4.graduation_work.databinding.HealthCheckBinding
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
+import java.time.LocalDate
 
 class HealthCheck : AppCompatActivity() {
 
     private lateinit var binding : HealthCheckBinding
     private var thing_list : String = ""
     private var part_list : String = ""
-    private var count : Int = 0
-    private var list1 = mutableListOf<String>()
-    private var list2 = mutableListOf<String>()
-    private var value: String = ""
-    private var age: Int = 0
-    private var ageValue: String = ""
-    private var height: String = ""
-    private var weight: String = ""
 
+    private var count : Int = 0
+    private var list1 = mutableListOf<String>() //도구 리스트
+    private var list2 = mutableListOf<String>() //부위 리스트
+    private var value : String = ""     //성별
+    private var age : Int = 0           //나이
+    private var id : String = ""        //아이디
+    private var ageValue : String = ""
+    private var height : String = ""    //키
+    private var weight : String = ""    //몸무게
+
+    var database = Firebase.database.reference.child("health")
+    private val list = mutableListOf<UserHealth>()
+
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,26 +57,41 @@ class HealthCheck : AppCompatActivity() {
         binding = HealthCheckBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        value = intent.getStringExtra("value") ?: ""
+        controlData()
+
+        var Date = LocalDate.now()
+
         age = intent.getIntExtra("age", 0)
+        value = intent.getStringExtra("value") ?: ""
+        id = intent.getStringExtra("id") ?: ""
 
         val sharedPreferences = getSharedPreferences("age", Context.MODE_PRIVATE)
         val sharedPreferences2 = getSharedPreferences("value", Context.MODE_PRIVATE)
+        val sharedPreferences3 = getSharedPreferences("id", Context.MODE_PRIVATE)
 
-        if(age == 0){
-            age = sharedPreferences.getInt("age", 0) ?: 0
-        } else{
+        if (age == 0) {
+            age = sharedPreferences.getInt("age", 0)
+        } else {
             sharedPreferences.edit {
                 this.putInt("age", age)
                 commit()
             }
         }
 
-        if(value.isNullOrEmpty()){
+        if (value.isNullOrEmpty()) {
             value = sharedPreferences2.getString("value", "") ?: ""
-        } else{
+        } else {
             sharedPreferences2.edit {
                 this.putString("value", value)
+                commit()
+            }
+        }
+
+        if (id.isNullOrEmpty()) {
+            id = sharedPreferences3.getString("id", "") ?: ""
+        } else {
+            sharedPreferences3.edit {
+                this.putString("id", id)
                 commit()
             }
         }
@@ -147,29 +184,31 @@ class HealthCheck : AppCompatActivity() {
 
                 thing_list = ""
 
-                for(i in 0..list1.size - 1 step 1){
-                    if(i == list1.size - 1) thing_list = thing_list + list1[i]
+                for (i in 0 until list1.size step 1){
+                    if (i == list1.size - 1) thing_list += list1[i]
                     else thing_list = thing_list + list1[i] + ","
                 }
 
                 part_list = ""
                 count = 0
-                for(i in 0..list2.size - 1 step 1){
-                    if(i == list2.size - 1) part_list = part_list + list2[i]
-                    else part_list = part_list + list2[i] + ","
+                (0 until list2.size step 1).forEach { i ->
+                    part_list = if(i == list2.size - 1) part_list + list2[i]
+                    else part_list + list2[i] + ","
                     count++
                 }
 
-                if(value.equals("남성")) value = "M"
-                else value = "F"
+                value = if (value == "남성") "M"
+                else "F"
 
-                if(age < 20) ageValue = "10대"
-                else if(age < 30) ageValue = "20대"
-                else if(age < 40) ageValue = "30대"
-                else if(age < 50) ageValue = "40대"
-                else if(age < 60) ageValue = "50대"
-                else if(age < 70) ageValue = "60대"
-                else ageValue = "70대 이상"
+                ageValue = when {
+                    age < 20 -> "10대"
+                    age < 30 -> "20대"
+                    age < 40 -> "30대"
+                    age < 50 -> "40대"
+                    age < 60 -> "50대"
+                    age < 70 -> "60대"
+                    else -> "70대 이상"
+                }
 
                 height = userHeight.text.toString()
                 weight = userWeight.text.toString()
@@ -182,12 +221,13 @@ class HealthCheck : AppCompatActivity() {
                 if (count < 3) {
                     Toast.makeText(applicationContext, "운동 부위는 3개 이상 골라주세요.", Toast.LENGTH_SHORT).show()
                 }
+
                 else {
-                    val text = value + "|" + ageValue + "|" + part_list + "|" + thing_list + "|" + height + "|" + weight
+                    val text = "$value|$ageValue|$part_list|$thing_list|$height|$weight"
+                    database.child(id!!).push().setValue(UserHealth(id, Date.toString(), height, weight, thing_list, part_list))
                     connectServer(text)
                 }
             }
-
         }
     }
 
@@ -195,7 +235,7 @@ class HealthCheck : AppCompatActivity() {
         val postUrl = Url.recommendUrl
 
         val mediaType = "text/plain".toMediaTypeOrNull()
-        val postBody = RequestBody.create(mediaType, text.toString())
+        val postBody = text.toRequestBody(mediaType)
 
         postRequest(postUrl, postBody)
     }
@@ -212,6 +252,7 @@ class HealthCheck : AppCompatActivity() {
             override fun onFailure(call: Call, e: IOException) {
             }
 
+            @SuppressLint("CutPasteId")
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body!!.string()
                 runOnUiThread {
@@ -224,17 +265,17 @@ class HealthCheck : AppCompatActivity() {
                     val inflater = layoutInflater
                     val customView = inflater.inflate(R.layout.custom_dialog, null)
 
-                    customView.findViewById<TextView>(R.id.pre_item1).setText(pre_data[0])
-                    customView.findViewById<TextView>(R.id.pre_item2).setText(pre_data[1])
-                    customView.findViewById<TextView>(R.id.pre_item3).setText(pre_data[2])
+                    customView.findViewById<TextView>(R.id.pre_item1).text = pre_data[0]
+                    customView.findViewById<TextView>(R.id.pre_item2).text = pre_data[1]
+                    customView.findViewById<TextView>(R.id.pre_item3).text = pre_data[2]
 
-                    customView.findViewById<TextView>(R.id.in_item1).setText(in_data[0])
-                    customView.findViewById<TextView>(R.id.in_item2).setText(in_data[1])
-                    customView.findViewById<TextView>(R.id.in_item3).setText(in_data[2])
+                    customView.findViewById<TextView>(R.id.in_item1).text = in_data[0]
+                    customView.findViewById<TextView>(R.id.in_item2).text = in_data[1]
+                    customView.findViewById<TextView>(R.id.in_item3).text = in_data[2]
 
-                    customView.findViewById<TextView>(R.id.post_item1).setText(post_data[0])
-                    customView.findViewById<TextView>(R.id.post_item2).setText(post_data[1])
-                    customView.findViewById<TextView>(R.id.post_item3).setText(post_data[2])
+                    customView.findViewById<TextView>(R.id.post_item1).text = post_data[0]
+                    customView.findViewById<TextView>(R.id.post_item2).text = post_data[1]
+                    customView.findViewById<TextView>(R.id.post_item3).text = post_data[2]
                     dialog.setView(customView)
                         .setTitle("추천 목록")
 
@@ -251,31 +292,32 @@ class HealthCheck : AppCompatActivity() {
                         var predata: String? = null
                         var indata: String? = null
                         var postdata: String? = null
-                        when(group1.checkedRadioButtonId){
+                        when(group1.checkedRadioButtonId) {
                             R.id.pre_item1 -> predata = customView.findViewById<TextView>(R.id.pre_item1).text.toString()
                             R.id.pre_item2 -> predata = customView.findViewById<TextView>(R.id.pre_item2).text.toString()
                             R.id.pre_item3 -> predata = customView.findViewById<TextView>(R.id.pre_item3).text.toString()
                         }
 
-                        when(group2.checkedRadioButtonId){
+                        when(group2.checkedRadioButtonId) {
                             R.id.in_item1 -> indata = customView.findViewById<TextView>(R.id.in_item1).text.toString()
                             R.id.in_item2 -> indata = customView.findViewById<TextView>(R.id.in_item2).text.toString()
                             R.id.in_item3 -> indata = customView.findViewById<TextView>(R.id.in_item3).text.toString()
                         }
 
-                        when(group3.checkedRadioButtonId){
+                        when(group3.checkedRadioButtonId) {
                             R.id.post_item1 -> postdata = customView.findViewById<TextView>(R.id.post_item1).text.toString()
                             R.id.post_item2 -> postdata = customView.findViewById<TextView>(R.id.post_item2).text.toString()
                             R.id.post_item3 -> postdata = customView.findViewById<TextView>(R.id.post_item3).text.toString()
                         }
 
-                        if(predata.isNullOrEmpty() || indata.isNullOrEmpty() || postdata.isNullOrEmpty()){
+                        if (predata.isNullOrEmpty() || indata.isNullOrEmpty() || postdata.isNullOrEmpty()) {
                             Toast.makeText(this@HealthCheck, "데이터를 선택해주세요", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(this@HealthCheck, "${predata}|${indata}|${postdata}", Toast.LENGTH_SHORT).show()
-                            //val intent = Intent(this@HealthCheck, Health::class.java)
-                            //intent.putExtra("things", thing_list)
-                            //intent.putExtra("parts", part_list)
+                            //val intent = Intent(this@HealthCheck, HealthView::class.java)
+                            //intent.putExtra("predata", thing_list)
+                            //intent.putExtra("indata", part_list)
+                            //intent.putExtra("postdata", part_list)
                             //startActivity(intent)
                             //finish()
                         }
@@ -284,9 +326,33 @@ class HealthCheck : AppCompatActivity() {
                     noButton.setOnClickListener {
                         Alertdialog.dismiss()
                     }
-
                 }
                 Log.d("RESPONSE", data)
+            }
+        })
+    }
+
+    private fun controlData() {
+        database.addChildEventListener(object: ChildEventListener{
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+                val Item = snapshot.getValue(UserHealth::class.java)
+
+                val list = UserHealth(id!!, Item!!.date, Item!!.height, Item!!.weight, Item!!.things, Item!!.part)
+
+                binding.userHeight.setText(list.height)
+                binding.userWeight.setText(list.weight)
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            override fun onCancelled(error: DatabaseError) {
             }
 
         })

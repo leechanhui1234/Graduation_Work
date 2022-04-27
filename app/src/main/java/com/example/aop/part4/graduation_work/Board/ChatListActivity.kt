@@ -180,9 +180,7 @@ class ChatListActivity: AppCompatActivity() {
         chatdatabase?.child(model!!.key).addChildEventListener(object: ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val chatItem = snapshot.getValue(ChatListModel::class.java)
-
                 chatItem ?: return
-
                 addChild(snapshot, chatItem)
             }
 
@@ -191,9 +189,7 @@ class ChatListActivity: AppCompatActivity() {
 
             override fun onChildRemoved(snapshot: DataSnapshot) {
                 val chatItem = snapshot.getValue(ChatListModel::class.java)
-
                 chatItem ?: return
-
                 removeChild(snapshot, chatItem)
             }
 

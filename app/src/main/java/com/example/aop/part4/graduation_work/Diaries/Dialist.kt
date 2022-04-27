@@ -28,7 +28,7 @@ class Dialist : AppCompatActivity() {
 
     private val list = mutableListOf<UserDialist>()
 
-    private var id: String? = null
+    private var id : String? = null
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
