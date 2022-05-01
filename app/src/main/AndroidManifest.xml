@@ -21,6 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Graduation_work"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBGyYjwM_O2jtKOEU6aZvHTw137vPRBO1c">
+
+        </meta-data>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -47,6 +52,7 @@
         <activity android:name=".Board.UpdateContentActivity"
             android:parentActivityName=".Board.ChatActivity"/>
         <activity android:name=".Hospital.HospitalList"/>
+        <activity android:name=".Hospital.HospitalInfo"/>
     </application>
 
 </manifest>

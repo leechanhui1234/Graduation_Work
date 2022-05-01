@@ -39,8 +39,14 @@ class HospitalList: AppCompatActivity() {
         setContentView(binding.root)
 
         adapter = HospitalAdapter(onItemClicked = { it ->
-
+            val intent = Intent(this@HospitalList, HospitalInfo::class.java)
+            intent.putExtra("data", it)
+            startActivity(intent)
         })
+
+        binding.backbtn.setOnClickListener {
+            finish()
+        }
 
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
 
@@ -107,7 +113,9 @@ class HospitalList: AppCompatActivity() {
             return
         }
 
-        mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper())
+        mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback,
+            Looper.myLooper()!!
+        )
     }
 
     private val mLocationCallback = object : LocationCallback() {
