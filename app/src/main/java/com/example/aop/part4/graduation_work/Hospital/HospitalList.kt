@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aop.part4.graduation_work.Hospital.Adapter.HospitalAdapter
 import com.example.aop.part4.graduation_work.databinding.HospitalListBinding
@@ -32,6 +33,7 @@ class HospitalList: AppCompatActivity() {
     private lateinit var adapter: HospitalAdapter
     var lati: String ?= null
     var longi: String ?= null
+    var id: String ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +43,21 @@ class HospitalList: AppCompatActivity() {
         adapter = HospitalAdapter(onItemClicked = { it ->
             val intent = Intent(this@HospitalList, HospitalInfo::class.java)
             intent.putExtra("data", it)
+            intent.putExtra("id", id)
             startActivity(intent)
         })
+
+        id = intent.getStringExtra("id")
+        val sharedPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
+
+        if(id.isNullOrEmpty()){
+            id = sharedPreferences.getString("id", "") ?: ""
+        } else{
+            sharedPreferences.edit {
+                this.putString("id", id)
+                commit()
+            }
+        }
 
         binding.backbtn.setOnClickListener {
             finish()

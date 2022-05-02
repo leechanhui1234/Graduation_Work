@@ -1,5 +1,6 @@
 package com.example.aop.part4.graduation_work.Board.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil

@@ -16,5 +16,5 @@ data class Documents(
     var x: String = "",
     var y: String = "",
     var place_url: String = "",
-    var distanc: String = ""
+    var distance: String = ""
 ): Parcelable

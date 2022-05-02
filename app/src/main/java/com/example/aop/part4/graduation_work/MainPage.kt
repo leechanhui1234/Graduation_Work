@@ -112,6 +112,7 @@ class MainPage : AppCompatActivity() {
             //병원 찾기
             hospital.setOnClickListener {
                 val intent = Intent(this@MainPage, HospitalList::class.java)
+                intent.putExtra("id", id)
                 startActivity(intent)
             }
             
