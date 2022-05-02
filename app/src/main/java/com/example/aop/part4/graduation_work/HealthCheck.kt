@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import com.example.aop.part4.graduation_work.Url.Url
 import com.example.aop.part4.graduation_work.data.UserHealth
+import com.example.aop.part4.graduation_work.data.UserHealthCheck
 import com.example.aop.part4.graduation_work.databinding.HealthCheckBinding
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -42,7 +43,10 @@ class HealthCheck : AppCompatActivity() {
     private var height : String = ""    //키
     private var weight : String = ""    //몸무게
 
+    lateinit var Date : LocalDate
+
     var database = Firebase.database.reference.child("health")
+    var database_select = Firebase.database.reference.child("health_select")
     private val list = mutableListOf<UserHealth>()
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -55,7 +59,7 @@ class HealthCheck : AppCompatActivity() {
 
         controlData()
 
-        var Date = LocalDate.now()
+        Date = LocalDate.now()
 
         age = intent.getIntExtra("age", 0)
         value = intent.getStringExtra("value") ?: ""
@@ -261,7 +265,8 @@ class HealthCheck : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body!!.string()
                 runOnUiThread {
-
+                    
+                    //로딩 바
                     binding.progress.visibility = View.GONE
                     binding.loading.visibility = View.GONE
                     binding.reset.visibility = View.VISIBLE
@@ -279,6 +284,7 @@ class HealthCheck : AppCompatActivity() {
                     val inflater = layoutInflater
                     val customView = inflater.inflate(R.layout.custom_dialog, null)
 
+                    //추천 목록 띄우기
                     customView.findViewById<TextView>(R.id.pre_item1).text = pre_data[0]
                     customView.findViewById<TextView>(R.id.pre_item2).text = pre_data[1]
                     customView.findViewById<TextView>(R.id.pre_item3).text = pre_data[2]
@@ -330,6 +336,8 @@ class HealthCheck : AppCompatActivity() {
                             Toast.makeText(this@HealthCheck, "데이터를 선택해주세요", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(this@HealthCheck, "${predata}|${indata}|${postdata}", Toast.LENGTH_SHORT).show()
+                            //DB에 health_select 이름으로 저장
+                            database_select.child(id!!).push().setValue(UserHealthCheck(id, Date.toString(), predata.toString(), indata.toString(), postdata.toString(), 0))
                             val intent = Intent(this@HealthCheck, HealthView::class.java)
                             intent.putExtra("predata", predata)
                             intent.putExtra("indata", indata)
@@ -349,6 +357,7 @@ class HealthCheck : AppCompatActivity() {
         })
     }
 
+    //필요없어 보이지만 일단 스킵
     private fun controlData() {
         database.addChildEventListener(object: ChildEventListener{
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {

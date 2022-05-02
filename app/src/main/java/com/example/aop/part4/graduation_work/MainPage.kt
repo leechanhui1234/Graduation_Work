@@ -100,9 +100,9 @@ class MainPage : AppCompatActivity() {
                 finish()
             }
             
-            //운동 
+            //운동
             health.setOnClickListener {
-                var intent = Intent(this@MainPage, HealthCheck::class.java)
+                var intent = Intent(this@MainPage, Health::class.java)
                 intent.putExtra("id", id)
                 intent.putExtra("age", age)
                 intent.putExtra("value", value)

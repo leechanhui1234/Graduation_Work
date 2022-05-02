@@ -1,8 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/backbtn"
+        android:src="@drawable/ic_baseline_west_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="운동하기"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/health_recommend"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="운동 추천"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        android:textColor="@color/white"
+        android:backgroundTint="#6490ED"/>
+
+    <Button
+        android:id="@+id/health_start"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="운동 하기"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/health_recommend"
+        android:textColor="@color/white"
+        android:backgroundTint="#6490ED"/>
+
+    <Button
+        android:id="@+id/my_health"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="내 기록 보기"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/health_start"
+        android:textColor="@color/white"
+        android:backgroundTint="#6490ED"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
