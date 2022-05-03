@@ -20,6 +20,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import kotlinx.android.synthetic.main.chat_write.*
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
@@ -39,6 +40,10 @@ class HospitalList: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = HospitalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.recycler.visibility = android.view.View.GONE
+        binding.progress.visibility = android.view.View.VISIBLE
+        binding.loading.visibility = android.view.View.VISIBLE
 
         adapter = HospitalAdapter(onItemClicked = { it ->
             val intent = Intent(this@HospitalList, HospitalInfo::class.java)
@@ -94,6 +99,9 @@ class HospitalList: AppCompatActivity() {
                 checkGPS()
 
                 if(lati != null){
+                    binding.recycler.visibility = android.view.View.VISIBLE
+                    binding.progress.visibility = android.view.View.GONE
+                    binding.loading.visibility = android.view.View.GONE
                     val data = Repository.getListApi(lati!! ,longi!!, "정신병원")
                     adapter.submitList(data)
                     adapter.notifyDataSetChanged()

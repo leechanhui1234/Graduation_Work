@@ -293,14 +293,53 @@
                 app:layout_constraintStart_toStartOf="@id/detail"
                 app:layout_constraintTop_toBottomOf="@id/reviewLayout" />
 
+            <LinearLayout
+                android:id="@+id/totalScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/totalreview"
+                app:layout_constraintTop_toBottomOf="@id/totalreview">
+
+                <TextView
+                    android:id="@+id/avgScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="0.0"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:text="점"
+                    android:textSize="16sp" />
+
+                <RatingBar
+                    android:id="@+id/avgRatingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.1" />
+            </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/totalReviewAdapter"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="@id/reviewLayout"
                 app:layout_constraintStart_toStartOf="@id/reviewLayout"
-                app:layout_constraintTop_toBottomOf="@id/totalreview" />
+                app:layout_constraintTop_toBottomOf="@id/totalScore" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

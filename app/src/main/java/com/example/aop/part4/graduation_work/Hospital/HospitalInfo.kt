@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.hospital_list_adapter.*
+import java.lang.Math.round
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -51,6 +52,7 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
         initAdapter()
         bindView()
         controlDatabase()
+
         val supportMapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         supportMapFragment.getMapAsync(this)
     }
@@ -148,7 +150,18 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
 
         list.add(data!!)
         adapter.setReviewList(list){
-            Log.e("Test", it.toString())
+
+        }
+
+        var sum = 0.0f
+
+        for(i in 0..list.size - 1 step 1){
+            sum = sum + list[i].rating.toFloat()
+        }
+
+        if(list.size != 0){
+            binding.avgScore.setText((round(sum/list.size * 10) / 10.0).toString())
+            binding.avgRatingBar.rating = binding.avgScore.text.toString().toFloat()
         }
         adapter.notifyDataSetChanged()
     }
