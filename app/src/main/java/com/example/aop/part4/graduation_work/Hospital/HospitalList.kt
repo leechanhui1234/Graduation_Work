@@ -71,8 +71,8 @@ class HospitalList: AppCompatActivity() {
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
 
         mLocationRequest = com.google.android.gms.location.LocationRequest().apply {
-            interval = 2000 //업데이트 간격 단위
-            fastestInterval = 1000 //가장 빠른 업뎃 간격 단위
+            interval = 1000 * 60 * 60 //업데이트 간격 단위
+            fastestInterval = 1000 * 60 * 60 //가장 빠른 업뎃 간격 단위
             priority = com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY //정확성
             maxWaitTime = 2000 //최대 대기 시간
         }

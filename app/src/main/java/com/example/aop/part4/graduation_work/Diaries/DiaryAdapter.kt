@@ -35,8 +35,10 @@ class DiaryAdapter(private val items: MutableList<UserDialist>, private val onCl
         fun bind(listner: View.OnClickListener, item:UserDialist) {
             var title = view.findViewById<TextView>(R.id.title)
             var time = view.findViewById<TextView>(R.id.time)
+            var content = view.findViewById<TextView>(R.id.content)
             title.text = item.title
             time.text = item.day
+            content.text = item.diary
 
             view.setOnClickListener(listner)
         }

@@ -28,7 +28,7 @@ class Diary: AppCompatActivity() {
 
         with(binding) {
             val Date = LocalDate.now()
-            Day.text = Date.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일"))
+            Day.text = Date.format(DateTimeFormatter.ofPattern("yyyy. MM. dd(EE)"))
             
             //dialist로 돌아가기
             diarySave.setOnClickListener {

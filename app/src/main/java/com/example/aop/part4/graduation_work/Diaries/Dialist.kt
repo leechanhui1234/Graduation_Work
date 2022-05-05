@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.Rect
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,8 @@ class Dialist : AppCompatActivity() {
     private val list = mutableListOf<UserDialist>()
 
     private var id : String? = null
+
+    var count = 0
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,6 +64,13 @@ class Dialist : AppCompatActivity() {
 
             controlDatabase(id!!)
 
+            if(count == 0){
+                binding.progress.visibility = View.GONE
+                binding.loading.visibility = View.GONE
+                binding.ItemList.visibility = View.VISIBLE
+                binding.Layout2.visibility = View.VISIBLE
+            }
+
             NeWrite.setOnClickListener {
                 //글쓰기
                 val intent = Intent(this@Dialist, Diary::class.java)
@@ -92,6 +102,8 @@ class Dialist : AppCompatActivity() {
                 val getKey = snapshot.key
 
                 val data = UserDialist(getKey!!, getItem!!.title, getItem!!.diary, getItem!!.day)
+
+                count++
 
                 binding.progress.visibility = View.GONE
                 binding.loading.visibility = View.GONE
