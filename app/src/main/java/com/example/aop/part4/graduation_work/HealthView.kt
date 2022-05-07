@@ -9,6 +9,10 @@ import android.widget.Chronometer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.example.aop.part4.graduation_work.data.UserHealthCheck
 import com.example.aop.part4.graduation_work.databinding.HealthViewBinding
 import com.google.firebase.database.ChildEventListener
@@ -16,7 +20,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.health_view.*
 
 class HealthView : AppCompatActivity() {
 
@@ -30,6 +33,8 @@ class HealthView : AppCompatActivity() {
     private var value : String = ""     //성별
     private var age : Int = 0           //나이
     private var id : String = ""        //아이디
+
+    private val Num = 3   //운동을 보여줄 페이지 수
 
     private lateinit var chrono : Chronometer
 
@@ -117,6 +122,8 @@ class HealthView : AppCompatActivity() {
             //운동 보여줄 페이지 구성
             //https://todaycode.tistory.com/27
 
+            controlDatabase(id)
+
         }
     }
 
@@ -150,5 +157,31 @@ class HealthView : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
             }
         })
+    }
+
+    class ScreenView : FragmentActivity() {
+        private val Num = 3
+        private lateinit var viewPager : ViewPager2
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.health_page1)
+
+            viewPager = findViewById(R.id.pager)
+        }
+
+        override fun onBackPressed() {
+            if (viewPager.currentItem == 0) {
+                super.onBackPressed()
+            }
+            else {
+                viewPager.currentItem = viewPager.currentItem - 1
+            }
+        }
+
+        private inner class ViewPagerAdapter(fa : FragmentActivity) : FragmentStateAdapter(fa) {
+            override fun getItemCount() : Int = Num
+            override fun createFragment(position : Int) : Fragment = ViewPagerFragment1()
+        }
     }
 }

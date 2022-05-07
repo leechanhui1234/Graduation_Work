@@ -1,8 +1,10 @@
 package com.example.aop.part4.graduation_work
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import com.example.aop.part4.graduation_work.data.UserHealthCheck
 import com.example.aop.part4.graduation_work.databinding.HealthRecordBinding
 import com.google.firebase.database.ChildEventListener
@@ -15,6 +17,8 @@ class HealthRecord : AppCompatActivity() {
 
     private lateinit var binding: HealthRecordBinding
 
+    private var id : String = ""    //아이디
+
     var database = Firebase.database.reference.child("health_select")
 
     @SuppressLint("ResourceType")
@@ -23,6 +27,19 @@ class HealthRecord : AppCompatActivity() {
 
         binding = HealthRecordBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        id = intent.getStringExtra("id") ?: ""
+
+        val sharedPreferences3 = getSharedPreferences("id", Context.MODE_PRIVATE)
+
+        if (id.isNullOrEmpty()) {
+            id = sharedPreferences3.getString("id", "") ?: ""
+        } else {
+            sharedPreferences3.edit {
+                this.putString("id", id)
+                commit()
+            }
+        }
 
         with(binding) {
 

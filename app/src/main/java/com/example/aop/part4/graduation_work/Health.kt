@@ -13,9 +13,9 @@ class Health : AppCompatActivity() {
 
     private lateinit var binding: HealthBinding
 
+    private var id : String = ""        //아이디
     private var value : String = ""     //성별
     private var age : Int = 0           //나이
-    private var id : String = ""        //아이디
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +24,22 @@ class Health : AppCompatActivity() {
         binding = HealthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        id = intent.getStringExtra("id") ?: ""
         age = intent.getIntExtra("age", 0)
         value = intent.getStringExtra("value") ?: ""
-        id = intent.getStringExtra("id") ?: ""
 
+        val sharedPreferences3 = getSharedPreferences("id", Context.MODE_PRIVATE)
         val sharedPreferences = getSharedPreferences("age", Context.MODE_PRIVATE)
         val sharedPreferences2 = getSharedPreferences("value", Context.MODE_PRIVATE)
-        val sharedPreferences3 = getSharedPreferences("id", Context.MODE_PRIVATE)
+
+        if (id.isNullOrEmpty()) {
+            id = sharedPreferences3.getString("id", "") ?: ""
+        } else {
+            sharedPreferences3.edit {
+                this.putString("id", id)
+                commit()
+            }
+        }
 
         if (age == 0) {
             age = sharedPreferences.getInt("age", 0)
@@ -46,15 +55,6 @@ class Health : AppCompatActivity() {
         } else {
             sharedPreferences2.edit {
                 this.putString("value", value)
-                commit()
-            }
-        }
-
-        if (id.isNullOrEmpty()) {
-            id = sharedPreferences3.getString("id", "") ?: ""
-        } else {
-            sharedPreferences3.edit {
-                this.putString("id", id)
                 commit()
             }
         }
