@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.Rect
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +31,8 @@ class Dialist : AppCompatActivity() {
 
     private var id : String? = null
 
+    var count = 0
+
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +42,6 @@ class Dialist : AppCompatActivity() {
 
         with(binding) {
             backbtn.setOnClickListener {
-                val intent1 = Intent(this@Dialist, MainPage::class.java)
-                startActivity(intent1)
                 finish()
             }
 
@@ -55,14 +56,26 @@ class Dialist : AppCompatActivity() {
                     commit()
                 }
             }
+
+            progress.visibility = View.VISIBLE
+            loading.visibility = View.VISIBLE
+            ItemList.visibility = View.GONE
+            Layout2.visibility = View.GONE
+
             controlDatabase(id!!)
+
+            if(count == 0){
+                binding.progress.visibility = View.GONE
+                binding.loading.visibility = View.GONE
+                binding.ItemList.visibility = View.VISIBLE
+                binding.Layout2.visibility = View.VISIBLE
+            }
 
             NeWrite.setOnClickListener {
                 //글쓰기
                 val intent = Intent(this@Dialist, Diary::class.java)
                 intent.putExtra("id", id)
                 startActivity(intent)
-                finish()
             }
         }
 
@@ -89,6 +102,13 @@ class Dialist : AppCompatActivity() {
                 val getKey = snapshot.key
 
                 val data = UserDialist(getKey!!, getItem!!.title, getItem!!.diary, getItem!!.day)
+
+                count++
+
+                binding.progress.visibility = View.GONE
+                binding.loading.visibility = View.GONE
+                binding.ItemList.visibility = View.VISIBLE
+                binding.Layout2.visibility = View.VISIBLE
 
                 list.add(data)
                 var adapter = DiaryAdapter(list) { data -> adapterOnClick(data) }
@@ -156,11 +176,5 @@ class Dialist : AppCompatActivity() {
             outRect.left = value
             outRect.right = value
         }
-    }
-
-    override fun onBackPressed() {
-        val intent = Intent(this, MainPage::class.java)
-        startActivity(intent)
-        finish()
     }
 }

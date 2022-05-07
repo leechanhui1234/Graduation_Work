@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.edit
@@ -46,6 +47,11 @@ class ChatActivity : AppCompatActivity() {
                 commit()
             }
         }
+
+        binding.progress.visibility = View.VISIBLE
+        binding.loading.visibility = View.VISIBLE
+        binding.chatlist.visibility = View.GONE
+        binding.writebtn.visibility = View.GONE
 
         if (id.isNullOrEmpty()){
             id = sharedPreferences2.getString("id", "") ?: ""
@@ -110,6 +116,11 @@ class ChatActivity : AppCompatActivity() {
         totallist.map{
             list.add(it!!)
         }
+
+        binding.progress.visibility = View.GONE
+        binding.loading.visibility = View.GONE
+        binding.chatlist.visibility = View.VISIBLE
+        binding.writebtn.visibility = View.VISIBLE
 
         adapter.submitList(list)
         adapter.notifyDataSetChanged()

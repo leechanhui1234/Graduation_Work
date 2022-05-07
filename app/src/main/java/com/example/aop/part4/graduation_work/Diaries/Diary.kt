@@ -28,29 +28,24 @@ class Diary: AppCompatActivity() {
 
         with(binding) {
             val Date = LocalDate.now()
-            Day.text = Date.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일"))
+            Day.text = Date.format(DateTimeFormatter.ofPattern("yyyy. MM. dd(EE)"))
             
             //dialist로 돌아가기
-            val intent1 = Intent(this@Diary, Dialist::class.java)
             diarySave.setOnClickListener {
                 var id = intent.getStringExtra("id")
                 database.child(id!!).push().setValue(UserDiary(diaryTitle.text.toString(), diaryText.text.toString(), Day.text.toString()))
                 Toast.makeText(applicationContext, "저장 되었습니다.", Toast.LENGTH_SHORT).show()
                 //저장 후 리스트로 돌아가기
-                startActivity(intent1)
                 finish()
             }
 
             backbtn.setOnClickListener {
-                startActivity(intent1)
                 finish()
             }
         }
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this, Dialist::class.java)
-        startActivity(intent)
         finish()
     }
 }

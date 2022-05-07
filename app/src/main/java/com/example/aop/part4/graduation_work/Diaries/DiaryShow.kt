@@ -56,8 +56,6 @@ class DiaryShow : AppCompatActivity() {
             controlDatabase(id!!)
 
             backbtn.setOnClickListener {
-                val intent1 = Intent(this@DiaryShow, Dialist::class.java)
-                startActivity(intent1)
                 finish()
             }
 
@@ -99,9 +97,9 @@ class DiaryShow : AppCompatActivity() {
         Toast.makeText(this@DiaryShow, "${data.key}",Toast.LENGTH_SHORT).show()
         diarydatabase.child(id!!).child(data.key).removeValue()
         val intent_d = Intent(this@DiaryShow, Dialist::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        intent_d.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent_d.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent_d.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent_d)
         finish()
     }

@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.content.edit
 import com.example.aop.part4.graduation_work.Board.ChatActivity
 import com.example.aop.part4.graduation_work.Diaries.Dialist
+import com.example.aop.part4.graduation_work.Hospital.HospitalList
 import com.example.aop.part4.graduation_work.data.UserData
 
 class MainPage : AppCompatActivity() {
@@ -97,7 +98,6 @@ class MainPage : AppCompatActivity() {
             depressiveCheck.setOnClickListener {
                 val intent = Intent(this@MainPage, DepressiveCheck::class.java)
                 startActivity(intent)
-                finish()
             }
             
             //운동
@@ -111,9 +111,9 @@ class MainPage : AppCompatActivity() {
             
             //병원 찾기
             hospital.setOnClickListener {
-                //val intent = Intent(this@MainPage, Hospital::class.java)
-                //startActivity(intent)
-                //finish()
+                val intent = Intent(this@MainPage, HospitalList::class.java)
+                intent.putExtra("id", id)
+                startActivity(intent)
             }
             
             //게시판
@@ -129,7 +129,6 @@ class MainPage : AppCompatActivity() {
                 val intent = Intent(this@MainPage, Dialist::class.java)
                 intent.putExtra("id", id)
                 startActivity(intent)
-                finish()
             }
 
             //기타 항목
