@@ -53,7 +53,7 @@ class HealthRecord : AppCompatActivity() {
                 val getItem = snapshot.getValue(UserHealthCheck::class.java)
                 val getKey = snapshot.key
 
-                val data = UserHealthCheck(getKey!!, getItem!!.date, getItem!!.pre_select, getItem!!.in_select, getItem!!.post_select, getItem!!.record)
+                //val data = UserHealthCheck(getKey!!, getItem!!.date, getItem!!.pre_select, getItem!!.in_select, getItem!!.post_select, getItem!!.record)
             }
 
             //수정

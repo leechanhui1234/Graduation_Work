@@ -5,24 +5,33 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.widget.Chronometer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.room.Room
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.example.aop.part4.graduation_work.Healths.database.Appdatabase
+import com.example.aop.part4.graduation_work.Healths.database.getDatabase
 import com.example.aop.part4.graduation_work.data.UserHealthCheck
+import com.example.aop.part4.graduation_work.data.UserHealthInfo
 import com.example.aop.part4.graduation_work.databinding.HealthViewBinding
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HealthView : AppCompatActivity() {
-
+    lateinit var db: Appdatabase
     private lateinit var binding: HealthViewBinding
     private val database = Firebase.database.reference.child("Health_select")
 
@@ -36,7 +45,7 @@ class HealthView : AppCompatActivity() {
 
     private val Num = 3   //운동을 보여줄 페이지 수
 
-    private lateinit var chrono : Chronometer
+    //private lateinit var chrono : Chronometer
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +53,7 @@ class HealthView : AppCompatActivity() {
 
         binding = HealthViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        db = getDatabase(this)
         age = intent.getIntExtra("age", 0)
         value = intent.getStringExtra("value") ?: ""
         id = intent.getStringExtra("id") ?: ""
@@ -85,27 +94,44 @@ class HealthView : AppCompatActivity() {
             predata = intent.getStringExtra("predata")
             indata = intent.getStringExtra("indata")
             postdata = intent.getStringExtra("postdata")
+
+            GlobalScope.launch(Dispatchers.IO){
+                var data = db.userHealthDao().getData(id)
+                if(data == null){
+                    db.userHealthDao().insertData(UserHealthInfo(null, id, predata, indata, postdata, 0))
+                } else {
+                    db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, 0))
+                }
+            }
         }
         else {
             //DB에서 가져오기
-            if (true) {
-                //DB 있음
-                Toast.makeText(applicationContext, "가장 최근에 추천된 운동으로 세팅합니다.", Toast.LENGTH_SHORT).show()
 
+            GlobalScope.launch(Dispatchers.IO){
+                var data = db.userHealthDao().getData(id)
+
+                runOnUiThread {
+                    if (data != null) {
+                        //DB 있음
+                        Toast.makeText(applicationContext, "${data.toString()}", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                    else {
+                        //DB 없음
+                        Toast.makeText(applicationContext, "저장된 운동이 없습니다. 추천 시스템으로 넘어갑니다.", Toast.LENGTH_SHORT).show()
+
+                        //운동 추천
+                        var intent = Intent(this@HealthView, HealthCheck::class.java)
+                        intent.putExtra("id", id)
+                        intent.putExtra("age", age)
+                        intent.putExtra("value", value)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
             }
 
-            else {
-                //DB 없음
-                Toast.makeText(applicationContext, "저장된 운동이 없습니다. 추천 시스템으로 넘어갑니다.", Toast.LENGTH_SHORT).show()
-
-                //운동 추천
-                var intent = Intent(this@HealthView, HealthCheck::class.java)
-                intent.putExtra("id", id)
-                intent.putExtra("age", age)
-                intent.putExtra("value", value)
-                startActivity(intent)
-                finish()
-            }
         }
 
         with(binding) {
@@ -116,18 +142,18 @@ class HealthView : AppCompatActivity() {
             //이후로 운동에 필요한 기능들 구현 필요.
 
             //총 운동시간 측정용
-            chrono.base = SystemClock.elapsedRealtime()
-            chrono.start()      //측정 시작
+            //chrono.base = SystemClock.elapsedRealtime()
+            //chrono.start()      //측정 시작
             
             //운동 보여줄 페이지 구성
             //https://todaycode.tistory.com/27
 
-            controlDatabase(id)
+            //controlDatabase(id)
 
         }
     }
 
-    private fun controlDatabase(id : String) {
+    /*private fun controlDatabase(id : String) {
         database?.child(id!!).addChildEventListener(object: ChildEventListener {
             //DB 가져오기
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
@@ -157,7 +183,7 @@ class HealthView : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
             }
         })
-    }
+    }*/
 
     class ScreenView : FragmentActivity() {
         private val Num = 3

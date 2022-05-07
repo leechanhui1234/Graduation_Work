@@ -23,9 +23,7 @@
         android:usesCleartextTraffic="true">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBGyYjwM_O2jtKOEU6aZvHTw137vPRBO1c">
-
-        </meta-data>
+            android:value="AIzaSyBGyYjwM_O2jtKOEU6aZvHTw137vPRBO1c" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

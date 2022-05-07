@@ -345,11 +345,12 @@ class HealthCheck : AppCompatActivity() {
                         } else {
                             Toast.makeText(this@HealthCheck, "${predata}|${indata}|${postdata}", Toast.LENGTH_SHORT).show()
                             //DB에 health_select 이름으로 저장
-                            database_select.child(id!!).push().setValue(UserHealthCheck(id, Date.toString(), predata.toString(), indata.toString(), postdata.toString(), 0))
+                            //database_select.child(id!!).push().setValue(UserHealthCheck(id, Date.toString(), predata.toString(), indata.toString(), postdata.toString(), 0))
                             val intent = Intent(this@HealthCheck, HealthView::class.java)
                             intent.putExtra("predata", predata)
                             intent.putExtra("indata", indata)
                             intent.putExtra("postdata", postdata)
+                            intent.putExtra("id", id)
                             startActivity(intent)
                             finish()
                         }
