@@ -14,6 +14,7 @@ import com.example.aop.part4.graduation_work.Hospital.Adapter.HospitalInfoAdapte
 import com.example.aop.part4.graduation_work.R
 import com.example.aop.part4.graduation_work.data.Documents
 import com.example.aop.part4.graduation_work.data.LocationLatLngEntity
+import com.example.aop.part4.graduation_work.data.Rating
 import com.example.aop.part4.graduation_work.data.totalReviewModel
 import com.example.aop.part4.graduation_work.databinding.HospitalInfoBinding
 import com.google.android.gms.maps.*
@@ -32,7 +33,7 @@ import java.time.format.DateTimeFormatter
 class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: HospitalInfoBinding
     private lateinit var mgoogleMap: GoogleMap
-    private lateinit var data: Documents
+    private lateinit var d: Documents
     private lateinit var adapter: HospitalInfoAdapter
     private var id: String ?= null
     private val database = Firebase.database.reference.child("hospital")
@@ -46,7 +47,7 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
         binding.backbtn.setOnClickListener {
             finish()
         }
-        data = intent.getParcelableExtra<Documents>("data")!!
+        d = intent.getParcelableExtra<Documents>("data")!!
         id = intent.getStringExtra("id")
         adapter = HospitalInfoAdapter()
         initAdapter()
@@ -60,11 +61,11 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun bindView(){
         with(binding){
-            addr.setText(data.address_name)
-            roadAddr.setText(data.road_address_name)
-            location.setText("(${data.y}, ${data.x})")
-            phone.setText(data.phone)
-            title.setText(data.place_name)
+            addr.setText(d.address_name)
+            roadAddr.setText(d.road_address_name)
+            location.setText("(${d.y}, ${d.x})")
+            phone.setText(d.phone)
+            title.setText(d.place_name)
             ratingBar.setOnRatingBarChangeListener { ratingBar1, rating, fromUser ->
                 ratingBar.rating = rating
                 score.setText(rating.toInt().toString())
@@ -91,24 +92,27 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
             else{
                 val now = LocalDate.now()
                 var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy.MM.dd"))
-                val saveData = totalReviewModel(id = id!!, rating = text, review = review.text.toString(), date = Strnow)
-                database.child(data.id).push().setValue(saveData)
+                val saveData = totalReviewModel(id = id!!, rating = text, review = review.text.toString(), date = Strnow, info = d.id)
+                database.child(d.id).push().setValue(saveData)
                 AlertDialog.Builder(this@HospitalInfo)
                     .setTitle("후기 등록 완료")
                     .setMessage("후기 등록이 완료되었습니다.")
                     .setPositiveButton("확인"){ _, _ ->
                     }.show()
+                binding.ratingBar.rating = 0.0f
+                binding.score.setText("0")
+                binding.review.setText("")
             }
         }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mgoogleMap = googleMap
-        val location = LocationLatLngEntity(data.x.toFloat(), data.y.toFloat())
+        val location = LocationLatLngEntity(d.x.toFloat(), d.y.toFloat())
         val markerOption = MarkerOptions().apply{
             position(LatLng(location.longitude.toDouble(), location.latitude.toDouble()))
-            title(data.place_name)
-            snippet(data.address_name)
+            title(d.place_name)
+            snippet(d.address_name)
         }
 
         googleMap.addMarker(markerOption)
@@ -121,7 +125,7 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun controlDatabase() {
-        database?.child(data!!.id).addChildEventListener(object: ChildEventListener {
+        database?.child(d!!.id).addChildEventListener(object: ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val item = snapshot.getValue(totalReviewModel::class.java)
                 item ?: return
@@ -145,7 +149,7 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
 
     private fun addChild(snapshot: DataSnapshot, ReviewItem: totalReviewModel) {
         val data = snapshot.key?.let { key ->
-            totalReviewModel(id = ReviewItem.id, rating = ReviewItem.rating, review = ReviewItem.review, date = ReviewItem.date)
+            totalReviewModel(id = ReviewItem.id, rating = ReviewItem.rating, review = ReviewItem.review, date = ReviewItem.date, info = d.id)
         }
 
         list.add(data!!)

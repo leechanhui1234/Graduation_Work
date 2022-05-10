@@ -80,6 +80,11 @@ class HospitalList: AppCompatActivity() {
         searchKeyword()
     }
 
+    override fun onStart() {
+        super.onStart()
+        adapter.notifyDataSetChanged()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         scope.cancel()

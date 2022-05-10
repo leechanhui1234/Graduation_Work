@@ -7,5 +7,6 @@ data class totalReviewModel(
     val id: String = "",
     val rating: String = "",
     val review: String = "",
-    val date: String = ""
+    val date: String = "",
+    val info: String = ""
 )
