@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.room.Room
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.example.aop.part4.graduation_work.Healths.HealthAdapter
 import com.example.aop.part4.graduation_work.Healths.database.Appdatabase
 import com.example.aop.part4.graduation_work.Healths.database.getDatabase
 import com.example.aop.part4.graduation_work.data.UserHealthCheck
@@ -42,6 +43,8 @@ class HealthView : AppCompatActivity() {
     private var value : String = ""     //성별
     private var age : Int = 0           //나이
     private var id : String = ""        //아이디
+    var list = emptyList<String>()
+    private lateinit var viewPager: ViewPager2
 
     private val Num = 3   //운동을 보여줄 페이지 수
 
@@ -57,6 +60,7 @@ class HealthView : AppCompatActivity() {
         age = intent.getIntExtra("age", 0)
         value = intent.getStringExtra("value") ?: ""
         id = intent.getStringExtra("id") ?: ""
+        viewPager = binding.healthView
 
         val sharedPreferences = getSharedPreferences("age", Context.MODE_PRIVATE)
         val sharedPreferences2 = getSharedPreferences("value", Context.MODE_PRIVATE)
@@ -112,9 +116,13 @@ class HealthView : AppCompatActivity() {
 
                 runOnUiThread {
                     if (data != null) {
+                        list = emptyList()
                         //DB 있음
                         Toast.makeText(applicationContext, "${data.toString()}", Toast.LENGTH_SHORT).show()
-
+                        list = list + data.pre_select!!
+                        list = list + data.in_select!!
+                        list = list + data.post_select!!
+                        displayData()
                     }
 
                     else {
@@ -153,6 +161,11 @@ class HealthView : AppCompatActivity() {
         }
     }
 
+    private fun displayData() {
+        var adapter = HealthAdapter(list)
+        viewPager.adapter = adapter
+    }
+
     /*private fun controlDatabase(id : String) {
         database?.child(id!!).addChildEventListener(object: ChildEventListener {
             //DB 가져오기
@@ -185,7 +198,7 @@ class HealthView : AppCompatActivity() {
         })
     }*/
 
-    class ScreenView : FragmentActivity() {
+    /*class ScreenView : FragmentActivity() {
         private val Num = 3
         private lateinit var viewPager : ViewPager2
 
@@ -209,5 +222,5 @@ class HealthView : AppCompatActivity() {
             override fun getItemCount() : Int = Num
             override fun createFragment(position : Int) : Fragment = ViewPagerFragment1()
         }
-    }
+    }*/
 }

@@ -2,19 +2,15 @@ package com.example.aop.part4.graduation_work.Hospital
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.aop.part4.graduation_work.Board.model.ChatAdapterListModel
-import com.example.aop.part4.graduation_work.Board.model.ChatListModel
 import com.example.aop.part4.graduation_work.Hospital.Adapter.HospitalInfoAdapter
 import com.example.aop.part4.graduation_work.R
 import com.example.aop.part4.graduation_work.data.Documents
 import com.example.aop.part4.graduation_work.data.LocationLatLngEntity
-import com.example.aop.part4.graduation_work.data.Rating
 import com.example.aop.part4.graduation_work.data.totalReviewModel
 import com.example.aop.part4.graduation_work.databinding.HospitalInfoBinding
 import com.google.android.gms.maps.*
@@ -25,7 +21,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.hospital_list_adapter.*
 import java.lang.Math.round
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -169,16 +164,6 @@ class HospitalInfo: AppCompatActivity(), OnMapReadyCallback {
         }
         adapter.notifyDataSetChanged()
     }
-
-    /*private fun removeChild(snapshot: DataSnapshot, chatItem: ChatListModel) {
-        val data = snapshot.key?.let { key ->
-            ChatAdapterListModel(chatItem.userId, chatItem.text, chatItem.time, key)
-        }
-
-        list.remove(data)
-        adapter.submitList(list)
-        adapter.notifyDataSetChanged()
-    }*/
 
     companion object{
         const val CAMERA_ZOOM_LEVEL = 17f

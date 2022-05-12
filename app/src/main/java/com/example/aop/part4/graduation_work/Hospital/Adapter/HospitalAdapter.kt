@@ -61,27 +61,6 @@ class HospitalAdapter(private val onItemClicked: (Documents) -> Unit): ListAdapt
 
             })
 
-                /*private fun addChild(snapshot: DataSnapshot, ReviewItem: totalReviewModel) {
-                    val data = snapshot.key?.let { key ->
-                        totalReviewModel(id = ReviewItem.id, rating = ReviewItem.rating, review = ReviewItem.review, date = ReviewItem.date)
-                    }
-
-                    list.add(data!!)
-
-                    var sum = 0.0f
-
-                    for(i in 0..list.size - 1 step 1){
-                        sum = sum + list[i].rating.toFloat()
-                        Log.e("Main", "${model.place_name} ${list[i].rating} ${snapshot.key}")
-                    }
-
-                    if(list.size != 0){
-                        binding.avgRatingBar.rating = ((Math.round(sum / list.size * 10) / 10.0).toFloat())
-                    }
-                }
-
-            })*/
-
             binding.title.text = model.place_name
             binding.phone.text = model.phone
             binding.address.text = model.address_name

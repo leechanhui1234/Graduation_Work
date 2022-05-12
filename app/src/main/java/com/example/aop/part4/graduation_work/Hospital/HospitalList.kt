@@ -104,12 +104,12 @@ class HospitalList: AppCompatActivity() {
                 checkGPS()
 
                 if(lati != null){
-                    binding.recycler.visibility = android.view.View.VISIBLE
-                    binding.progress.visibility = android.view.View.GONE
-                    binding.loading.visibility = android.view.View.GONE
                     val data = Repository.getListApi(lati!! ,longi!!, "정신병원")
                     adapter.submitList(data)
                     adapter.notifyDataSetChanged()
+                    binding.recycler.visibility = android.view.View.VISIBLE
+                    binding.progress.visibility = android.view.View.GONE
+                    binding.loading.visibility = android.view.View.GONE
                 }   
             }
         }
