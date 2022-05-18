@@ -43,6 +43,17 @@
             android:layout_gravity="center_horizontal"
             tools:text="부산 부산진구 가야동 136-74"
             android:layout_marginTop="5dp"/>
+
+        <RatingBar
+            android:id="@+id/avgRatingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:layout_marginTop="5dp"
+            android:stepSize="0.1" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -279,10 +279,17 @@ class HealthCheck : AppCompatActivity() {
                     var pre_data: List<String>
                     var in_data: List<String>
                     var post_data: List<String>
+                    var preurl: List<String>
+                    var inurl: List<String>
+                    var posturl: List<String>
+
                     try{
                         pre_data = d[0].split(",")
                         in_data = d[1].split(",")
                         post_data = d[2].split(",")
+                        preurl = d[3].split(",")
+                        inurl = d[4].split(",")
+                        posturl = d[5].split(",")
                     }catch(e: Exception){
                         Toast.makeText(this@HealthCheck, "추천 데이터가 없습니다.", Toast.LENGTH_SHORT).show()
                         return@runOnUiThread

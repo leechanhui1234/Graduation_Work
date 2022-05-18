@@ -4,17 +4,27 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.SystemClock
+import android.util.Log
+import android.widget.Chronometer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.room.Room
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.example.aop.part4.graduation_work.Healths.HealthAdapter
 import com.example.aop.part4.graduation_work.Healths.database.Appdatabase
 import com.example.aop.part4.graduation_work.Healths.database.getDatabase
+import com.example.aop.part4.graduation_work.data.UserHealthCheck
 import com.example.aop.part4.graduation_work.data.UserHealthInfo
 import com.example.aop.part4.graduation_work.databinding.HealthViewBinding
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +44,8 @@ class HealthView : AppCompatActivity() {
     private var value : String = ""     //성별
     private var age : Int = 0           //나이
     private var id : String = ""        //아이디
+    var list = emptyList<String>()
+    private lateinit var viewPager: ViewPager2
 
     lateinit var Date : LocalDate   //현재 날짜
 
@@ -47,12 +59,13 @@ class HealthView : AppCompatActivity() {
 
         binding = HealthViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         db = getDatabase(this)
 
         age = intent.getIntExtra("age", 0)
         value = intent.getStringExtra("value") ?: ""
         id = intent.getStringExtra("id") ?: ""
+        viewPager = binding.healthView
 
         Date = LocalDate.now()
 
@@ -112,9 +125,13 @@ class HealthView : AppCompatActivity() {
 
                 runOnUiThread {
                     if (data != null) {
+                        list = emptyList()
                         //DB 있음
                         Toast.makeText(applicationContext, "${data.toString()}", Toast.LENGTH_SHORT).show()
-
+                        list = list + data.pre_select!!
+                        list = list + data.in_select!!
+                        list = list + data.post_select!!
+                        displayData()
                     }
 
                     else {
@@ -153,6 +170,44 @@ class HealthView : AppCompatActivity() {
         }
     }
 
+    private fun displayData() {
+        var adapter = HealthAdapter(list)
+        viewPager.adapter = adapter
+    }
+
+    /*private fun controlDatabase(id : String) {
+        database?.child(id!!).addChildEventListener(object: ChildEventListener {
+            //DB 가져오기
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+                val getItem = snapshot.getValue(UserHealthCheck::class.java)
+                val getKey = snapshot.key
+
+                val data = UserHealthCheck(getKey!!, getItem!!.date, getItem!!.pre_select, getItem!!.in_select, getItem!!.post_select)
+
+                if (data != null) {
+                    /*pre_health.setText(data.pre_select)
+                    in_health.setText(data.in_select)
+                    post_health.setText(data.post_select)*/
+                }
+            }
+
+            //수정
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            //삭제
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+    }*/
+
+    /*class ScreenView : FragmentActivity() {
     class ScreenView : FragmentActivity() {
         private val Num = 3
         private lateinit var viewPager : ViewPager2
@@ -177,5 +232,5 @@ class HealthView : AppCompatActivity() {
             override fun getItemCount() : Int = Num
             override fun createFragment(position : Int) : Fragment = ViewPagerFragment1()
         }
-    }
+    }*/
 }
