@@ -357,7 +357,7 @@ class HealthCheck : AppCompatActivity() {
                     }
 
                     noButton.setOnClickListener {
-                        Alertdialog.dismiss()
+                        Alertdialog!!.dismiss()
                     }
 
                 }

@@ -11,5 +11,6 @@ data class UserHealthInfo(
     @ColumnInfo(name = "pre_select") val pre_select: String?,
     @ColumnInfo(name = "in_select") val in_select: String?,
     @ColumnInfo(name = "post_select") val post_select: String?,
+    @ColumnInfo(name = "date") val date: String?,
     @ColumnInfo(name = "record") val record: Int?
 )

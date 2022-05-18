@@ -4,31 +4,23 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock
-import android.util.Log
-import android.widget.Chronometer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.room.Room
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aop.part4.graduation_work.Healths.database.Appdatabase
 import com.example.aop.part4.graduation_work.Healths.database.getDatabase
-import com.example.aop.part4.graduation_work.data.UserHealthCheck
 import com.example.aop.part4.graduation_work.data.UserHealthInfo
 import com.example.aop.part4.graduation_work.databinding.HealthViewBinding
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 class HealthView : AppCompatActivity() {
     lateinit var db: Appdatabase
@@ -43,6 +35,8 @@ class HealthView : AppCompatActivity() {
     private var age : Int = 0           //나이
     private var id : String = ""        //아이디
 
+    lateinit var Date : LocalDate   //현재 날짜
+
     private val Num = 3   //운동을 보여줄 페이지 수
 
     //private lateinit var chrono : Chronometer
@@ -53,15 +47,20 @@ class HealthView : AppCompatActivity() {
 
         binding = HealthViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
         db = getDatabase(this)
+
         age = intent.getIntExtra("age", 0)
         value = intent.getStringExtra("value") ?: ""
         id = intent.getStringExtra("id") ?: ""
+
+        Date = LocalDate.now()
 
         val sharedPreferences = getSharedPreferences("age", Context.MODE_PRIVATE)
         val sharedPreferences2 = getSharedPreferences("value", Context.MODE_PRIVATE)
         val sharedPreferences3 = getSharedPreferences("id", Context.MODE_PRIVATE)
 
+        //sharedPreferences 나이, 성별, 아이디 저장
         if (age == 0) {
             age = sharedPreferences.getInt("age", 0)
         } else {
@@ -89,25 +88,26 @@ class HealthView : AppCompatActivity() {
             }
         }
 
+        //추천된 운동 보여주기
         if (intent.getStringExtra("predata") != null) {
             //운동 추천에서 넘어왔을 경우
             predata = intent.getStringExtra("predata")
             indata = intent.getStringExtra("indata")
             postdata = intent.getStringExtra("postdata")
 
-            GlobalScope.launch(Dispatchers.IO){
+            GlobalScope.launch(Dispatchers.IO) {
                 var data = db.userHealthDao().getData(id)
-                if(data == null){
-                    db.userHealthDao().insertData(UserHealthInfo(null, id, predata, indata, postdata, 0))
+                if (data == null) {
+                    db.userHealthDao().insertData(UserHealthInfo(null, id, predata, indata, postdata, Date.toString(), 0))
                 } else {
-                    db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, 0))
+                    db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, Date.toString(),0))
                 }
             }
         }
+        //운동 보여주기로 바로 들어왔을 경우(추천된 운동 없음.)
         else {
             //DB에서 가져오기
-
-            GlobalScope.launch(Dispatchers.IO){
+            GlobalScope.launch(Dispatchers.IO) {
                 var data = db.userHealthDao().getData(id)
 
                 runOnUiThread {
@@ -152,38 +152,6 @@ class HealthView : AppCompatActivity() {
 
         }
     }
-
-    /*private fun controlDatabase(id : String) {
-        database?.child(id!!).addChildEventListener(object: ChildEventListener {
-            //DB 가져오기
-            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                val getItem = snapshot.getValue(UserHealthCheck::class.java)
-                val getKey = snapshot.key
-
-                val data = UserHealthCheck(getKey!!, getItem!!.date, getItem!!.pre_select, getItem!!.in_select, getItem!!.post_select)
-
-                if (data != null) {
-                    /*pre_health.setText(data.pre_select)
-                    in_health.setText(data.in_select)
-                    post_health.setText(data.post_select)*/
-                }
-            }
-
-            //수정
-            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-            }
-
-            //삭제
-            override fun onChildRemoved(snapshot: DataSnapshot) {
-            }
-
-            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
-    }*/
 
     class ScreenView : FragmentActivity() {
         private val Num = 3
