@@ -52,6 +52,7 @@
             android:parentActivityName=".Board.ChatActivity"/>
         <activity android:name=".Hospital.HospitalList"/>
         <activity android:name=".Hospital.HospitalInfo"/>
+        <activity android:name=".More.MorePage" />
     </application>
 
 </manifest>

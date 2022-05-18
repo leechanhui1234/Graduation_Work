@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/backbtn"
+        android:src="@drawable/ic_baseline_west_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="정보"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view2"
+        app:layout_constraintBottom_toBottomOf="@id/view2"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개발자 정보" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용자 정보" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/frame">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
