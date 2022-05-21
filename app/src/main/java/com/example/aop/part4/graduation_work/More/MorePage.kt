@@ -1,11 +1,14 @@
 package com.example.aop.part4.graduation_work.More
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import com.example.aop.part4.graduation_work.More.Fragment.FragmentDeveloper
 import com.example.aop.part4.graduation_work.More.Fragment.FragmentUser
 import com.example.aop.part4.graduation_work.R
+import com.example.aop.part4.graduation_work.data.UserData
 import com.google.android.material.tabs.TabLayout
 
 class MorePage: AppCompatActivity() {
@@ -14,6 +17,55 @@ class MorePage: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.more_main)
+
+        var data = intent.getParcelableExtra<UserData>("data")
+
+        val sharedPreferences = getSharedPreferences("name", Context.MODE_PRIVATE)
+        val sharedPreferences2 = getSharedPreferences("id", Context.MODE_PRIVATE)
+        val sharedPreferences3 = getSharedPreferences("pw", Context.MODE_PRIVATE)
+        val sharedPreferences4 = getSharedPreferences("email", Context.MODE_PRIVATE)
+
+        var name = data?.userName
+        var id = data?.userId
+        var pw = data?.userPw
+        var email = data?.userEmail
+
+        if(name.isNullOrEmpty()) {
+            name = sharedPreferences.getString("name", "") ?: ""
+        } else {
+            sharedPreferences.edit {
+                this.putString("name", name)
+                commit()
+            }
+        }
+
+        if(id.isNullOrEmpty()) {
+            id = sharedPreferences2.getString("id", "") ?: ""
+        } else {
+            sharedPreferences2.edit {
+                this.putString("id", id)
+                commit()
+            }
+        }
+
+        if(pw.isNullOrEmpty()) {
+            pw = sharedPreferences3.getString("pw", "") ?: ""
+        } else {
+            sharedPreferences3.edit {
+                this.putString("pw", pw)
+                commit()
+            }
+        }
+
+        if(email.isNullOrEmpty()) {
+            email = sharedPreferences4.getString("email", "") ?: ""
+        } else {
+            sharedPreferences4.edit {
+                this.putString("email", email)
+                commit()
+            }
+        }
+
         fragment0 = FragmentDeveloper()
         fragment1 = FragmentUser()
 
@@ -33,7 +85,10 @@ class MorePage: AppCompatActivity() {
                 }
 
                 var bundle = Bundle()
-                bundle.putString("test", "test")
+                bundle.putString("id", id)
+                bundle.putString("name", name)
+                bundle.putString("pw", pw)
+                bundle.putString("email", email)
                 selected!!.arguments = bundle
 
                 supportFragmentManager.beginTransaction().replace(R.id.frame, selected!!).commit()

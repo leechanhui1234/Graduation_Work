@@ -44,7 +44,7 @@ class MainPage : AppCompatActivity() {
                     }
                     .create().show()
             }
-
+            var data = intent.getParcelableExtra<UserData>("User")
             var name = intent.getParcelableExtra<UserData>("User")?.userName
             var id = intent.getParcelableExtra<UserData>("User")?.userId
             var value = intent.getParcelableExtra<UserData>("User")?.userValue
@@ -135,6 +135,7 @@ class MainPage : AppCompatActivity() {
             //기타 항목
             more.setOnClickListener {
                 val intent = Intent(this@MainPage, MorePage::class.java)
+                intent.putExtra("data", data)
                 startActivity(intent)
             }
 

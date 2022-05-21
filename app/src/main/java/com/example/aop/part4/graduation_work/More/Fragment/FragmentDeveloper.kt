@@ -1,11 +1,13 @@
 package com.example.aop.part4.graduation_work.More.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import com.example.aop.part4.graduation_work.R
 
@@ -25,8 +27,14 @@ class FragmentDeveloper : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_developer, container, false)
-        val test = arguments?.getString("test") ?: "null"
-        Log.e("Main", test!!.toString())
+        val query = view.findViewById<Button>(R.id.query)
+        query.setOnClickListener {
+            val email = Intent(Intent.ACTION_SEND)
+            email.setType("plain/text")
+            val address = arrayOf("1724535@donga.ac.kr")
+            email.putExtra(Intent.EXTRA_EMAIL, address)
+            startActivity(email)
+        }
         return view
     }
 }

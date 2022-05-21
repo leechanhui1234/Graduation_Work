@@ -53,6 +53,8 @@
         <activity android:name=".Hospital.HospitalList"/>
         <activity android:name=".Hospital.HospitalInfo"/>
         <activity android:name=".More.MorePage" />
+        <activity android:name=".More.ChangeEmail" />
+        <activity android:name=".More.ChangePw" />
     </application>
 
 </manifest>

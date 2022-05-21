@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import com.android.volley.Response
 import com.android.volley.toolbox.Volley
 import com.example.aop.part4.graduation_work.Request.LoginRequest
@@ -113,5 +114,10 @@ class LoginActivity : AppCompatActivity() {
             ID.setText(sharePreferences.getString(getString(R.string.prompt_ID), ""))
             PW.setText(sharePreferences.getString(getString(R.string.prompt_PW), ""))
         }
+    }
+
+    override fun onBackPressed() {
+        ActivityCompat.finishAffinity(this)
+        super.onBackPressed()
     }
 }
