@@ -1,6 +1,7 @@
 package com.example.aop.part4.graduation_work.More.Fragment
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -119,15 +120,17 @@ class FragmentUser : Fragment() {
         }
 
         logout.setOnClickListener {
-            var intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
-            if(activity != null){
-                activity?.finish()
-            }
+            AlertDialog.Builder(activity)
+                .setMessage("정말로 로그아웃하시겠습니까?")
+                .setPositiveButton("확인"){ dialog, view ->
+                    var intent = Intent(activity, LoginActivity::class.java)
+                    startActivity(intent)
+                }.setNegativeButton("취소"){ _, _ ->
+                }.create()
+                .show()
         }
 
         return view
     }
-
 
 }

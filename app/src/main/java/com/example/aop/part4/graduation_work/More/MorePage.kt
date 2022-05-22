@@ -103,4 +103,9 @@ class MorePage: AppCompatActivity() {
 
         })
     }
+
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
+    }
 }
