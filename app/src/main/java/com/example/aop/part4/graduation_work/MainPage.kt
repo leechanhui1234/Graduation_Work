@@ -12,6 +12,7 @@ import androidx.core.content.edit
 import com.example.aop.part4.graduation_work.Board.ChatActivity
 import com.example.aop.part4.graduation_work.Diaries.Dialist
 import com.example.aop.part4.graduation_work.Hospital.HospitalList
+import com.example.aop.part4.graduation_work.More.MorePage
 import com.example.aop.part4.graduation_work.data.UserData
 
 class MainPage : AppCompatActivity() {
@@ -43,7 +44,7 @@ class MainPage : AppCompatActivity() {
                     }
                     .create().show()
             }
-
+            var data = intent.getParcelableExtra<UserData>("User")
             var name = intent.getParcelableExtra<UserData>("User")?.userName
             var id = intent.getParcelableExtra<UserData>("User")?.userId
             var value = intent.getParcelableExtra<UserData>("User")?.userValue
@@ -133,9 +134,9 @@ class MainPage : AppCompatActivity() {
 
             //기타 항목
             more.setOnClickListener {
-                //val intent = Intent(this@MainPage, More::class.java)
-                //startActivity(intent)
-                //finish()
+                val intent = Intent(this@MainPage, MorePage::class.java)
+                intent.putExtra("data", data)
+                startActivity(intent)
             }
 
             //베너 1
