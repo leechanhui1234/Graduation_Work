@@ -67,6 +67,7 @@
         <activity android:name=".More.MorePage" />
         <activity android:name=".More.ChangeEmail" />
         <activity android:name=".More.ChangePw" />
+        <activity android:name=".More.DeleteUser" />
     </application>
 
 </manifest>

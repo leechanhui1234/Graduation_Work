@@ -21,6 +21,7 @@ import com.example.aop.part4.graduation_work.Board.model.ChatModel
 import com.example.aop.part4.graduation_work.LoginActivity
 import com.example.aop.part4.graduation_work.More.ChangeEmail
 import com.example.aop.part4.graduation_work.More.ChangePw
+import com.example.aop.part4.graduation_work.More.DeleteUser
 import com.example.aop.part4.graduation_work.R
 import com.example.aop.part4.graduation_work.data.ImageModel
 import com.google.firebase.database.ChildEventListener
@@ -104,6 +105,7 @@ class FragmentUser : Fragment() {
         val changePw = view.findViewById<TextView>(R.id.changePw)
         val changeEmail = view.findViewById<TextView>(R.id.changeEmail)
         val logout = view.findViewById<TextView>(R.id.logout)
+        val Delete = view.findViewById<TextView>(R.id.Delete)
 
         changePw.setOnClickListener {
             var intent = Intent(activity, ChangePw::class.java)
@@ -124,6 +126,19 @@ class FragmentUser : Fragment() {
                 .setMessage("정말로 로그아웃하시겠습니까?")
                 .setPositiveButton("확인"){ dialog, view ->
                     var intent = Intent(activity, LoginActivity::class.java)
+                    startActivity(intent)
+                }.setNegativeButton("취소"){ _, _ ->
+                }.create()
+                .show()
+        }
+
+        Delete.setOnClickListener {
+            AlertDialog.Builder(activity)
+                .setMessage("정말로 회원탈퇴를 하시겠습니까?")
+                .setPositiveButton("확인"){ dialog, view ->
+                    var intent = Intent(activity, DeleteUser::class.java)
+                    intent.putExtra("id", id)
+                    intent.putExtra("pw", pw)
                     startActivity(intent)
                 }.setNegativeButton("취소"){ _, _ ->
                 }.create()
