@@ -26,7 +26,7 @@ class HealthAdapter(private val text: List<String>): RecyclerView.Adapter<Health
         private val str: TextView = itemView.findViewById<TextView>(R.id.health_text)
 
         fun bind(str: String){
-            this.str.setText(str)
+            this.str.text = str
         }
     }
 }

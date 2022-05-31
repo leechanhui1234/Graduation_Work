@@ -3,28 +3,22 @@ package com.example.aop.part4.graduation_work
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.SystemClock
-import android.util.Log
 import android.widget.Chronometer
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.room.Room
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aop.part4.graduation_work.Healths.HealthAdapter
 import com.example.aop.part4.graduation_work.Healths.database.Appdatabase
 import com.example.aop.part4.graduation_work.Healths.database.getDatabase
-import com.example.aop.part4.graduation_work.data.UserHealthCheck
 import com.example.aop.part4.graduation_work.data.UserHealthInfo
 import com.example.aop.part4.graduation_work.databinding.HealthViewBinding
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
@@ -49,10 +43,10 @@ class HealthView : AppCompatActivity() {
 
     lateinit var Date : LocalDate   //현재 날짜
 
-    private val Num = 3   //운동을 보여줄 페이지 수
+    private lateinit var chrono : Chronometer
+    var CountDown : CountDownTimer? = null
 
-    //private lateinit var chrono : Chronometer
-
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -127,7 +121,7 @@ class HealthView : AppCompatActivity() {
                     if (data != null) {
                         list = emptyList()
                         //DB 있음
-                        Toast.makeText(applicationContext, "${data.toString()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "$data", Toast.LENGTH_SHORT).show()
                         list = list + data.pre_select!!
                         list = list + data.in_select!!
                         list = list + data.post_select!!
@@ -152,20 +146,78 @@ class HealthView : AppCompatActivity() {
         }
 
         with(binding) {
-            /*pre_health.setText(predata)
-            in_health.setText(indata)
-            post_health.setText(postdata)*/
-
-            //이후로 운동에 필요한 기능들 구현 필요.
 
             //총 운동시간 측정용
-            //chrono.base = SystemClock.elapsedRealtime()
-            //chrono.start()      //측정 시작
+            chrono = chronometer
+            var pauseTimeCounter = 0L
+            var pauseTime = 0L
             
-            //운동 보여줄 페이지 구성
-            //https://todaycode.tistory.com/27
+            //운동 시작
+            starting.setOnClickListener {
 
-            //controlDatabase(id)
+                CountDown = object : CountDownTimer( (10 - pauseTimeCounter) * 1000, 1000) {
+                    @SuppressLint("SetTextI18n")
+                    override fun onTick(millisUntilFinished: Long) {
+                        val second = millisUntilFinished / 1000
+                        val minute = second / 60
+                        val seconds = second % 60
+                        timer.text = "$minute : $seconds"
+                        pauseTimeCounter++
+                    }
+
+                    override fun onFinish() {
+                        var dialog = AlertDialog.Builder(this@HealthView)
+                        dialog.setTitle("운동 종료!")
+                        dialog.setMessage("5분 휴식 후 다음 운동으로 넘어가세요!")
+                        dialog.setPositiveButton("확인", null)
+
+                        pauseTimeCounter = 0
+                        pauseTime = chrono.base - SystemClock.elapsedRealtime()
+                        chrono.stop()
+
+                        dialog.show()
+                    }
+                }.start()
+
+                chrono.base = SystemClock.elapsedRealtime() + pauseTime + 1
+                chrono.start()      //측정 시작
+
+            }
+
+            pausing.setOnClickListener {
+                CountDown?.cancel()
+                pauseTime = chrono.base - SystemClock.elapsedRealtime()
+                chrono.stop()
+            }
+
+            //운동 종료
+            ending.setOnClickListener {
+                var dialog = AlertDialog.Builder(this@HealthView)
+                dialog.setTitle("운동 종료")
+                dialog.setMessage("운동을 종료하시겠습니까?")
+
+                dialog.setPositiveButton("확인") { dialog, which ->
+                    var dialog1 = AlertDialog.Builder(this@HealthView)
+                    dialog1.setMessage("운동이 종료되었습니다.")
+                    dialog1.setPositiveButton("확인", null)
+
+                    CountDown?.cancel()
+                    CountDown = null
+                    pauseTimeCounter = 0
+
+                    chrono.stop()
+                    pauseTime = 0L
+
+                    dialog1.show()
+                }
+
+                dialog.setNegativeButton("취소") { dialog, which ->
+                    var dialog1 = AlertDialog.Builder(this@HealthView)
+                    dialog1.setMessage("취소되었습니다.")
+                }
+
+                dialog.show()
+            }
 
         }
     }
@@ -174,63 +226,4 @@ class HealthView : AppCompatActivity() {
         var adapter = HealthAdapter(list)
         viewPager.adapter = adapter
     }
-
-    /*private fun controlDatabase(id : String) {
-        database?.child(id!!).addChildEventListener(object: ChildEventListener {
-            //DB 가져오기
-            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                val getItem = snapshot.getValue(UserHealthCheck::class.java)
-                val getKey = snapshot.key
-
-                val data = UserHealthCheck(getKey!!, getItem!!.date, getItem!!.pre_select, getItem!!.in_select, getItem!!.post_select)
-
-                if (data != null) {
-                    /*pre_health.setText(data.pre_select)
-                    in_health.setText(data.in_select)
-                    post_health.setText(data.post_select)*/
-                }
-            }
-
-            //수정
-            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-            }
-
-            //삭제
-            override fun onChildRemoved(snapshot: DataSnapshot) {
-            }
-
-            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
-    }*/
-
-    /*class ScreenView : FragmentActivity() {
-    class ScreenView : FragmentActivity() {
-        private val Num = 3
-        private lateinit var viewPager : ViewPager2
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.health_page1)
-
-            viewPager = findViewById(R.id.pager)
-        }
-
-        override fun onBackPressed() {
-            if (viewPager.currentItem == 0) {
-                super.onBackPressed()
-            }
-            else {
-                viewPager.currentItem = viewPager.currentItem - 1
-            }
-        }
-
-        private inner class ViewPagerAdapter(fa : FragmentActivity) : FragmentStateAdapter(fa) {
-            override fun getItemCount() : Int = Num
-            override fun createFragment(position : Int) : Fragment = ViewPagerFragment1()
-        }
-    }*/
 }
