@@ -5,6 +5,7 @@ object Url {
     const val loginUrl = "http://yepp0517.ivyro.net/LoginMode.php"
     const val pwchangeUrl = "http://yepp0517.ivyro.net/PwChange.php"
     const val emailchangeUrl = "http://yepp0517.ivyro.net/EmailChange.php"
+    const val deleteUrl = "http://yepp0517.ivyro.net/Delete.php"
     const val recommendUrl = "https://dongaserver.herokuapp.com"
     const val kakaoUrl = "https://dapi.kakao.com/"
 }
