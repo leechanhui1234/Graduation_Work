@@ -16,6 +16,9 @@ import com.example.aop.part4.graduation_work.databinding.ActivityLoginBinding
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
+
+
+
     private lateinit var sharePreferences: SharedPreferences
     private lateinit var editor : SharedPreferences.Editor
 
@@ -23,6 +26,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)

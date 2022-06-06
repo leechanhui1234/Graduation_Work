@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_check.xml" value="0.2379204892966361" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis.xml" value="0.33" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis_1.xml" value="0.33" />
@@ -17,6 +18,11 @@
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dep_result.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_check.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dialist.xml" value="0.290625" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health.xml" value="0.25226449275362317" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_adapter.xml" value="0.1" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_check.xml" value="0.25226449275362317" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_page1.xml" value="0.25226449275362317" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/main_page.xml" value="0.290625" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/new_account.xml" value="0.1413373860182371" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/old_dep_check.xml" value="0.192481884057971" />

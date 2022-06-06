@@ -117,6 +117,7 @@ class HealthView : AppCompatActivity() {
                 } else {
                     db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, preurl, inurl, posturl, Date.toString(),0))
                 }
+
             }
         }
         //운동 보여주기로 바로 들어왔을 경우(추천된 운동 없음.)
