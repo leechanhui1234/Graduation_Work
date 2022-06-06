@@ -9,13 +9,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.aop.part4.graduation_work.Healths.dao.HealthDao
 import com.example.aop.part4.graduation_work.data.UserHealthInfo
 
-@Database(entities = [UserHealthInfo::class], version = 2)
+@Database(entities = [UserHealthInfo::class], version = 3)
 abstract class Appdatabase: RoomDatabase() {
     abstract fun userHealthDao(): HealthDao
 }
 
 fun getDatabase(context: Context): Appdatabase{
-    val MIGRATION_1_2 = object : Migration(1, 2){
+    val MIGRATION_1_2 = object : Migration(2, 3){
         override fun migrate(database: SupportSQLiteDatabase) {
             database.execSQL(
                 "CREATE TABLE health_new(" +
@@ -24,6 +24,10 @@ fun getDatabase(context: Context): Appdatabase{
                         "pre_select Text, " +
                         "in_select Text, " +
                         "post_select Text, " +
+                        "pre_url Text, " +
+                        "in_url Text, " +
+                        "post_url Text, " +
+                        "date Text, " +
                         "record INTEGER, " +
                         "PRIMARY KEY(uid))"
             )

@@ -328,35 +328,67 @@ class HealthCheck : AppCompatActivity() {
                         var predata: String? = null
                         var indata: String? = null
                         var postdata: String? = null
+                        var pre_url: String? = null
+                        var in_url: String? = null
+                        var post_url: String? = null
 
                         when(group1.checkedRadioButtonId) {
-                            R.id.pre_item1 -> predata = customView.findViewById<TextView>(R.id.pre_item1).text.toString()
-                            R.id.pre_item2 -> predata = customView.findViewById<TextView>(R.id.pre_item2).text.toString()
-                            R.id.pre_item3 -> predata = customView.findViewById<TextView>(R.id.pre_item3).text.toString()
+                            R.id.pre_item1 -> {
+                                predata = customView.findViewById<TextView>(R.id.pre_item1).text.toString()
+                                pre_url = preurl[0]
+                            }
+                            R.id.pre_item2 -> {
+                                predata = customView.findViewById<TextView>(R.id.pre_item2).text.toString()
+                                pre_url = preurl[1]
+                            }
+                            R.id.pre_item3 -> {
+                                predata = customView.findViewById<TextView>(R.id.pre_item3).text.toString()
+                                pre_url = preurl[2]
+                            }
                         }
 
                         when(group2.checkedRadioButtonId) {
-                            R.id.in_item1 -> indata = customView.findViewById<TextView>(R.id.in_item1).text.toString()
-                            R.id.in_item2 -> indata = customView.findViewById<TextView>(R.id.in_item2).text.toString()
-                            R.id.in_item3 -> indata = customView.findViewById<TextView>(R.id.in_item3).text.toString()
+                            R.id.in_item1 -> {
+                                indata = customView.findViewById<TextView>(R.id.in_item1).text.toString()
+                                in_url = inurl[0]
+                            }
+                            R.id.in_item2 -> {
+                                indata = customView.findViewById<TextView>(R.id.in_item2).text.toString()
+                                in_url = inurl[1]
+                            }
+                            R.id.in_item3 -> {
+                                indata = customView.findViewById<TextView>(R.id.in_item3).text.toString()
+                                in_url = inurl[2]
+                            }
                         }
 
                         when(group3.checkedRadioButtonId) {
-                            R.id.post_item1 -> postdata = customView.findViewById<TextView>(R.id.post_item1).text.toString()
-                            R.id.post_item2 -> postdata = customView.findViewById<TextView>(R.id.post_item2).text.toString()
-                            R.id.post_item3 -> postdata = customView.findViewById<TextView>(R.id.post_item3).text.toString()
+                            R.id.post_item1 -> {
+                                postdata = customView.findViewById<TextView>(R.id.post_item1).text.toString()
+                                post_url = posturl[0]
+                            }
+                            R.id.post_item2 -> {
+                                postdata = customView.findViewById<TextView>(R.id.post_item2).text.toString()
+                                post_url = posturl[1]
+                            }
+                            R.id.post_item3 -> {
+                                postdata = customView.findViewById<TextView>(R.id.post_item3).text.toString()
+                                post_url = posturl[2]
+                            }
                         }
 
                         if (predata.isNullOrEmpty() || indata.isNullOrEmpty() || postdata.isNullOrEmpty()) {
                             Toast.makeText(this@HealthCheck, "데이터를 선택해주세요", Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(this@HealthCheck, "${predata}|${indata}|${postdata}", Toast.LENGTH_SHORT).show()
                             //DB에 health_select 이름으로 저장
                             //database_select.child(id!!).push().setValue(UserHealthCheck(id, Date.toString(), predata.toString(), indata.toString(), postdata.toString(), 0))
                             val intent = Intent(this@HealthCheck, HealthView::class.java)
                             intent.putExtra("predata", predata)
                             intent.putExtra("indata", indata)
                             intent.putExtra("postdata", postdata)
+                            intent.putExtra("preurl", pre_url)
+                            intent.putExtra("inurl", in_url)
+                            intent.putExtra("posturl", post_url)
                             intent.putExtra("id", id)
                             startActivity(intent)
                             finish()

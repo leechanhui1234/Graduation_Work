@@ -35,10 +35,15 @@ class HealthView : AppCompatActivity() {
     private var indata : String? = ""
     private var postdata : String? = ""
 
+    private var preurl: String? = ""
+    private var inurl: String? = ""
+    private var posturl: String? = ""
+
     private var value : String = ""     //성별
     private var age : Int = 0           //나이
     private var id : String = ""        //아이디
     var list = emptyList<String>()
+    var urllist = emptyList<String>()
     private lateinit var viewPager: ViewPager2
 
     lateinit var Date : LocalDate   //현재 날짜
@@ -101,13 +106,16 @@ class HealthView : AppCompatActivity() {
             predata = intent.getStringExtra("predata")
             indata = intent.getStringExtra("indata")
             postdata = intent.getStringExtra("postdata")
+            preurl = intent.getStringExtra("preurl")
+            inurl = intent.getStringExtra("inurl")
+            posturl = intent.getStringExtra("posturl")
 
             GlobalScope.launch(Dispatchers.IO) {
                 var data = db.userHealthDao().getData(id)
                 if (data == null) {
-                    db.userHealthDao().insertData(UserHealthInfo(null, id, predata, indata, postdata, Date.toString(), 0))
+                    db.userHealthDao().insertData(UserHealthInfo(null, id, predata, indata, postdata, preurl, inurl, posturl, Date.toString(), 0))
                 } else {
-                    db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, Date.toString(),0))
+                    db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, preurl, inurl, posturl, Date.toString(),0))
                 }
             }
         }
@@ -120,11 +128,15 @@ class HealthView : AppCompatActivity() {
                 runOnUiThread {
                     if (data != null) {
                         list = emptyList()
+                        urllist = emptyList()
                         //DB 있음
-                        Toast.makeText(applicationContext, "$data", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "${data.in_url} ${data.post_url}", Toast.LENGTH_SHORT).show()
                         list = list + data.pre_select!!
                         list = list + data.in_select!!
                         list = list + data.post_select!!
+                        urllist = urllist + data.pre_url!!
+                        urllist = urllist + data.in_url!!
+                        urllist = urllist + data.post_url!!
                         displayData()
                     }
 
@@ -223,7 +235,7 @@ class HealthView : AppCompatActivity() {
     }
 
     private fun displayData() {
-        var adapter = HealthAdapter(list)
+        var adapter = HealthAdapter(list, urllist)
         viewPager.adapter = adapter
     }
 }

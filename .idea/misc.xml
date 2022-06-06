@@ -68,7 +68,9 @@
         <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/fragment_user.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/health_adapter.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/health_check.xml" value="0.1453125" />
-        <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/health_view.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/health_page1.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/health_record.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/health_view.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/hospital_info.xml" value="0.10677083333333333" />
         <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/hospital_info_adapter.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work8/app/src/main/res/layout/hospital_list_adapter.xml" value="0.17916666666666667" />
@@ -96,12 +98,10 @@
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/diary_show.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/find_id.xml" value="0.1" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health.xml" value="0.25181159420289856" />
-        <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_adapter.xml" value="0.359375" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_check.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_record.xml" value="0.359375" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_view_pager.xml" value="0.15" />
-        <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/hospital_info_adapter.xml" value="0.359375" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/new_account.xml" value="0.1" />
       </map>
     </option>
