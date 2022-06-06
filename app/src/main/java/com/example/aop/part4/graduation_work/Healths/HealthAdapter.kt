@@ -1,5 +1,6 @@
 package com.example.aop.part4.graduation_work.Healths
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ class HealthAdapter(private val text: List<String>, private val url: List<String
 
     override fun onBindViewHolder(holder: HealthAdapter.ItemViewHolder, position: Int) {
         holder.bind(text[position], url[position])
+        Log.e("HealthAdapter", url[position])
     }
 
     override fun getItemCount(): Int {
@@ -25,7 +27,7 @@ class HealthAdapter(private val text: List<String>, private val url: List<String
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val str: TextView = itemView.findViewById<TextView>(R.id.health_text)
 
-        fun bind(str: String, url: String){
+        fun bind(str: String, url: String?){
             this.str.text = str
         }
     }

@@ -134,9 +134,9 @@ class HealthView : AppCompatActivity() {
                         list = list + data.pre_select!!
                         list = list + data.in_select!!
                         list = list + data.post_select!!
-                        urllist = urllist + data.pre_url!!
-                        urllist = urllist + data.in_url!!
-                        urllist = urllist + data.post_url!!
+                        urllist = urllist + data.pre_url!!.split("v=")[1]
+                        urllist = urllist + data.in_url!!.split("v=")[1]
+                        urllist = urllist + data.post_url!!.split("v=")[1]
                         displayData()
                     }
 
