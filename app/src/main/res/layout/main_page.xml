@@ -12,9 +12,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <ImageView
@@ -133,44 +132,6 @@
             </TableRow>
 
         </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/Banner1"
-                android:layout_width="350dp"
-                android:layout_height="90dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="15dp"
-                android:text="배너 1"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED"/>
-
-            <Button
-                android:id="@+id/Banner2"
-                android:layout_width="350dp"
-                android:layout_height="90dp"
-                android:layout_gravity="center"
-                android:text="배너 2"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED"/>
-
-            <Button
-                android:id="@+id/Banner3"
-                android:layout_width="350dp"
-                android:layout_height="90dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:text="배너 3"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED"/>
-
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

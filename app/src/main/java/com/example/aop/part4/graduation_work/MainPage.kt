@@ -138,30 +138,6 @@ class MainPage : AppCompatActivity() {
                 intent.putExtra("data", data)
                 startActivity(intent)
             }
-
-            //베너 1
-            Banner1.setOnClickListener {
-                //
-                //val intent = Intent(this@MainPage, Other::class.java)
-                //startActivity(intent)
-                //finish()
-            }
-
-            //베너2
-            Banner2.setOnClickListener {
-                //개인정보
-                //val intent = Intent(this@MainPage, PersonalInfo::class.java)
-                //startActivity(intent)
-                //finish()
-            }
-
-            //베너3
-            Banner3.setOnClickListener {
-                //문의하기
-                //val intent = Intent(this@MainPage, DeveloperInfo::class.java)
-                //startActivity(intent)
-                //finish()
-            }
         }
     }
 }
