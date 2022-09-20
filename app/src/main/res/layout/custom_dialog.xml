@@ -23,6 +23,7 @@
             android:id="@+id/pre_item1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="normal"
             android:text="항목1" />
 
         <RadioButton

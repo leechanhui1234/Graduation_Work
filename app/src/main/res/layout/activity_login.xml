@@ -11,21 +11,17 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
+
         android:background="#FAFAFA">
 
-       <!--<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube_player_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
-            app:videoId="KCRsjB6N51U"
-            app:autoPlay="true" />-->
 
         <EditText
             android:id="@+id/ID"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font_custom"
             android:hint="아이디를 입력하세요" />
 
         <EditText
@@ -35,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:inputType="textPassword"
+            android:fontFamily="@font/font_custom"
             android:hint="비밀번호를 입력하세요" />
 
         <LinearLayout
@@ -42,19 +39,23 @@
              android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <CheckBox
                 android:id="@+id/AutoLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
-                android:text="자동 로그인" />
+                android:fontFamily="@font/font_custom"
+                android:text="자동 로그인"
+                />
 
             <Button
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font_custom"
                 android:text="로그인"
                 android:textColor="@color/white"
                 android:backgroundTint="#6490ED"/>
@@ -72,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
+                android:fontFamily="@font/font_custom"
                 android:text="회원가입"
                 android:textColor="@color/white"
                 android:backgroundTint="#6490ED" />
