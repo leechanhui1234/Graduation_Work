@@ -3,46 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Graduation_Work/app/src/main/res/font/font.xml" value="0.2911458333333333" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/font/font_custom.xml" value="0.3020833333333333" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/font/title_medium.xml" value="0.13055555555555556" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/activity_login.xml" value="0.40370370370370373" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_check.xml" value="0.2379204892966361" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis.xml" value="0.33" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis_1.xml" value="0.33" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_depression_diagnosis_2.xml" value="0.33" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/ces_d_result.xml" value="0.33" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat.xml" value="0.5" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_adapter.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_list.xml" value="0.192481884057971" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_list_adapter.xml" value="0.27447916666666666" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_update.xml" value="0.290625" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_write.xml" value="0.290625" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/custom_dialog.xml" value="0.26145833333333335" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/delete_user.xml" value="0.3307291666666667" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dep_check.xml" value="0.22" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dep_result.xml" value="0.192481884057971" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_check.xml" value="0.33" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_result.xml" value="0.1" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_check.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dialist.xml" value="0.290625" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/diary_update.xml" value="0.3307291666666667" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/email_change.xml" value="0.3307291666666667" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/font_test.xml" value="0.33" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/fragment_developer.xml" value="0.26145833333333335" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health.xml" value="0.25226449275362317" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_adapter.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_check.xml" value="0.25226449275362317" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_page1.xml" value="0.25226449275362317" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_record.xml" value="0.2391304347826087" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.25" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/hospital_info.xml" value="0.2391304347826087" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/hospital_info_adapter.xml" value="0.2391304347826087" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/hospital_list.xml" value="0.2391304347826087" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/hospital_list_adapter.xml" value="0.2391304347826087" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/intro.xml" value="0.25226449275362317" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/main_page.xml" value="0.290625" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/more_main.xml" value="0.25226449275362317" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/new_account.xml" value="0.25" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/new_account.xml" value="0.1413373860182371" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/old_dep_check.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/old_dep_result.xml" value="0.6990131578947368" />
         <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -127,8 +109,24 @@
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/health_view_pager.xml" value="0.15" />
         <entry key="..\:/Users/wnsdu/AndroidStudioProjects/Graduation_Work/app/src/main/res/layout/new_account.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.20244565217391305" />
-        <entry key="app/src/main/res/layout/main_page.xml" value="0.20244565217391305" />
+        <entry key="app/src/main/res/drawable/border.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/border_bottom.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/border_round.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/drawable_hospital.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/drawable_rect.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/drawable_rectangle.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/drawable_review.xml" value="0.1285" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/delete_user.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/depressive_check.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/depressive_result.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/health.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/health_adapter.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/hospital_info.xml" value="0.15416666666666667" />
+        <entry key="app/src/main/res/layout/hospital_list.xml" value="0.15416666666666667" />
+        <entry key="app/src/main/res/layout/main_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/new_account.xml" value="0.15416666666666667" />
       </map>
     </option>
   </component>
@@ -137,12 +135,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.33" />
-      </ProjectState>
-    </option>
   </component>
 </project>

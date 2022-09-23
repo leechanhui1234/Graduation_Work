@@ -14,6 +14,7 @@ import com.example.aop.part4.graduation_work.Diaries.Dialist
 import com.example.aop.part4.graduation_work.Hospital.HospitalList
 import com.example.aop.part4.graduation_work.More.MorePage
 import com.example.aop.part4.graduation_work.data.UserData
+import kotlinx.android.synthetic.main.custom_health.view.*
 
 class MainPage : AppCompatActivity() {
 
@@ -32,18 +33,6 @@ class MainPage : AppCompatActivity() {
 
         with(binding) {
 
-            logo.setOnClickListener {
-                var builder = AlertDialog.Builder(this@MainPage)
-                builder.setTitle("개발자 정보")
-                    .setMessage("동아대학교 컴퓨터공학과\n" +
-                            "1724014 박준영\n" +
-                            "1724535 이찬희\n" +
-                            "1627374 이상혁\n")
-                    .setPositiveButton("OK") { dialog, i ->
-                        null
-                    }
-                    .create().show()
-            }
             var data = intent.getParcelableExtra<UserData>("User")
             var name = intent.getParcelableExtra<UserData>("User")?.userName
             var id = intent.getParcelableExtra<UserData>("User")?.userId
@@ -87,6 +76,13 @@ class MainPage : AppCompatActivity() {
             }
             Name.text = "$name" + "님, 반갑습니다."
 
+            depressiveCheck.clipToOutline = true
+            health.clipToOutline = true
+            hospital.clipToOutline = true
+            board.clipToOutline = true
+            diary.clipToOutline = true
+            more.clipToOutline = true
+
             //로그아웃
             Logout.setOnClickListener {
                 Toast.makeText(applicationContext, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
@@ -103,11 +99,29 @@ class MainPage : AppCompatActivity() {
             
             //운동
             health.setOnClickListener {
-                var intent = Intent(this@MainPage, Health::class.java)
-                intent.putExtra("id", id)
-                intent.putExtra("age", age)
-                intent.putExtra("value", value)
-                startActivity(intent)
+                val dialog = AlertDialog.Builder(this@MainPage)
+                val inflater = layoutInflater
+                val customView = inflater.inflate(R.layout.custom_health, null)
+
+                dialog.setView(customView)
+
+                customView.health_recommend.setOnClickListener {
+                    var intent = Intent(this@MainPage, HealthCheck::class.java)
+                    intent.putExtra("id", id)
+                    intent.putExtra("age", age)
+                    intent.putExtra("value", value)
+                    startActivity(intent)
+                }
+
+                customView.health_start.setOnClickListener {
+                    var intent = Intent(this@MainPage, HealthView::class.java)
+                    intent.putExtra("id", id)
+                    intent.putExtra("age", age)
+                    intent.putExtra("value", value)
+                    startActivity(intent)
+                }
+
+                dialog.show()
             }
             
             //병원 찾기
