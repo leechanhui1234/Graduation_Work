@@ -118,6 +118,7 @@
         <entry key="app/src/main/res/drawable/drawable_review.xml" value="0.1285" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/custom_health.xml" value="0.1" />
         <entry key="app/src/main/res/layout/delete_user.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/depressive_check.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/depressive_result.xml" value="0.20364583333333333" />

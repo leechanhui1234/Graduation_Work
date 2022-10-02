@@ -35,19 +35,18 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBGyYjwM_O2jtKOEU6aZvHTw137vPRBO1c" />
-        <activity android:name=".IntroActivity"
+        <activity android:name=".IntroActivity" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".NewAccount" />
+        <activity android:name=".MainPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".NewAccount" />
-        <activity android:name=".MainPage" />
         <activity android:name=".DepressiveCheck" />
         <activity android:name=".DepressionResult"/>
-        <activity android:name=".Health"/>
         <activity android:name=".HealthCheck"/>
         <activity android:name=".HealthView"/>
         <activity android:name=".HealthRecord"/>
