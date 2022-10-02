@@ -63,6 +63,7 @@ class LoginActivity : AppCompatActivity() {
 
             val id = binding.ID.text.toString()
             val pw = binding.PW.text.toString()
+
             checkUser(id, pw)
         }
 
@@ -78,6 +79,7 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val jsonObject = JSONObject(response)
                 val success = jsonObject.getBoolean("success")
+
                 if (success) {
                     val userId = jsonObject.getString("userId")
                     val userPw = jsonObject.getString("userPw")
@@ -92,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
                     //메인 페이지로 화면 전환
                     val intent = Intent(this@LoginActivity, MainPage::class.java)
                     intent.putExtra("User", data)
+                    intent.putExtra("loginCheck", true)
                     startActivity(intent)
 
                 } else {

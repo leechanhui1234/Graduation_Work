@@ -19,18 +19,49 @@
         android:clickable="true"
         android:contentDescription="@string/app_name" />
 
-    <TextView
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintStart_toEndOf="@id/logo"
         app:layout_constraintEnd_toStartOf="@id/Logout"
         app:layout_constraintTop_toTopOf="@id/logo"
         app:layout_constraintBottom_toBottomOf="@id/logo"
-        android:id="@+id/Name"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textSize="15dp"
-        android:text=""/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text=""
+                tools:text="leechanhui"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:id="@+id/Name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="님" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="반갑습니다."/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/Logout"
