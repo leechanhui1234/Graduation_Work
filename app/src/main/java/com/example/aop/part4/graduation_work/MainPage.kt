@@ -112,10 +112,24 @@ class MainPage : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else {
-                    Toast.makeText(applicationContext, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@MainPage, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    var dialog = AlertDialog.Builder(this@MainPage)
+                    dialog.setMessage("로그아웃 하시겠습니까?")
+                        .setPositiveButton("예", { _, _ ->
+                            Toast.makeText(this@MainPage, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+                            var dm = resources.getDisplayMetrics()
+                            var size = Math.round(20 * dm.density)
+                            Name.text = ""
+                            Name2.text = ""
+                            Name3.text = "로그인이 필요합니다."
+                            Logout.text = "로그인"
+                            var param = LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT)
+                            param.bottomMargin = size
+                            Name3.setLayoutParams(param)
+                            id = ""
+                        }).setNegativeButton("아니오", { _, _ -> })
+                        .show()
                 }
             }
 
