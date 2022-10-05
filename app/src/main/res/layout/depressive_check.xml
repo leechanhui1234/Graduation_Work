@@ -69,7 +69,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border"
                 android:gravity="center"
                 android:text="지난 일주일간 느꼈던 감정을 체크해주세요!"
                 android:textSize="33dp" />
@@ -78,15 +77,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="1. 평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다."
+                android:text="① 평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q1"
@@ -129,15 +127,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border_bottom"
                 android:gravity="left"
-                android:text="2. 먹고 싶지 않고, 식욕이 없었다."
+                android:text="② 먹고 싶지 않고, 식욕이 없었다."
                 android:textSize="25sp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q2"
@@ -180,15 +177,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="3. 어느 누가 도와준다 하더라도, 나의 울적한 기분을 떨쳐버릴수 없을 것 같았다."
+                android:text="③ 어느 누가 도와준다 하더라도, 나의 울적한 기분을 떨쳐버릴수 없을 것 같았다."
                 android:textSize="25sp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_bottom">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q3"
@@ -231,15 +227,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="4. 무슨 일을 하든 정신을 집중하기가 힘들었다."
+                android:text="④ 무슨 일을 하든 정신을 집중하기가 힘들었다."
                 android:textSize="25sp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q4"
@@ -282,15 +277,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="5. 비교적 잘 지냈다."
+                android:text="⑤ 비교적 잘 지냈다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q5"
@@ -333,15 +327,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="6. 상당히 우울했다."
+                android:text="⑥ 상당히 우울했다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q6"
@@ -384,15 +377,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="7. 모든 일들이 힘들게 느껴졌다."
+                android:text="⑦ 모든 일들이 힘들게 느껴졌다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q7"
@@ -435,15 +427,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="8. 앞일이 암담하게 느껴졌다."
+                android:text="⑧ 앞일이 암담하게 느껴졌다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q8"
@@ -486,15 +477,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="9. 지금까지의 내 인생은 실패작이라는 생각이 들었다."
+                android:text="⑨ 지금까지의 내 인생은 실패작이라는 생각이 들었다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q9"
@@ -537,15 +527,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="10. 적더도 보통사람들만큼의 능력은 있었다고 생각한다."
+                android:text="⑩ 적더도 보통사람들만큼의 능력은 있었다고 생각한다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q10"
@@ -588,15 +577,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="11. 잠을 설쳤다(잠을 잘 이루지 못했다)."
+                android:text="⑪ 잠을 설쳤다(잠을 잘 이루지 못했다)."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q11"
@@ -639,15 +627,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="12. 두려움을 느꼈다."
+                android:text="⑫ 두려움을 느꼈다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q12"
@@ -690,15 +677,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="13. 평소에 비해 말수가 적었다."
+                android:text="⑬ 평소에 비해 말수가 적었다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q13"
@@ -741,15 +727,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="14. 세상에 홀로 있는 듯한 외로움을 느꼈다."
+                android:text="⑭ 세상에 홀로 있는 듯한 외로움을 느꼈다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q14"
@@ -792,15 +777,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="15. 큰 불만없이 생활했다."
+                android:text="⑮ 큰 불만없이 생활했다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q15"
@@ -843,15 +827,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="16. 사람들이 나에게 차갑게 대하는 것 같았다."
+                android:text="⑯ 사람들이 나에게 차갑게 대하는 것 같았다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q16"
@@ -894,15 +877,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="17. 갑자기 울음이 나왔다."
+                android:text="⑰ 갑자기 울음이 나왔다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q17"
@@ -945,15 +927,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="18. 마음이 슬펐다."
+                android:text="⑱ 마음이 슬펐다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+               >
 
                 <RadioGroup
                     android:id="@+id/Q18"
@@ -996,15 +977,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="19. 사람들이 나를 싫어하는 것 같았다."
+                android:text="⑲ 사람들이 나를 싫어하는 것 같았다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q19"
@@ -1047,16 +1027,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:gravity="left"
-                android:text="20. 도무지 뭘 해 나갈 엄두가 나지 않았다."
+                android:text="⑳ 도무지 뭘 해 나갈 엄두가 나지 않았다."
                 android:textSize="25dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:background="@drawable/border">
+                >
 
                 <RadioGroup
                     android:id="@+id/Q20"

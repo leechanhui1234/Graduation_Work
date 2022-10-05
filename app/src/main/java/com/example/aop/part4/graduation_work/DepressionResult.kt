@@ -2,6 +2,7 @@ package com.example.aop.part4.graduation_work
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
@@ -37,16 +38,19 @@ class DepressionResult : AppCompatActivity(){
                 depressionText3.visibility = android.view.View.VISIBLE
             }
             backbtn.setOnClickListener {
+                //Toast.makeText(applicationContext,score.toString(),Toast.LENGTH_SHORT).show()
                 finish()
             }
 
             resultcheck.setOnClickListener {
                 val intent1 = Intent(this@DepressionResult, MainPage::class.java)
-                intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+               intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                 intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent1)
                 finish()
+                //Toast.makeText(applicationContext,"토스트메세지",Toast.LENGTH_SHORT).show()
+
             }
         }
     }

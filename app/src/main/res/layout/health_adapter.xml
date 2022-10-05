@@ -30,13 +30,6 @@
          />
 
 
-    <TextView
-        android:id="@+id/url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="여기에 동영상 삽입"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/health_text" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

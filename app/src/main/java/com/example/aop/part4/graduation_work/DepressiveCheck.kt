@@ -3,8 +3,10 @@ package com.example.aop.part4.graduation_work
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aop.part4.graduation_work.databinding.DepressiveCheckBinding
+import kotlinx.android.synthetic.main.depressive_result.view.*
 
 class DepressiveCheck : AppCompatActivity() {
 
@@ -206,9 +208,32 @@ class DepressiveCheck : AppCompatActivity() {
                 }
 
                 else {
+
                     val intent = Intent(this@DepressiveCheck, DepressionResult::class.java)
                     intent.putExtra("score", value)
+                    Toast.makeText(applicationContext,value.toString(),Toast.LENGTH_SHORT).show()
+
+                   // val dialog = AlertDialog.Builder(this@DepressiveCheck)
+                    //val inflater = layoutInflater
+                   // val customView = inflater.inflate(R.layout.depressive_result, null)
+                   // dialog.setView(customView)
+
+                   // dialog.show()
+                    value=0
+                    //customView.backbtn.setOnClickListener {
+                      //  Toast.makeText(applicationContext,value.toString(),Toast.LENGTH_SHORT).show()
+                        //finish()
+                    //}
+                    //customView.resultcheck.setOnClickListener {
+                                   // val intent1 = Intent(this@DepressiveCheck, MainPage::class.java)
+                                   // intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                   // intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                                  //  intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                   // finish()
+                   // }
                     startActivity(intent)
+
+
                 }
             }
             backbtn.setOnClickListener {
