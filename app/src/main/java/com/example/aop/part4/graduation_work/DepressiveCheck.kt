@@ -209,29 +209,42 @@ class DepressiveCheck : AppCompatActivity() {
 
                 else {
 
-                    val intent = Intent(this@DepressiveCheck, DepressionResult::class.java)
+                    /*val intent = Intent(this@DepressiveCheck, DepressionResult::class.java)
                     intent.putExtra("score", value)
-                    Toast.makeText(applicationContext,value.toString(),Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,value.toString(),Toast.LENGTH_SHORT).show()*/
 
-                   // val dialog = AlertDialog.Builder(this@DepressiveCheck)
-                    //val inflater = layoutInflater
-                   // val customView = inflater.inflate(R.layout.depressive_result, null)
-                   // dialog.setView(customView)
+                   val dialog = AlertDialog.Builder(this@DepressiveCheck)
+                   val inflater = layoutInflater
+                   val customView = inflater.inflate(R.layout.depressive_result, null)
+                   dialog.setView(customView)
+                    customView.result.text = value.toString()
+                    if(value in 0..20) {
+                        customView.depression_1.visibility = android.view.View.VISIBLE
+                        customView.depression_text_1.visibility = android.view.View.VISIBLE
+                    }
+                    if(value in 21..24) {
+                        customView.depression_2.visibility = android.view.View.VISIBLE
+                        customView.depression_text_2.visibility = android.view.View.VISIBLE
+                    }
+                    if(value in 25..60) {
+                        customView.depression_3.visibility = android.view.View.VISIBLE
+                        customView.depression_text_3.visibility = android.view.View.VISIBLE
+                    }
 
-                   // dialog.show()
+                   dialog.show()
                     value=0
                     //customView.backbtn.setOnClickListener {
                       //  Toast.makeText(applicationContext,value.toString(),Toast.LENGTH_SHORT).show()
                         //finish()
                     //}
-                    //customView.resultcheck.setOnClickListener {
-                                   // val intent1 = Intent(this@DepressiveCheck, MainPage::class.java)
-                                   // intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                   // intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                                  //  intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                                   // finish()
-                   // }
-                    startActivity(intent)
+                    customView.resultcheck.setOnClickListener {
+                        val intent1 = Intent(this@DepressiveCheck, MainPage::class.java)
+                        intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        finish()
+                   }
+                    //startActivity(intent)
 
 
                 }
