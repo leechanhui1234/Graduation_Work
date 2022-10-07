@@ -6,41 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/logo"
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA"
         android:gravity="center"
         android:orientation="vertical"
-
-        android:background="#FAFAFA">
-
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        android:layout_marginTop="60dp">
 
 
         <EditText
             android:id="@+id/ID"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:fontFamily="@font/font_custom"
             android:hint="아이디를 입력하세요" />
 
         <EditText
             android:id="@+id/PW"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
-            android:inputType="textPassword"
             android:fontFamily="@font/font_custom"
-            android:hint="비밀번호를 입력하세요" />
+            android:hint="비밀번호를 입력하세요"
+            android:inputType="textPassword" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/AutoLogin"
@@ -48,17 +58,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
                 android:fontFamily="@font/font_custom"
-                android:text="자동 로그인"
-                />
+                android:text="자동 로그인" />
 
             <Button
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#6490ED"
                 android:fontFamily="@font/font_custom"
                 android:text="로그인"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED"/>
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,10 +82,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
+                android:backgroundTint="#6490ED"
                 android:fontFamily="@font/font_custom"
                 android:text="회원가입"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED" />
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 

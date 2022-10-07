@@ -1,15 +1,22 @@
 package com.example.aop.part4.graduation_work.More
 
 import android.content.Context
+import android.content.Intent
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import com.example.aop.part4.graduation_work.MainPage
 import com.example.aop.part4.graduation_work.More.Fragment.FragmentDeveloper
 import com.example.aop.part4.graduation_work.More.Fragment.FragmentUser
 import com.example.aop.part4.graduation_work.R
 import com.example.aop.part4.graduation_work.data.UserData
+import com.example.aop.part4.graduation_work.databinding.MainPageBinding
+import com.example.aop.part4.graduation_work.databinding.MoreMainBinding
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.depressive_result.view.*
 
 class MorePage: AppCompatActivity() {
     var fragment0: FragmentDeveloper ?= null
@@ -102,6 +109,16 @@ class MorePage: AppCompatActivity() {
             }
 
         })
+
+        val backbtn = findViewById<ImageButton>(R.id.backbtn)
+
+        backbtn.setOnClickListener {
+            val intent1 = Intent(this@MorePage, MainPage::class.java)
+            intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            finish()
+        }
     }
 
     override fun onBackPressed() {
