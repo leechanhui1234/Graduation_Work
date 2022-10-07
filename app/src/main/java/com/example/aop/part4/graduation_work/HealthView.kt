@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.SystemClock
 import android.widget.Chronometer
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -232,6 +233,15 @@ class HealthView : AppCompatActivity() {
                 dialog.show()
             }
 
+        }
+
+        val backbtn = findViewById<ImageButton>(R.id.backbtn)
+        backbtn.setOnClickListener {
+            val intent1 = Intent(this@HealthView, MainPage::class.java)
+            intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            finish()
         }
     }
 
