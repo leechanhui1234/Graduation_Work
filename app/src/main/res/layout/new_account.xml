@@ -10,54 +10,59 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FAFAFA"
         android:gravity="center"
-        android:orientation="vertical"
-        android:background="#FAFAFA">
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/Name"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:hint="이름을 입력하세요"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:layout_marginBottom="13dp" />
 
         <EditText
             android:id="@+id/ID"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
             android:hint="아이디를 입력하세요"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:layout_marginBottom="13dp"/>
 
         <EditText
             android:id="@+id/PW"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
             android:hint="비밀번호를 입력하세요"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:layout_marginBottom="13dp"/>
 
         <EditText
             android:id="@+id/PW_CH"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
             android:hint="비밀번호를 다시 입력하세요"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:layout_marginBottom="13dp"/>
 
         <RadioGroup
             android:id="@+id/Sex_Group"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="13dp"
             android:orientation="horizontal">
 
             <TextView
@@ -82,9 +87,10 @@
         <Spinner
             android:id="@+id/Age"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="13dp"
             android:contentDescription="@string/prompt_Age"
             android:hint="나이를 선택하세요"
             android:minHeight="48dp"
@@ -95,11 +101,13 @@
         <EditText
             android:id="@+id/Email"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
             android:hint="이메일을 입력하세요"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:layout_marginBottom="13dp"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -113,17 +121,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
+                android:backgroundTint="#6490ED"
                 android:text="가입하기"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#6490ED"
                 android:text="로그인하기"
-                android:textColor="@color/white"
-                android:backgroundTint="#6490ED" />
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 
