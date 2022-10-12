@@ -49,8 +49,7 @@ class DepressionResult : AppCompatActivity(){
                 intent1.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent1)
                 finish()
-                //Toast.makeText(applicationContext,"토스트메세지",Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(applicationContext,"토스트메세지",Toast.LENGTH_SHORT).show()
             }
         }
     }
