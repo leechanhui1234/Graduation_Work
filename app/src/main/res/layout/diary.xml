@@ -42,18 +42,39 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- 오늘 날짜 출력 -->
+
     <TextView
-        android:id="@+id/Day"
+        android:id="@+id/day"
+        app:layout_constraintStart_toStartOf="@+id/diaryTitle"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/backbtn"/>
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="22" />
+
+    <TextView
+        android:id="@+id/month"
+        app:layout_constraintStart_toEndOf="@+id/day"
+        app:layout_constraintBottom_toBottomOf="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:layout_marginStart="10dp"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/year"
+        app:layout_constraintStart_toEndOf="@+id/month"
+        app:layout_constraintBottom_toBottomOf="@+id/month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:layout_marginStart="10dp"
+        tools:text="2022" />
 
     <!-- 일기 작성 -->
     <EditText
@@ -67,7 +88,7 @@
         android:maxLength="50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Day" />
+        app:layout_constraintTop_toBottomOf="@+id/day" />
 
     <EditText
         android:id="@+id/diaryText"
