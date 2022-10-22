@@ -160,7 +160,7 @@ class HealthView : AppCompatActivity() {
         }
 
         var setTimer = 10
-        var totalTimer = 0  //총 운동시간. (단위 : 초)
+        var totalTimer = 1  //총 운동시간. (단위 : 초)
 
         with(binding) {
 
@@ -182,10 +182,10 @@ class HealthView : AppCompatActivity() {
                             timer.text = "$minute : $seconds"       //상단 타이머 표시
                             pauseTimeCounter++
 
-                            totalTimer += 1                         //총 운동시간 저장용
                             var totalMinute = totalTimer / 60
                             var totalSeconds = totalTimer % 60
                             chronometer.text = "총 운동 시간 = $totalMinute : $totalSeconds"     //하단 총 운동시간 표시
+                            totalTimer += 1                         //총 운동시간 저장용
                         }
 
                         override fun onFinish() {
