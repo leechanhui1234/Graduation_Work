@@ -49,7 +49,7 @@ class HealthView : AppCompatActivity() {
 
     lateinit var Date : LocalDate   //현재 날짜
 
-    private lateinit var chrono : Chronometer
+//    private lateinit var chrono : Chronometer
     var CountDown : CountDownTimer? = null
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -159,49 +159,63 @@ class HealthView : AppCompatActivity() {
 
         }
 
+        var setTimer = 10
+        var totalTimer = 0  //총 운동시간. (단위 : 초)
+
         with(binding) {
 
             //총 운동시간 측정용
-            chrono = chronometer
+//            chrono = chronometer
             var pauseTimeCounter = 0L
-            var pauseTime = 0L
+//            var pauseTime = 0L
+            var locking = false
             
             //운동 시작
             starting.setOnClickListener {
+                if (!locking) {
+                    CountDown = object : CountDownTimer( (setTimer - pauseTimeCounter) * 1000, 1000) {
+                        @SuppressLint("SetTextI18n")
+                        override fun onTick(millisUntilFinished: Long) {
+                            val second = millisUntilFinished / 1000
+                            val minute = second / 60
+                            val seconds = second % 60
+                            timer.text = "$minute : $seconds"       //상단 타이머 표시
+                            pauseTimeCounter++
 
-                CountDown = object : CountDownTimer( (10 - pauseTimeCounter) * 1000, 1000) {
-                    @SuppressLint("SetTextI18n")
-                    override fun onTick(millisUntilFinished: Long) {
-                        val second = millisUntilFinished / 1000
-                        val minute = second / 60
-                        val seconds = second % 60
-                        timer.text = "$minute : $seconds"
-                        pauseTimeCounter++
-                    }
+                            totalTimer += 1                         //총 운동시간 저장용
+                            var totalMinute = totalTimer / 60
+                            var totalSeconds = totalTimer % 60
+                            chronometer.text = "총 운동 시간 = $totalMinute : $totalSeconds"     //하단 총 운동시간 표시
+                        }
 
-                    override fun onFinish() {
-                        var dialog = AlertDialog.Builder(this@HealthView)
-                        dialog.setTitle("운동 종료!")
-                        dialog.setMessage("5분 휴식 후 다음 운동으로 넘어가세요!")
-                        dialog.setPositiveButton("확인", null)
+                        override fun onFinish() {
+                            var dialog = AlertDialog.Builder(this@HealthView)
+                            dialog.setTitle("운동 종료!")
+                            dialog.setMessage("5분 휴식 후 다음 운동으로 넘어가세요!")
+                            dialog.setPositiveButton("확인", null)
 
-                        pauseTimeCounter = 0
-                        pauseTime = chrono.base - SystemClock.elapsedRealtime()
-                        chrono.stop()
+                            pauseTimeCounter = 0
+//                            pauseTime = chrono.base - SystemClock.elapsedRealtime()
+//                            chrono.stop()
+                            setTimer = 60 * 10
+                            timer.text = "10 : 0"
+                            locking = false
 
-                        dialog.show()
-                    }
-                }.start()
+                            dialog.show()
+                        }
+                    }.start()
 
-                chrono.base = SystemClock.elapsedRealtime() + pauseTime + 1
-                chrono.start()      //측정 시작
-
+//                    chrono.base = SystemClock.elapsedRealtime() + pauseTime
+//                    chrono.start()      //측정 시작
+                    locking = true      //시작하기 버튼 누른 후 다시 시작하기 누를 경우 대비.
+                }
             }
 
             pausing.setOnClickListener {
                 CountDown?.cancel()
-                pauseTime = chrono.base - SystemClock.elapsedRealtime()
-                chrono.stop()
+//                pauseTime = chrono.base - SystemClock.elapsedRealtime() + 1
+//                chrono.stop()
+                locking = false
             }
 
             //운동 종료
@@ -219,10 +233,18 @@ class HealthView : AppCompatActivity() {
                     CountDown = null
                     pauseTimeCounter = 0
 
-                    chrono.stop()
-                    pauseTime = 0L
+                    setTimer = 60 * 10
+                    timer.text = "10 : 0"
+                    var saveTime = totalTimer
+                    chronometer.text = "0 : 0"
+                    totalTimer = 0
+
+//                    chrono.stop()
+//                    pauseTime = 0L
 
                     dialog1.show()
+
+                    locking = false
                 }
 
                 dialog.setNegativeButton("취소") { dialog, which ->
@@ -232,7 +254,6 @@ class HealthView : AppCompatActivity() {
 
                 dialog.show()
             }
-
         }
 
         val backbtn = findViewById<ImageButton>(R.id.backbtn)

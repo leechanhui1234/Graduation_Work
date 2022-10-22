@@ -12,7 +12,6 @@ class DepressionResult : AppCompatActivity(){
 
     private lateinit var binding: DepressiveResultBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
