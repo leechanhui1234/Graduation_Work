@@ -127,6 +127,8 @@
         <entry key="app/src/main/res/layout/dialist_list.xml" value="0.16354166666666667" />
         <entry key="app/src/main/res/layout/diary.xml" value="0.16354166666666667" />
         <entry key="app/src/main/res/layout/diary_show.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/layout/diary_update.xml" value="0.14402173913043478" />
+        <entry key="app/src/main/res/layout/email_change.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/health.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/health_adapter.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/health_view.xml" value="0.1109375" />
