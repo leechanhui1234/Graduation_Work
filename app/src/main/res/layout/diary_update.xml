@@ -58,13 +58,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:textSize="30dp"
-        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textColor="#ff0066"
+        android:textStyle="bold"
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/backbtn"/>
+        tools:text="2022. 02. 02"
+        android:layout_marginVertical="15dp"
+        app:layout_constraintStart_toStartOf="@id/diaryTitle"
+        app:layout_constraintTop_toBottomOf="@id/backbtn"
+        app:layout_constraintBottom_toTopOf="@+id/diaryTitle"/>
 
     <!-- 일기 작성 -->
     <EditText
@@ -73,9 +75,12 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:background="#EDEDED"
+        android:background="@android:color/transparent"
         android:maxLength="50"
         android:text=""
+        tools:text="test"
+        android:textSize="20sp"
+        android:padding="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Day" />
@@ -86,8 +91,12 @@
         android:layout_height="400dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:background="#EDEDED"
         android:maxLength="500"
+        tools:text="test"
+        android:background="@android:color/transparent"
+        android:padding="10sp"
+        android:textSize="15sp"
+        android:gravity="top"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,13 +106,12 @@
         android:id="@+id/diarySave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_gravity="right"
         android:textColor="@color/white"
         android:text="저장하기"
-        android:backgroundTint="#6490ED"
+        android:backgroundTint="#ff3399"
+        android:layout_marginRight="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/diaryText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

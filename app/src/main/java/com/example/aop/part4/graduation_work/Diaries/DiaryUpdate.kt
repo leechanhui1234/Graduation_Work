@@ -27,7 +27,7 @@ class DiaryUpdate : AppCompatActivity() {
         with(binding){
 
             var id = intent.getStringExtra("id")
-
+            Day.text = list!!.day
             diaryTitle.hint = list!!.title
             diaryText.hint = list!!.diary
 
