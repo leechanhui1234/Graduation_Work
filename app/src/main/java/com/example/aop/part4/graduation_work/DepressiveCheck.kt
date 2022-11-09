@@ -264,6 +264,7 @@ class DepressiveCheck : AppCompatActivity() {
                    val customView = inflater.inflate(R.layout.depressive_result, null)
                    dialog.setView(customView)
                     customView.result.text = value.toString()
+
                     if(value in 0..20) {
                         customView.depression_1.visibility = android.view.View.VISIBLE
                         customView.depression_text_1.visibility = android.view.View.VISIBLE
