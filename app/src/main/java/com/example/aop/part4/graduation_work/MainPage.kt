@@ -135,10 +135,12 @@ class MainPage : AppCompatActivity() {
 
             //우울증 항목 조사
             depressiveCheck.setOnClickListener {
-
-                val intent = Intent(this@MainPage, DepressiveCheck::class.java)
-                startActivity(intent)
-
+                if(id == "") popUp()
+                else {
+                    val intent = Intent(this@MainPage, DepressiveCheck::class.java)
+                    intent.putExtra("id", id)
+                    startActivity(intent)
+                }
             }
             
             //운동

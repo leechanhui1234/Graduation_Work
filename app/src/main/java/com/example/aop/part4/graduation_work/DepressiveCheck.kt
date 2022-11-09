@@ -1,25 +1,68 @@
 package com.example.aop.part4.graduation_work
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
+import com.example.aop.part4.graduation_work.data.RecordModel
+import com.example.aop.part4.graduation_work.data.UserDiary
 import com.example.aop.part4.graduation_work.databinding.DepressiveCheckBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.depressive_result.view.*
+import kotlinx.android.synthetic.main.calandar.*
+import java.lang.String.format
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class DepressiveCheck : AppCompatActivity() {
 
     private lateinit var binding: DepressiveCheckBinding
 
     private var allcheck : Boolean = true
+    private var id : String = ""        //아이디
     var value : Int = 0
+    var database = Firebase.database.reference.child("depression_result")
+    var Year : Int = 0
+    var Month : Int = 0
+    var Day : Int = 0
+    var text : String = ""
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    @SuppressLint("ResourceType", "SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DepressiveCheckBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        id = intent.getStringExtra("id") ?: ""
+
+        var currenttime = Calendar.getInstance().time
+        Year = Integer.parseInt(SimpleDateFormat("yyyy", Locale.getDefault()).format(currenttime))
+        Month = Integer.parseInt(SimpleDateFormat("MM", Locale.getDefault()).format(currenttime))
+        Day = Integer.parseInt(SimpleDateFormat("dd", Locale.getDefault()).format(currenttime))
+        var Date = LocalDate.of(Year, Month, Day)
+        var text = Date.format(DateTimeFormatter.ofPattern("yyyy. MM. dd"))
+
+        val sharedPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
+
+        if (id.isNullOrEmpty()) {
+            id = sharedPreferences.getString("id", "") ?: ""
+        } else {
+            sharedPreferences.edit {
+                this.putString("id", id)
+                commit()
+            }
+        }
 
         with(binding) {
             fun value(){
@@ -208,6 +251,9 @@ class DepressiveCheck : AppCompatActivity() {
                 }
 
                 else {
+
+                    val model = RecordModel(id, value, text)
+                    database.child(id!!).push().setValue(model)
 
                     /*val intent = Intent(this@DepressiveCheck, DepressionResult::class.java)
                     intent.putExtra("score", value)
