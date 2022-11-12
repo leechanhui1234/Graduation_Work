@@ -49,7 +49,7 @@ class HealthView : AppCompatActivity() {
 
     lateinit var Date : LocalDate   //현재 날짜
 
-//    private lateinit var chrono : Chronometer
+    //    private lateinit var chrono : Chronometer
     var CountDown : CountDownTimer? = null
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -169,7 +169,7 @@ class HealthView : AppCompatActivity() {
             var pauseTimeCounter = 0L
 //            var pauseTime = 0L
             var locking = false
-            
+
             //운동 시작
             starting.setOnClickListener {
                 if (!locking) {

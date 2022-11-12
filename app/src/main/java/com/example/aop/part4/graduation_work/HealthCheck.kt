@@ -265,7 +265,7 @@ class HealthCheck : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body!!.string()
                 runOnUiThread {
-                    
+
                     //로딩 바
                     binding.progress.visibility = View.GONE
                     binding.loading.visibility = View.GONE
@@ -382,8 +382,7 @@ class HealthCheck : AppCompatActivity() {
                         } else {
                             //DB에 health_select 이름으로 저장
                             //database_select.child(id!!).push().setValue(UserHealthCheck(id, Date.toString(), predata.toString(), indata.toString(), postdata.toString(), 0))
-                            Toast.makeText(this@HealthCheck, "데이터가 저장되었습니다 메인페이지로 이동합니다.", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this@HealthCheck, MainPage::class.java) ///////메인페이지로 변경
+                            val intent = Intent(this@HealthCheck, HealthView::class.java)
                             intent.putExtra("predata", predata)
                             intent.putExtra("indata", indata)
                             intent.putExtra("postdata", postdata)

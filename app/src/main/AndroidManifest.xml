@@ -47,6 +47,7 @@
         </activity>
         <activity android:name=".DepressiveCheck" />
         <activity android:name=".DepressionResult"/>
+        <activity android:name=".DepressionRecord" />
         <activity android:name=".HealthCheck"/>
         <activity android:name=".HealthView"/>
         <activity android:name=".HealthRecord"/>
