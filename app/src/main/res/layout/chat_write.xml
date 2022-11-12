@@ -59,7 +59,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/font_custom"
-        android:hint="제목"
+        android:hint="제목 (자신이 겪었던 힘들었던 일 서술)"
         android:textSize="25sp"
         android:backgroundTint="#d3d3d3"
         android:gravity="center_vertical"
@@ -69,7 +69,7 @@
 
     <EditText
         android:fontFamily="@font/font_custom"
-        android:hint="내용을 입력하세요."
+        android:hint="내용을 입력하세요.\n(다른사람들에게 극복방법을 알려주세요)"
         android:gravity="top"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -16,6 +16,7 @@ import com.example.aop.part4.graduation_work.Healths.HealthAdapter
 import com.example.aop.part4.graduation_work.Hospital.HospitalList
 import com.example.aop.part4.graduation_work.More.MorePage
 import com.example.aop.part4.graduation_work.data.UserData
+import kotlinx.android.synthetic.main.custom_depressive.view.*
 import kotlinx.android.synthetic.main.custom_health.view.*
 
 class MainPage : AppCompatActivity() {
@@ -137,9 +138,23 @@ class MainPage : AppCompatActivity() {
             depressiveCheck.setOnClickListener {
                 if(id == "") popUp()
                 else {
-                    val intent = Intent(this@MainPage, DepressiveCheck::class.java)
-                    intent.putExtra("id", id)
-                    startActivity(intent)
+                    val dialog = AlertDialog.Builder(this@MainPage)
+                    val inflater = layoutInflater
+                    val customView = inflater.inflate(R.layout.custom_depressive, null)
+
+                    dialog.setView(customView)
+
+                    customView.depressive_check.setOnClickListener {
+                        val intent = Intent(this@MainPage, DepressiveCheck::class.java)
+                        intent.putExtra("id", id)
+                        startActivity(intent)
+                    }
+                    customView.depressive_record.setOnClickListener {
+                        val intent = Intent(this@MainPage, DepressiveRecord::class.java)
+                        intent.putExtra("id", id)
+                        startActivity(intent)
+                    }
+                    dialog.show()
                 }
             }
             

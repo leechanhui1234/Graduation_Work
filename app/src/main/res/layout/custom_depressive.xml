@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/depressive_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우울점수 검사"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:backgroundTint="#6490ED"/>
+
+    <Button
+        android:id="@+id/depressive_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우울 점수 기록확인"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depressive_check"
+        android:textColor="@color/white"
+        android:backgroundTint="#6490ED"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

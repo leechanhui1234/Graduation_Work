@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="30dp"
-        android:text="우울한 상태입니다.\n 기분전환 해보는건 어떨까요?"/>
+        android:text="약간 우울한 상태로 생각됩니다."/>
     <TextView
         android:id="@+id/depression_text_3"
         android:visibility="invisible"
@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="30dp"
-        android:text="매우 우울한 상태입니다.\n 전문의와 상담하세요."/>
+        android:text="매우 우울한 상태로 생각됩니다.\n 전문의와 상담하세요."/>
 
 </FrameLayout>
     </LinearLayout>
