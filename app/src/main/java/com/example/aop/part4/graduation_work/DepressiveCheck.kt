@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.calandar.*
 import java.lang.String.format
 import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -46,12 +47,16 @@ class DepressiveCheck : AppCompatActivity() {
 
         id = intent.getStringExtra("id") ?: ""
 
-        var currenttime = Calendar.getInstance().time
+        /*var currenttime = Calendar.getInstance().time
         Year = Integer.parseInt(SimpleDateFormat("yyyy", Locale.getDefault()).format(currenttime))
         Month = Integer.parseInt(SimpleDateFormat("MM", Locale.getDefault()).format(currenttime))
         Day = Integer.parseInt(SimpleDateFormat("dd", Locale.getDefault()).format(currenttime))
         var Date = LocalDate.of(Year, Month, Day)
-        var text = Date.format(DateTimeFormatter.ofPattern("yyyy. MM. dd"))
+        var text = Date.format(DateTimeFormatter.ofPattern("yyyy. MM. dd"))*/
+
+        var now = LocalDateTime.now()
+        var dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm")
+        var text = now.format(dateFormat)
 
         val sharedPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
 

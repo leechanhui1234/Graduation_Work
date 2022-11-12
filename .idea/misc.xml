@@ -12,31 +12,21 @@
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_adapter.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_list.xml" value="0.192481884057971" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_list_adapter.xml" value="0.17806484295845998" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_update.xml" value="0.290625" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/chat_write.xml" value="0.290625" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/custom_depressive.xml" value="0.36614583333333334" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dep_check.xml" value="0.22" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dep_result.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_check.xml" value="0.1" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_record.xml" value="0.36614583333333334" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/depressive_result.xml" value="0.14444444444444443" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/dialist.xml" value="0.290625" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/diary_update.xml" value="0.20742753623188406" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/fragment_developer.xml" value="0.36614583333333334" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/fragment_user.xml" value="0.36614583333333334" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health.xml" value="0.25226449275362317" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_adapter.xml" value="0.5" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_adapter.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_check.xml" value="0.25226449275362317" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_page1.xml" value="0.25226449275362317" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_record.xml" value="0.20742753623188406" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.25" />
+        <entry key="..\:/Graduation_Work/app/src/main/res/layout/health_view.xml" value="0.1" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/main_page.xml" value="0.290625" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/layout/more_main.xml" value="0.17806484295845998" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/new_account.xml" value="0.1413373860182371" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/old_dep_check.xml" value="0.192481884057971" />
         <entry key="..\:/Graduation_Work/app/src/main/res/layout/old_dep_result.xml" value="0.6990131578947368" />
-        <entry key="..\:/Graduation_Work/app/src/main/res/menu/chat_list_menu.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/ASUS/Graduation_Work1/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Graduation_Work3/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ASUS/Graduation_Work6/app/src/main/res/layout/activity_login.xml" value="0.1" />
@@ -127,11 +117,24 @@
         <entry key="app/src/main/res/drawable/drawable_rectangle.xml" value="0.1285" />
         <entry key="app/src/main/res/drawable/drawable_review.xml" value="0.1285" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/calandar.xml" value="0.1625" />
+        <entry key="app/src/main/res/layout/chat_adapter.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/chat_list_adapter.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/custom_depressive.xml" value="0.14402173913043478" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/custom_health.xml" value="0.1" />
         <entry key="app/src/main/res/layout/delete_user.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/depressive_check.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/depressive_list.xml" value="0.14402173913043478" />
+        <entry key="app/src/main/res/layout/depressive_record.xml" value="0.14402173913043478" />
+        <entry key="app/src/main/res/layout/depressive_record_list.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/depressive_result.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/dialist.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/layout/dialist_list.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/layout/diary.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/layout/diary_show.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/layout/diary_update.xml" value="0.14402173913043478" />
+        <entry key="app/src/main/res/layout/email_change.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/health.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/health_adapter.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/health_view.xml" value="0.1109375" />
@@ -140,6 +143,7 @@
         <entry key="app/src/main/res/layout/main_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/more_main.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/new_account.xml" value="0.15416666666666667" />
+        <entry key="app/src/main/res/layout/pw_change.xml" value="0.16354166666666667" />
       </map>
     </option>
   </component>

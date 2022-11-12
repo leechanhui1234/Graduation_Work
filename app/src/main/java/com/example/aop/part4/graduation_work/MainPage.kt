@@ -150,7 +150,7 @@ class MainPage : AppCompatActivity() {
                         startActivity(intent)
                     }
                     customView.depressive_record.setOnClickListener {
-                        val intent = Intent(this@MainPage, DepressiveRecord::class.java)
+                        val intent = Intent(this@MainPage, DepressionRecord::class.java)
                         intent.putExtra("id", id)
                         startActivity(intent)
                     }
