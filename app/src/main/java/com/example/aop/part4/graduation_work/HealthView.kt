@@ -119,6 +119,21 @@ class HealthView : AppCompatActivity() {
                     db.userHealthDao().updateData(UserHealthInfo(data.uid, id, predata, indata, postdata, preurl, inurl, posturl, Date.toString(),0))
                 }
 
+                data = db.userHealthDao().getData(id)
+
+                runOnUiThread {
+                    list = emptyList()
+                    urllist = emptyList()
+                    //DB 있음
+                    Toast.makeText(applicationContext, "${data.in_url} ${data.post_url}", Toast.LENGTH_SHORT).show()
+                    list = list + data.pre_select!!
+                    list = list + data.in_select!!
+                    list = list + data.post_select!!
+                    urllist = urllist + data.pre_url!!.split("v=")[1]
+                    urllist = urllist + data.in_url!!.split("v=")[1]
+                    urllist = urllist + data.post_url!!.split("v=")[1]
+                    displayData()
+                }
             }
         }
         //운동 보여주기로 바로 들어왔을 경우(추천된 운동 없음.)

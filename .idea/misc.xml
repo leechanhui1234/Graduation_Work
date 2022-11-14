@@ -127,7 +127,7 @@
         <entry key="app/src/main/res/layout/depressive_check.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/depressive_list.xml" value="0.14402173913043478" />
         <entry key="app/src/main/res/layout/depressive_record.xml" value="0.14402173913043478" />
-        <entry key="app/src/main/res/layout/depressive_record_list.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/depressive_record_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/depressive_result.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/dialist.xml" value="0.16354166666666667" />
         <entry key="app/src/main/res/layout/dialist_list.xml" value="0.16354166666666667" />
@@ -140,6 +140,7 @@
         <entry key="app/src/main/res/layout/health_view.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/hospital_info.xml" value="0.15416666666666667" />
         <entry key="app/src/main/res/layout/hospital_list.xml" value="0.15416666666666667" />
+        <entry key="app/src/main/res/layout/hospital_list_adapter.xml" value="0.11322463768115942" />
         <entry key="app/src/main/res/layout/main_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/more_main.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/new_account.xml" value="0.15416666666666667" />
